@@ -11,7 +11,7 @@ Rm 8:28-29
 ## Sobre
 
 O projeto visa transformar o layout abaixo  
-![Banner do Propósito Eterno](https://github.com/fundamentos-dev/proposito-eterno-parallax/blob/main/proposito_eterno_preview.jpg?raw=true)  
+![Banner do Propósito Eterno](https://github.com/fundamentos-dev/proposito-eterno-parallax/blob/main/src/assets/proposito_eterno_preview.jpg?raw=true)  
 em um site de slides animados com elementos e camadas parallax que vão aparecendo em ordem a medida que o usuário rola o mouse ou clica nas setas.
 
 ## Requisitos principais
