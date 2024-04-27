@@ -23,7 +23,7 @@ em um site de slides animados com elementos e camadas parallax que vão aparecen
 
 - [ ] HTML
 - [ ] CSS
-- [ ] Jquery parallax
+- [ ] Jquery parallax ou React
 
 ## Links de referência 
 
