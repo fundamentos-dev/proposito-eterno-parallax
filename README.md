@@ -9,7 +9,7 @@ Porque os que dantes conheceu, também os predestinou para serem conformes à im
 Rm 8:28-29
 
 > [!IMPORTANT]  Versão provisória
-> Foi criado um projeto temporário enquanto a versão parallax não fica pronta, utilizando [Keynote](https://www.apple.com/br/keynote/). Está disponível, CLIQUE AQUI PARA ACESSAR. Os arquivos que fazem parte desse projeto são `index.html` e a pasta `assets`
+> Foi criado um projeto temporário enquanto a versão parallax não fica pronta, utilizando [Keynote](https://www.apple.com/br/keynote/). Está disponível, [CLIQUE AQUI PARA ACESSAR](https://propositoeterno.filipelopes.me). Os arquivos que fazem parte desse projeto são `index.html` e a pasta `assets`
 
 ## Sobre
 
