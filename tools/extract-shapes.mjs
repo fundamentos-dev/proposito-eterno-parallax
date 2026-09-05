@@ -4,6 +4,7 @@
 // em src/assets/kn/. O fundo branco de cada slide é ignorado.
 import fs from 'fs';
 import path from 'path';
+import crypto from 'crypto';
 import { execFileSync } from 'child_process';
 
 const KN = process.argv[2];
@@ -19,10 +20,34 @@ for (const s of scene.slides) {
     need.set(`${s.id}#${l.pdfPage}`, { slide: s.id, page: l.pdfPage, short: `${s.id.slice(0, 8)}-p${l.pdfPage}` });
   }
 }
+// A mesma forma costuma reaparecer em vários slides, exportada em páginas diferentes.
+// Sem unificar por conteúdo o mesmo objeto vira dois — e é assim que a seta vermelha da
+// queda acabava desenhada duas vezes, uma delas atrás do globo.
+const tmp = fs.mkdtempSync('/tmp/pe-formas-');
+const porHash = new Map();
+const apelido = {};
 for (const { slide, page, short } of need.values()) {
   const pdf = path.join(KN, slide, 'assets', `${slide}.pdf`);
-  const dest = path.join(OUT, `${short}.svg`);
-  execFileSync('pdftocairo', ['-svg', '-f', String(page), '-l', String(page), pdf, dest]);
-  console.log(`${short}.svg  <- ${slide.slice(0, 8)} página ${page}`);
+  const bruto = path.join(tmp, `${short}.svg`);
+  execFileSync('pdftocairo', ['-svg', '-f', String(page), '-l', String(page), pdf, bruto]);
+  const conteudo = fs.readFileSync(bruto);
+  const hash = crypto.createHash('sha1').update(conteudo).digest('hex').slice(0, 6);
+  if (!porHash.has(hash)) {
+    // nome legível: o tamanho identifica a forma de relance em src/ajustes.js
+    const vb = conteudo.toString('utf8').match(/viewBox="[\d.]+ [\d.]+ ([\d.]+) ([\d.]+)"/);
+    const nome = vb ? `forma-${Math.round(+vb[1])}x${Math.round(+vb[2])}` : `forma-${hash}`;
+    const unico = fs.existsSync(path.join(OUT, `${nome}.svg`)) ? `${nome}-${hash}` : nome;
+    fs.writeFileSync(path.join(OUT, `${unico}.svg`), conteudo);
+    porHash.set(hash, unico);
+  }
+  apelido[short] = porHash.get(hash);
 }
-console.log(`${need.size} formas nativas do Keynote exportadas para ${OUT}/`);
+fs.rmSync(tmp, { recursive: true, force: true });
+const mantidos = new Set([...porHash.values()].map((n) => `${n}.svg`));
+for (const f of fs.readdirSync(OUT)) if (!mantidos.has(f)) fs.rmSync(path.join(OUT, f));
+fs.mkdirSync('src/scene', { recursive: true });
+fs.writeFileSync('src/scene/formas.json', JSON.stringify(apelido, null, 1));
+
+const repetidas = need.size - porHash.size;
+console.log(`${porHash.size} formas nativas do Keynote em ${OUT}/` +
+  (repetidas ? ` (${repetidas} eram repetição da mesma forma em outro slide)` : ''));

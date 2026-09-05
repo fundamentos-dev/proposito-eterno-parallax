@@ -108,7 +108,10 @@ sobrevive a uma reextração (ao contrário de `src/scene/*.json`, que são gera
 - faz Espírito, Alma e Corpo entrarem junto com Justificação · Santificação · Redenção;
 - põe o círculo branco da Geena atrás das colunas roxas — ele só delimita o fogo;
 - nivela o topo das peças da direita da ponte verde;
-- marca as chamas como animação contínua.
+- marca as chamas como animação contínua e as contém no disco da Geena;
+- devolve o contorno claro do círculo da Geena e põe seu texto em branco, como em produção;
+- faz o remendo roxo entrar junto com as colunas, cobrindo o disco branco;
+- alinha a entrada das chamas com o círculo.
 
 ## Tipografia
 

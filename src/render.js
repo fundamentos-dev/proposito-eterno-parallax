@@ -95,12 +95,29 @@ function desenhaTexto(grupo, geo, linhas, id) {
   });
 }
 
-export function montaCena(cena, geometria, textos, links, continuas = {}) {
+export function montaCena(cena, geometria, textos, links, continuas = {}, recortes = {}, contornos = {}) {
   const svg = el('svg', {
     viewBox: `0 0 ${cena.palco.width} ${cena.palco.height}`,
     xmlns: NS, id: 'palco',
     'aria-label': cena.titulo,
   });
+
+  // recortes declarados em src/ajustes.js: o disco de outra camada limita esta
+  const defsGlobais = el('defs');
+  svg.appendChild(defsGlobais);
+  const clipDe = {};
+  for (const [alvo, regra] of Object.entries(recortes)) {
+    const fonte = cena.camadas.find((l) => l.asset.id === regra.disco);
+    if (!fonte) continue;
+    const id = `recorte-${alvo}`;
+    const cp = el('clipPath', { id, clipPathUnits: 'userSpaceOnUse' });
+    cp.appendChild(el('circle', {
+      cx: fonte.x + fonte.w / 2, cy: fonte.y + fonte.h / 2,
+      r: Math.min(fonte.w, fonte.h) / 2,
+    }));
+    defsGlobais.appendChild(cp);
+    clipDe[alvo] = id;
+  }
 
   const faltando = new Set();
   cena.camadas.forEach((c) => {
@@ -112,12 +129,21 @@ export function montaCena(cena, geometria, textos, links, continuas = {}) {
     // dentro encaixa o asset, desenhado no seu próprio quadro, dentro do retângulo do palco.
     const g = el('g', { class: 'camada', 'data-passo': c.step, 'data-asset': c.asset.id });
     if (continuas[c.asset.id]) g.classList.add(`anima-${continuas[c.asset.id]}`);
+    if (clipDe[c.asset.id]) g.setAttribute('clip-path', `url(#${clipDe[c.asset.id]})`);
     const dentro = el('g', {
       transform: `translate(${c.x},${c.y}) scale(${(c.w / cx.w).toFixed(6)},${(c.h / cx.h).toFixed(6)})`
         + (c.rotation ? ` rotate(${c.rotation * 180 / Math.PI},${cx.w / 2},${cx.h / 2})` : ''),
       opacity: c.opacity,
     });
     g.appendChild(dentro);
+
+    const contorno = contornos[c.asset.id];
+    if (contorno) {
+      // a largura vem em unidades de palco; aqui ela volta para o quadro do asset
+      dentro.setAttribute('stroke', contorno.cor);
+      dentro.setAttribute('stroke-width', (contorno.largura / (c.w / cx.w)).toFixed(3));
+    }
+
 
     const geo = geometria[c.asset.id];
     if (geo) desenhaTexto(dentro, geo, textos[c.asset.id], `${c.asset.id}-${c.z}`);

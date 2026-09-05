@@ -7,113 +7,36 @@
  "passos": 18,
  "camadas": [
   {
-   "chave": "o41",
-   "asset": {
-    "tipo": "keynote",
-    "id": "B6E581B2-p39"
-   },
-   "step": 7,
-   "z": 0,
-   "slide": 1,
-   "x": 1308,
-   "y": 762,
-   "w": 1173,
-   "h": 520
-  },
-  {
-   "chave": "o46",
-   "asset": {
-    "tipo": "keynote",
-    "id": "B6E581B2-p46"
-   },
-   "step": 7,
-   "z": 1,
-   "slide": 1,
-   "x": 1744,
-   "y": 778,
-   "w": 672,
-   "h": 108
-  },
-  {
-   "chave": "o47",
-   "asset": {
-    "tipo": "keynote",
-    "id": "B6E581B2-p47"
-   },
-   "step": 7,
-   "z": 2,
-   "slide": 1,
-   "x": 1740,
-   "y": 771,
-   "w": 681,
-   "h": 109
-  },
-  {
-   "chave": "o48",
-   "asset": {
-    "tipo": "keynote",
-    "id": "B6E581B2-p29"
-   },
-   "step": 7,
-   "z": 3,
-   "slide": 1,
-   "x": 1799,
-   "y": 771,
-   "w": 643,
-   "h": 101
-  },
-  {
-   "chave": "o49",
-   "asset": {
-    "tipo": "keynote",
-    "id": "B6E581B2-p48"
-   },
-   "step": 7,
-   "z": 4,
-   "slide": 1,
-   "x": 2372,
-   "y": 1048,
-   "w": 195,
-   "h": 7,
-   "rotation": -1.5708
-  },
-  {
-   "chave": "o0",
    "asset": {
     "tipo": "inkscape",
     "id": "path4607"
    },
    "step": 0,
-   "z": 5,
-   "slide": 2,
+   "z": 0,
    "x": 772,
    "y": 280,
    "w": 1702,
    "h": 870
   },
   {
-   "chave": "o50",
    "asset": {
     "tipo": "keynote",
-    "id": "973229BA-p3"
+    "id": "forma-1155x1681"
    },
    "step": 12,
-   "z": 6,
-   "slide": 2,
+   "z": 1,
    "x": 1608,
    "y": -62,
    "w": 1155,
    "h": 1681
   },
   {
-   "chave": "o35",
    "asset": {
     "tipo": "inkscape",
     "id": "circle4539"
    },
    "step": 11,
-   "z": 7,
-   "slide": 2,
+   "z": 2,
    "x": 2486,
    "y": 979,
    "w": 397,
@@ -124,14 +47,12 @@
    }
   },
   {
-   "chave": "o36",
    "asset": {
     "tipo": "inkscape",
     "id": "circle5931"
    },
    "step": 11,
-   "z": 8,
-   "slide": 2,
+   "z": 3,
    "x": 2542,
    "y": 1021,
    "w": 304,
@@ -142,28 +63,24 @@
    }
   },
   {
-   "chave": "o37",
    "asset": {
     "tipo": "inkscape",
     "id": "g5929"
    },
    "step": 7,
-   "z": 9,
-   "slide": 2,
+   "z": 4,
    "x": 2508,
    "y": 1087,
    "w": 405,
    "h": 316
   },
   {
-   "chave": "o38",
    "asset": {
     "tipo": "inkscape",
     "id": "circle5578"
    },
    "step": 11,
-   "z": 10,
-   "slide": 2,
+   "z": 5,
    "x": 2436,
    "y": 913,
    "w": 519,
@@ -174,28 +91,24 @@
    }
   },
   {
-   "chave": "o51",
    "asset": {
     "tipo": "inkscape",
     "id": "path6060"
    },
    "step": 14,
-   "z": 11,
-   "slide": 2,
+   "z": 6,
    "x": 2435,
    "y": 913,
    "w": 328,
    "h": 519
   },
   {
-   "chave": "o39",
    "asset": {
     "tipo": "inkscape",
     "id": "text6327"
    },
    "step": 11,
-   "z": 12,
-   "slide": 2,
+   "z": 7,
    "x": 2510,
    "y": 1283,
    "w": 100,
@@ -207,14 +120,12 @@
    }
   },
   {
-   "chave": "o40",
    "asset": {
     "tipo": "inkscape",
     "id": "text6040"
    },
    "step": 11,
-   "z": 13,
-   "slide": 2,
+   "z": 8,
    "x": 2645,
    "y": 1000,
    "w": 217,
@@ -226,28 +137,24 @@
    }
   },
   {
-   "chave": "o1",
    "asset": {
     "tipo": "inkscape",
     "id": "path4605"
    },
    "step": 0,
-   "z": 14,
-   "slide": 2,
+   "z": 9,
    "x": 171,
    "y": 1081,
    "w": 2303,
    "h": 70
   },
   {
-   "chave": "o2",
    "asset": {
     "tipo": "inkscape",
     "id": "circle18"
    },
    "step": 5,
-   "z": 15,
-   "slide": 2,
+   "z": 10,
    "x": 1004,
    "y": 197,
    "w": 1097,
@@ -264,14 +171,12 @@
    }
   },
   {
-   "chave": "o3",
    "asset": {
     "tipo": "inkscape",
     "id": "g4676"
    },
    "step": 5,
-   "z": 16,
-   "slide": 2,
+   "z": 11,
    "x": 1017,
    "y": 215,
    "w": 1071,
@@ -288,42 +193,36 @@
    }
   },
   {
-   "chave": "o4",
    "asset": {
     "tipo": "inkscape",
     "id": "path4734"
    },
    "step": 0,
-   "z": 17,
-   "slide": 2,
+   "z": 12,
    "x": 724,
    "y": 770,
    "w": 643,
    "h": 101
   },
   {
-   "chave": "o5",
    "asset": {
     "tipo": "inkscape",
     "id": "path4731"
    },
    "step": 0,
-   "z": 18,
-   "slide": 2,
+   "z": 13,
    "x": 724,
    "y": 762,
    "w": 643,
    "h": 100
   },
   {
-   "chave": "o6",
    "asset": {
     "tipo": "inkscape",
     "id": "flowRoot58"
    },
    "step": 0,
-   "z": 19,
-   "slide": 2,
+   "z": 14,
    "x": 405,
    "y": 174,
    "w": 612,
@@ -331,42 +230,36 @@
    "texto": true
   },
   {
-   "chave": "o7",
    "asset": {
     "tipo": "inkscape",
     "id": "path14"
    },
    "step": 0,
-   "z": 20,
-   "slide": 2,
+   "z": 15,
    "x": 349,
    "y": 463,
    "w": 569,
    "h": 569
   },
   {
-   "chave": "o8",
    "asset": {
     "tipo": "inkscape",
     "id": "circle4751"
    },
    "step": 0,
-   "z": 21,
-   "slide": 2,
+   "z": 16,
    "x": 393,
    "y": 507,
    "w": 480,
    "h": 480
   },
   {
-   "chave": "o9",
    "asset": {
     "tipo": "inkscape",
     "id": "text4775"
    },
    "step": 0,
-   "z": 22,
-   "slide": 2,
+   "z": 17,
    "x": 373,
    "y": 489,
    "w": 262,
@@ -374,14 +267,12 @@
    "texto": true
   },
   {
-   "chave": "o10",
    "asset": {
     "tipo": "inkscape",
     "id": "path3732"
    },
    "step": 1,
-   "z": 23,
-   "slide": 2,
+   "z": 18,
    "x": 845,
    "y": 567,
    "w": 179,
@@ -392,28 +283,24 @@
    }
   },
   {
-   "chave": "o11",
    "asset": {
     "tipo": "inkscape",
     "id": "path4690"
    },
    "step": 1,
-   "z": 24,
-   "slide": 2,
+   "z": 19,
    "x": 551,
    "y": 797,
    "w": 220,
    "h": 235
   },
   {
-   "chave": "o12",
    "asset": {
     "tipo": "inkscape",
     "id": "path4688"
    },
    "step": 0,
-   "z": 25,
-   "slide": 2,
+   "z": 20,
    "x": 738,
    "y": 614,
    "w": 84,
@@ -424,118 +311,72 @@
    }
   },
   {
-   "chave": "o13",
    "asset": {
     "tipo": "inkscape",
     "id": "path4682"
    },
    "step": 1,
-   "z": 26,
-   "slide": 2,
+   "z": 21,
    "x": 692,
    "y": 684,
    "w": 282,
    "h": 288
   },
   {
-   "chave": "o14",
    "asset": {
     "tipo": "inkscape",
     "id": "path4686"
    },
    "step": 1,
-   "z": 27,
-   "slide": 2,
+   "z": 22,
    "x": 630,
    "y": 615,
    "w": 216,
    "h": 368
   },
   {
-   "chave": "o15",
    "asset": {
     "tipo": "inkscape",
     "id": "path4694"
    },
    "step": 0,
-   "z": 28,
-   "slide": 2,
+   "z": 23,
    "x": 618,
    "y": 806,
    "w": 128,
    "h": 222
   },
   {
-   "chave": "o16",
    "asset": {
     "tipo": "inkscape",
     "id": "path4684"
    },
    "step": 1,
-   "z": 29,
-   "slide": 2,
+   "z": 24,
    "x": 657,
    "y": 775,
    "w": 214,
    "h": 236
   },
   {
-   "chave": "o17",
-   "asset": {
-    "tipo": "inkscape",
-    "id": "flowRoot4813"
-   },
-   "step": 0,
-   "z": 30,
-   "slide": 2,
-   "x": 1834,
-   "y": 1228,
-   "w": 489,
-   "h": 27,
-   "texto": true
-  },
-  {
-   "chave": "o18",
-   "asset": {
-    "tipo": "inkscape",
-    "id": "flowRoot4797"
-   },
-   "step": 0,
-   "z": 31,
-   "slide": 2,
-   "x": 1898,
-   "y": 1193,
-   "w": 322,
-   "h": 30,
-   "texto": true,
-   "entrada": {
-    "tipo": "fade",
-    "dur": 1
-   }
-  },
-  {
-   "chave": "o19",
    "asset": {
     "tipo": "inkscape",
     "id": "rect4593"
    },
    "step": 0,
-   "z": 32,
-   "slide": 2,
+   "z": 25,
    "x": 171,
    "y": 279,
    "w": 174,
    "h": 871
   },
   {
-   "chave": "o20",
    "asset": {
     "tipo": "inkscape",
     "id": "path4734"
    },
    "step": 0,
-   "z": 33,
-   "slide": 2,
+   "z": 26,
    "x": 1289,
    "y": 771,
    "w": 643,
@@ -554,14 +395,330 @@
    ]
   },
   {
-   "chave": "o21",
+   "asset": {
+    "tipo": "inkscape",
+    "id": "path4734"
+   },
+   "step": 0,
+   "z": 27,
+   "x": 1837,
+   "y": 771,
+   "w": 643,
+   "h": 100,
+   "transicoes": [
+    {
+     "dx": 0,
+     "dy": -1,
+     "passo": 7
+    },
+    {
+     "dx": 0,
+     "dy": 7,
+     "passo": 12
+    }
+   ]
+  },
+  {
    "asset": {
     "tipo": "inkscape",
     "id": "path4731"
    },
    "step": 0,
+   "z": 28,
+   "x": 1837,
+   "y": 762,
+   "w": 643,
+   "h": 100,
+   "transicoes": [
+    {
+     "dx": 0,
+     "dy": 9,
+     "passo": 12
+    }
+   ]
+  },
+  {
+   "asset": {
+    "tipo": "inkscape",
+    "id": "image132"
+   },
+   "step": 1,
+   "z": 29,
+   "x": 407,
+   "y": 335,
+   "w": 193,
+   "h": 86,
+   "texto": true,
+   "entrada": {
+    "tipo": "pop",
+    "dur": 0.75,
+    "chaves": [
+     0.001,
+     1.125,
+     0.952,
+     0.9999999999999999
+    ]
+   }
+  },
+  {
+   "asset": {
+    "tipo": "inkscape",
+    "id": "flowRoot4641"
+   },
+   "step": 1,
+   "z": 30,
+   "x": 423,
+   "y": 418,
+   "w": 79,
+   "h": 19,
+   "texto": true,
+   "entrada": {
+    "tipo": "pop",
+    "dur": 0.75,
+    "chaves": [
+     0.001,
+     1.125,
+     0.952,
+     0.9999999999999999
+    ]
+   }
+  },
+  {
+   "asset": {
+    "tipo": "inkscape",
+    "id": "path4692"
+   },
+   "step": 2,
+   "z": 31,
+   "x": 1029,
+   "y": 552,
+   "w": 355,
+   "h": 264,
+   "entrada": {
+    "tipo": "queda",
+    "dur": 0.75,
+    "chaves": [
+     -816,
+     0,
+     -190.3430987313464,
+     0
+    ]
+   }
+  },
+  {
+   "asset": {
+    "tipo": "inkscape",
+    "id": "flowRoot5933"
+   },
+   "step": 2,
+   "z": 32,
+   "x": 779,
+   "y": 304,
+   "w": 160,
+   "h": 133,
+   "texto": true,
+   "entrada": {
+    "tipo": "fade",
+    "dur": 1
+   }
+  },
+  {
+   "asset": {
+    "tipo": "inkscape",
+    "id": "flowRoot6261"
+   },
+   "step": 3,
+   "z": 33,
+   "x": 956,
+   "y": 364,
+   "w": 234,
+   "h": 128,
+   "texto": true,
+   "entrada": {
+    "tipo": "fade",
+    "dur": 1
+   }
+  },
+  {
+   "asset": {
+    "tipo": "inkscape",
+    "id": "text6281"
+   },
+   "step": 3,
    "z": 34,
-   "slide": 2,
+   "x": 172,
+   "y": 1169,
+   "w": 1170,
+   "h": 28,
+   "texto": true,
+   "entrada": {
+    "tipo": "fade",
+    "dur": 1
+   }
+  },
+  {
+   "asset": {
+    "tipo": "inkscape",
+    "id": "flowRoot4633"
+   },
+   "step": 4,
+   "z": 35,
+   "x": 210,
+   "y": 1091,
+   "w": 631,
+   "h": 32,
+   "texto": true,
+   "entrada": {
+    "tipo": "fade",
+    "dur": 1
+   }
+  },
+  {
+   "asset": {
+    "tipo": "keynote",
+    "id": "forma-1173x520"
+   },
+   "step": 7,
+   "z": 36,
+   "x": 1308,
+   "y": 762,
+   "w": 1173,
+   "h": 520
+  },
+  {
+   "asset": {
+    "tipo": "inkscape",
+    "id": "flowRoot5943"
+   },
+   "step": 8,
+   "z": 37,
+   "x": 918,
+   "y": 893,
+   "w": 386,
+   "h": 217,
+   "texto": true,
+   "entrada": {
+    "tipo": "fade",
+    "dur": 1
+   }
+  },
+  {
+   "asset": {
+    "tipo": "inkscape",
+    "id": "flowRoot4813"
+   },
+   "step": 0,
+   "z": 38,
+   "x": 1834,
+   "y": 1228,
+   "w": 489,
+   "h": 27,
+   "texto": true
+  },
+  {
+   "asset": {
+    "tipo": "inkscape",
+    "id": "flowRoot4797"
+   },
+   "step": 0,
+   "z": 39,
+   "x": 1898,
+   "y": 1193,
+   "w": 322,
+   "h": 30,
+   "texto": true,
+   "entrada": {
+    "tipo": "fade",
+    "dur": 1
+   }
+  },
+  {
+   "asset": {
+    "tipo": "inkscape",
+    "id": "flowRoot6315"
+   },
+   "step": 9,
+   "z": 40,
+   "x": 1489,
+   "y": 985,
+   "w": 80,
+   "h": 86,
+   "texto": true,
+   "entrada": {
+    "tipo": "fade",
+    "dur": 1
+   }
+  },
+  {
+   "asset": {
+    "tipo": "keynote",
+    "id": "forma-672x108"
+   },
+   "step": 7,
+   "z": 41,
+   "x": 1744,
+   "y": 778,
+   "w": 672,
+   "h": 108,
+   "fim": 12
+  },
+  {
+   "asset": {
+    "tipo": "keynote",
+    "id": "forma-681x109"
+   },
+   "step": 7,
+   "z": 42,
+   "x": 1740,
+   "y": 771,
+   "w": 681,
+   "h": 109,
+   "fim": 12
+  },
+  {
+   "asset": {
+    "tipo": "keynote",
+    "id": "forma-643x101"
+   },
+   "step": 7,
+   "z": 43,
+   "x": 1799,
+   "y": 771,
+   "w": 643,
+   "h": 101,
+   "fim": 12
+  },
+  {
+   "asset": {
+    "tipo": "inkscape",
+    "id": "rect4680"
+   },
+   "step": 12,
+   "z": 44,
+   "x": 1744,
+   "y": 778,
+   "w": 672,
+   "h": 108
+  },
+  {
+   "asset": {
+    "tipo": "inkscape",
+    "id": "rect4678"
+   },
+   "step": 12,
+   "z": 45,
+   "x": 1740,
+   "y": 771,
+   "w": 681,
+   "h": 109
+  },
+  {
+   "asset": {
+    "tipo": "inkscape",
+    "id": "path4731"
+   },
+   "step": 0,
+   "z": 46,
    "x": 1289,
    "y": 762,
    "w": 643,
@@ -582,367 +739,36 @@
    ]
   },
   {
-   "chave": "o22",
-   "asset": {
-    "tipo": "inkscape",
-    "id": "path4734"
-   },
-   "step": 0,
-   "z": 35,
-   "slide": 2,
-   "x": 1837,
-   "y": 771,
-   "w": 643,
-   "h": 100,
-   "transicoes": [
-    {
-     "dx": 0,
-     "dy": -1,
-     "passo": 7
-    },
-    {
-     "dx": 0,
-     "dy": 7,
-     "passo": 12
-    }
-   ]
-  },
-  {
-   "chave": "o23",
-   "asset": {
-    "tipo": "inkscape",
-    "id": "path4731"
-   },
-   "step": 0,
-   "z": 36,
-   "slide": 2,
-   "x": 1837,
-   "y": 762,
-   "w": 643,
-   "h": 100,
-   "transicoes": [
-    {
-     "dx": 0,
-     "dy": 9,
-     "passo": 12
-    }
-   ]
-  },
-  {
-   "chave": "o26",
-   "asset": {
-    "tipo": "inkscape",
-    "id": "image132"
-   },
-   "step": 1,
-   "z": 37,
-   "slide": 2,
-   "x": 407,
-   "y": 335,
-   "w": 193,
-   "h": 86,
-   "texto": true,
-   "entrada": {
-    "tipo": "pop",
-    "dur": 0.75,
-    "chaves": [
-     0.001,
-     1.125,
-     0.952,
-     0.9999999999999999
-    ]
-   }
-  },
-  {
-   "chave": "o27",
-   "asset": {
-    "tipo": "inkscape",
-    "id": "flowRoot4641"
-   },
-   "step": 1,
-   "z": 38,
-   "slide": 2,
-   "x": 423,
-   "y": 418,
-   "w": 79,
-   "h": 19,
-   "texto": true,
-   "entrada": {
-    "tipo": "pop",
-    "dur": 0.75,
-    "chaves": [
-     0.001,
-     1.125,
-     0.952,
-     0.9999999999999999
-    ]
-   }
-  },
-  {
-   "chave": "o28",
-   "asset": {
-    "tipo": "inkscape",
-    "id": "path4692"
-   },
-   "step": 2,
-   "z": 39,
-   "slide": 2,
-   "x": 1029,
-   "y": 552,
-   "w": 355,
-   "h": 264,
-   "entrada": {
-    "tipo": "queda",
-    "dur": 0.75,
-    "chaves": [
-     -816,
-     0,
-     -190.3430987313464,
-     0
-    ]
-   }
-  },
-  {
-   "chave": "o29",
-   "asset": {
-    "tipo": "inkscape",
-    "id": "flowRoot5933"
-   },
-   "step": 2,
-   "z": 40,
-   "slide": 2,
-   "x": 779,
-   "y": 304,
-   "w": 160,
-   "h": 133,
-   "texto": true,
-   "entrada": {
-    "tipo": "fade",
-    "dur": 1
-   }
-  },
-  {
-   "chave": "o30",
-   "asset": {
-    "tipo": "inkscape",
-    "id": "flowRoot6261"
-   },
-   "step": 3,
-   "z": 41,
-   "slide": 2,
-   "x": 956,
-   "y": 364,
-   "w": 234,
-   "h": 128,
-   "texto": true,
-   "entrada": {
-    "tipo": "fade",
-    "dur": 1
-   }
-  },
-  {
-   "chave": "o31",
-   "asset": {
-    "tipo": "inkscape",
-    "id": "text6281"
-   },
-   "step": 3,
-   "z": 42,
-   "slide": 2,
-   "x": 172,
-   "y": 1169,
-   "w": 1170,
-   "h": 28,
-   "texto": true,
-   "entrada": {
-    "tipo": "fade",
-    "dur": 1
-   }
-  },
-  {
-   "chave": "o32",
-   "asset": {
-    "tipo": "inkscape",
-    "id": "flowRoot4633"
-   },
-   "step": 4,
-   "z": 43,
-   "slide": 2,
-   "x": 210,
-   "y": 1091,
-   "w": 631,
-   "h": 32,
-   "texto": true,
-   "entrada": {
-    "tipo": "fade",
-    "dur": 1
-   }
-  },
-  {
-   "chave": "o52",
-   "asset": {
-    "tipo": "keynote",
-    "id": "973229BA-p40"
-   },
-   "step": 12,
-   "z": 44,
-   "slide": 2,
-   "x": 1308,
-   "y": 762,
-   "w": 1173,
-   "h": 520
-  },
-  {
-   "chave": "o42",
-   "asset": {
-    "tipo": "inkscape",
-    "id": "flowRoot5943"
-   },
-   "step": 8,
-   "z": 45,
-   "slide": 2,
-   "x": 918,
-   "y": 893,
-   "w": 386,
-   "h": 217,
-   "texto": true,
-   "entrada": {
-    "tipo": "fade",
-    "dur": 1
-   }
-  },
-  {
-   "chave": "o43",
-   "asset": {
-    "tipo": "inkscape",
-    "id": "flowRoot4813"
-   },
-   "step": 7,
-   "z": 46,
-   "slide": 2,
-   "x": 1834,
-   "y": 1228,
-   "w": 489,
-   "h": 27,
-   "texto": true
-  },
-  {
-   "chave": "o44",
-   "asset": {
-    "tipo": "inkscape",
-    "id": "flowRoot4797"
-   },
-   "step": 10,
-   "z": 47,
-   "slide": 2,
-   "x": 1898,
-   "y": 1193,
-   "w": 322,
-   "h": 30,
-   "texto": true,
-   "entrada": {
-    "tipo": "fade",
-    "dur": 1
-   }
-  },
-  {
-   "chave": "o45",
-   "asset": {
-    "tipo": "inkscape",
-    "id": "flowRoot6315"
-   },
-   "step": 9,
-   "z": 48,
-   "slide": 2,
-   "x": 1489,
-   "y": 985,
-   "w": 80,
-   "h": 86,
-   "texto": true,
-   "entrada": {
-    "tipo": "fade",
-    "dur": 1
-   }
-  },
-  {
-   "chave": "o53",
-   "asset": {
-    "tipo": "inkscape",
-    "id": "rect4680"
-   },
-   "step": 12,
-   "z": 49,
-   "slide": 2,
-   "x": 1744,
-   "y": 778,
-   "w": 672,
-   "h": 108
-  },
-  {
-   "chave": "o54",
-   "asset": {
-    "tipo": "inkscape",
-    "id": "rect4678"
-   },
-   "step": 12,
-   "z": 50,
-   "slide": 2,
-   "x": 1740,
-   "y": 771,
-   "w": 681,
-   "h": 109
-  },
-  {
-   "chave": "o55",
-   "asset": {
-    "tipo": "inkscape",
-    "id": "path4731"
-   },
-   "step": 12,
-   "z": 51,
-   "slide": 2,
-   "x": 1799,
-   "y": 771,
-   "w": 643,
-   "h": 101
-  },
-  {
-   "chave": "o24",
    "asset": {
     "tipo": "inkscape",
     "id": "circle29"
    },
    "step": 0,
-   "z": 52,
-   "slide": 2,
+   "z": 47,
    "x": 2196,
    "y": 271,
    "w": 688,
    "h": 688
   },
   {
-   "chave": "o25",
    "asset": {
     "tipo": "inkscape",
     "id": "circle6215"
    },
    "step": 0,
-   "z": 53,
-   "slide": 2,
+   "z": 48,
    "x": 2247,
    "y": 322,
    "w": 587,
    "h": 587
   },
   {
-   "chave": "o56",
    "asset": {
     "tipo": "inkscape",
     "id": "path4835"
    },
    "step": 13,
-   "z": 54,
-   "slide": 2,
+   "z": 49,
    "x": 1754,
    "y": 753,
    "w": 36,
@@ -958,14 +784,12 @@
    ]
   },
   {
-   "chave": "o34",
    "asset": {
     "tipo": "inkscape",
     "id": "text6203"
    },
    "step": 0,
-   "z": 55,
-   "slide": 2,
+   "z": 50,
    "x": 2727,
    "y": 354,
    "w": 142,
@@ -973,28 +797,24 @@
    "texto": true
   },
   {
-   "chave": "o57",
    "asset": {
     "tipo": "keynote",
-    "id": "973229BA-p49"
+    "id": "forma-127x506"
    },
    "step": 12,
-   "z": 56,
-   "slide": 2,
+   "z": 51,
    "x": 1708,
    "y": 771,
    "w": 127,
    "h": 506
   },
   {
-   "chave": "o58",
    "asset": {
     "tipo": "inkscape",
     "id": "flowRoot5959"
    },
    "step": 13,
-   "z": 57,
-   "slide": 2,
+   "z": 52,
    "x": 1852,
    "y": 892,
    "w": 498,
@@ -1002,14 +822,12 @@
    "texto": true
   },
   {
-   "chave": "o59",
    "asset": {
     "tipo": "inkscape",
     "id": "flowRoot6124"
    },
    "step": 14,
-   "z": 58,
-   "slide": 2,
+   "z": 53,
    "x": 2086,
    "y": 29,
    "w": 208,
@@ -1021,14 +839,12 @@
    }
   },
   {
-   "chave": "o60",
    "asset": {
     "tipo": "inkscape",
     "id": "flowRoot6020"
    },
    "step": 15,
-   "z": 59,
-   "slide": 2,
+   "z": 54,
    "x": 1708,
    "y": 76,
    "w": 911,
@@ -1040,14 +856,12 @@
    }
   },
   {
-   "chave": "o61",
    "asset": {
     "tipo": "inkscape",
     "id": "flowRoot6067"
    },
    "step": 16,
-   "z": 60,
-   "slide": 2,
+   "z": 55,
    "x": 1703,
    "y": 131,
    "w": 159,
@@ -1059,14 +873,12 @@
    }
   },
   {
-   "chave": "o62",
    "asset": {
     "tipo": "inkscape",
     "id": "flowRoot6140"
    },
    "step": 12,
-   "z": 61,
-   "slide": 2,
+   "z": 56,
    "x": 2057,
    "y": 129,
    "w": 152,
@@ -1074,14 +886,12 @@
    "texto": true
   },
   {
-   "chave": "o63",
    "asset": {
     "tipo": "inkscape",
     "id": "flowRoot6175"
    },
    "step": 12,
-   "z": 62,
-   "slide": 2,
+   "z": 57,
    "x": 2419,
    "y": 128,
    "w": 197,
@@ -1089,14 +899,12 @@
    "texto": true
   },
   {
-   "chave": "o64",
    "asset": {
     "tipo": "keynote",
-    "id": "973229BA-p60"
+    "id": "forma-195x7"
    },
-   "step": 12,
-   "z": 63,
-   "slide": 2,
+   "step": 7,
+   "z": 58,
    "x": 2372,
    "y": 1048,
    "w": 195,
@@ -1104,14 +912,12 @@
    "rotation": -1.5708
   },
   {
-   "chave": "o65",
    "asset": {
     "tipo": "inkscape",
     "id": "circle4893"
    },
    "step": 13,
-   "z": 64,
-   "slide": 2,
+   "z": 59,
    "x": 1754,
    "y": 753,
    "w": 35,
@@ -1127,14 +933,12 @@
    ]
   },
   {
-   "chave": "o66",
    "asset": {
-    "tipo": "keynote",
+    "tipo": "inkscape",
     "id": "text6387"
    },
    "step": 12,
-   "z": 65,
-   "slide": 2,
+   "z": 60,
    "x": 1606,
    "y": 513,
    "w": 259,
@@ -1142,14 +946,12 @@
    "texto": true
   },
   {
-   "chave": "o67",
    "asset": {
-    "tipo": "keynote",
+    "tipo": "inkscape",
     "id": "text6005"
    },
    "step": 12,
-   "z": 66,
-   "slide": 2,
+   "z": 61,
    "x": 1546,
    "y": 461,
    "w": 378,
@@ -1157,14 +959,12 @@
    "texto": true
   },
   {
-   "chave": "o33",
    "asset": {
     "tipo": "inkscape",
     "id": "flowRoot6339"
    },
    "step": 6,
-   "z": 67,
-   "slide": 2,
+   "z": 62,
    "x": 1033,
    "y": 200,
    "w": 205,

@@ -34,10 +34,19 @@ export function estado(camada, avanco, cursor) {
   const partes = [];
   let opacidade = 1;
 
+  let opacidadeSaida = 1;
   const tipo = camada.entrada ? camada.entrada.tipo : 'fade';
   const ch = camada.entrada && camada.entrada.chaves;
 
   if (avanco <= 0) return { opacidade: 0, transform: '' };
+
+  // Objetos que o Keynote retira na virada de slide. Sem isso a peça velha da ponte fica
+  // desenhada sob a nova e a quebra do caminho vira uma sobreposição.
+  if (camada.fim != null) {
+    const saida = Math.min(Math.max(cursor - camada.fim + 1, 0), 1);
+    if (saida >= 1) return { opacidade: 0, transform: '' };
+    opacidadeSaida = 1 - suavizar(saida);
+  }
 
   if (tipo === 'pop') {
     const s = chave(ch || [0.001, 1.125, 0.952, 1], avanco);
@@ -68,5 +77,5 @@ export function estado(camada, avanco, cursor) {
     }
   }
 
-  return { opacidade, transform: partes.join(' ') };
+  return { opacidade: opacidade * opacidadeSaida, transform: partes.join(' ') };
 }
