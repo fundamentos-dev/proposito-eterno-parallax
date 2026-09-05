@@ -1,13 +1,7 @@
-import { defineConfig } from "vite";
-import react from "@vitejs/plugin-react";
-import svgr from "vite-plugin-svgr";
+import { defineConfig } from 'vite';
 
-// https://vitejs.dev/config/
+// A cena é SVG montado em runtime a partir de src/scene/*.json — não há framework.
 export default defineConfig({
-  plugins: [svgr(), react()],
-  resolve: {
-    alias: {
-      src: "/src",
-    },
-  },
+  base: './',
+  resolve: { alias: { src: '/src' } },
 });
