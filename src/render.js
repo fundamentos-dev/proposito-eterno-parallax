@@ -47,7 +47,7 @@ const FONTE_SERIF = "'Charis SIL', Charter, 'Bitstream Charter', Georgia, serif"
 const FONTE_SANS = "'DejaVu Sans', system-ui, sans-serif";
 const FONTE_HEBRAICO = "'Frank Ruhl Libre', 'Times New Roman', serif";
 
-function desenhaTexto(grupo, geo, linhas, id) {
+function desenhaTexto(grupo, geo, linhas, id, fatia) {
   const fonte = geo.serif ? FONTE_SERIF : FONTE_SANS;
   const comum = {
     fill: geo.fill,
@@ -81,6 +81,7 @@ function desenhaTexto(grupo, geo, linhas, id) {
   }
 
   geo.linhas.forEach((ln, i) => {
+    if (fatia && fatia.linhas && !fatia.linhas.includes(i)) return;
     const conteudo = Array.isArray(linhas) && linhas[i] != null ? linhas[i] : ln.texto;
     const t = el('text', {
       ...comum,
@@ -146,8 +147,17 @@ export function montaCena(cena, geometria, textos, links, continuas = {}, recort
 
 
     const geo = geometria[c.asset.id];
-    if (geo) desenhaTexto(dentro, geo, textos[c.asset.id], `${c.asset.id}-${c.z}`);
-    else dentro.innerHTML = miolo(bruto, `${c.asset.id}-${c.z}`);
+    if (geo) desenhaTexto(dentro, geo, textos[c.asset.id], `${c.asset.id}-${c.z}`, c.fatia);
+    else {
+      dentro.innerHTML = miolo(bruto, `${c.asset.id}-${c.z}`);
+      // fatia por grupo: o asset traz vários desenhos independentes (as três faixas roxas,
+      // por exemplo) e cada fatia mostra só os seus, para entrarem em passos diferentes
+      if (c.fatia && c.fatia.grupos) {
+        [...dentro.children]
+          .filter((n) => n.tagName !== 'defs')
+          .forEach((n, k) => { if (!c.fatia.grupos.includes(k)) n.remove(); });
+      }
+    }
 
     const url = links[c.asset.id];
     if (url) {

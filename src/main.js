@@ -28,8 +28,53 @@ if (ajustes.ponte) {
     if (xFinal < ajustes.ponte.aPartirDe) continue;
     c.y = y;
     if (c.transicoes) c.transicoes = c.transicoes.map((t) => ({ ...t, dy: 0 }));
+    // depois do corte não há caminho: essas peças esmaecem junto com a queda e o verde
+    // só volta com a cruz (rect4678/rect4680)
+    if (ajustes.ponte.saida != null) { c.saida = ajustes.ponte.saida; c.transicoes = []; }
   }
 }
+
+// camadas que saem de cena de vez (ver src/ajustes.js)
+if (ajustes.remover && ajustes.remover.length) {
+  const fora = new Set(ajustes.remover);
+  cena.camadas = cena.camadas.filter((c) => !fora.has(c.asset.id));
+}
+
+// fatias: um asset que traz vários desenhos (ou várias linhas de texto) vira N camadas,
+// cada uma com o seu passo. É assim que as três faixas roxas — e os três títulos sobre
+// elas — entram uma de cada vez, sem precisar recortar o arquivo original.
+for (const [id, cortes] of Object.entries(ajustes.fatias || {})) {
+  const i = cena.camadas.findIndex((l) => l.asset.id === id);
+  if (i < 0) continue;
+  const base = cena.camadas[i];
+  cena.camadas.splice(i, 1, ...cortes.map((corte, k) => ({
+    ...base,
+    z: `${base.z}-${k}`,
+    step: corte.passo,
+    fatia: { linhas: corte.linhas, grupos: corte.grupos },
+  })));
+}
+
+// camadas novas, que não vêm do deck (as nuvens da eternidade futura)
+for (const extra of ajustes.extras || []) {
+  const nova = {
+    asset: { id: extra.asset }, z: extra.asset, step: extra.passo,
+    x: extra.x, y: extra.y, w: extra.w, h: extra.h,
+  };
+  const i = extra.apos ? cena.camadas.findIndex((l) => l.asset.id === extra.apos) : -1;
+  if (i >= 0) cena.camadas.splice(i + 1, 0, nova);
+  else cena.camadas.push(nova);
+}
+
+// renumeração de "magic move" quando um passo vazio some da narrativa
+for (const [id, mapa] of Object.entries(ajustes.transicoes || {})) {
+  for (const c of cena.camadas) {
+    if (c.asset.id !== id || !c.transicoes) continue;
+    c.transicoes = c.transicoes.map((t) => ({ ...t, passo: mapa[t.passo] ?? t.passo }));
+  }
+}
+
+if (ajustes.passosTotais != null) cena.passos = ajustes.passosTotais;
 
 for (const [id, regra] of Object.entries(ajustes.ordem || {})) {
   const i = cena.camadas.findIndex((l) => l.asset.id === id);
@@ -44,10 +89,14 @@ const PARALLAX = 14;   // unidades de palco
 
 const camadas = [...palco.querySelectorAll('.camada')].map((el, i) => {
   const dados = cena.camadas[i];
+  const ritmo = (ajustes.ritmo || {})[dados.asset.id] || {};
   return {
     el,
     dados,
     passo: dados.step ?? 0,
+    // atraso e duração em frações de passo: deixam um rótulo esperar o objeto que rotula
+    atraso: ritmo.atraso || 0,
+    duracao: ritmo.duracao || 1,
     profundidade: cena.camadas.length > 1 ? i / (cena.camadas.length - 1) : 0,
   };
 });
@@ -63,7 +112,8 @@ function progresso() {
 function pinta(p) {
   const cursor = p * cena.passos;
   for (const c of camadas) {
-    const avanco = Math.min(Math.max((cursor - c.passo + 1) / FRACAO_ENTRADA, 0), 1);
+    const janela = FRACAO_ENTRADA * c.duracao;
+    const avanco = Math.min(Math.max((cursor - c.passo + 1 - c.atraso) / janela, 0), 1);
     const { opacidade, transform } = estado(c.dados, avanco, cursor);
     c.el.style.opacity = opacidade;
     c.el.style.visibility = opacidade <= 0.002 ? 'hidden' : 'visible';
@@ -71,6 +121,8 @@ function pinta(p) {
     const desloc = (1 - suavizar(avanco)) * PARALLAX * (0.3 + c.profundidade);
     c.el.setAttribute('transform', desloc > 0.01 ? `translate(0,${desloc.toFixed(2)}) ${transform}` : transform);
   }
+  // no último passo o fogo da Geena congela: a cena vira quadro, não mais animação
+  palco.firstElementChild.classList.toggle('parado', cursor >= cena.passos - 2 + FRACAO_ENTRADA);
   document.getElementById('passo-atual').textContent =
     `${Math.min(Math.round(cursor) + 1, cena.passos)} / ${cena.passos}`;
 }

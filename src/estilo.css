@@ -88,3 +88,20 @@ body {
 @media (prefers-reduced-motion: reduce) {
   .anima-fogo path { animation: none; }
 }
+
+/* As nuvens da eternidade futura. Elas deslizam uma largura inteira do banco e voltam
+   ao começo — como o desenho é repetido lado a lado, a volta não tem emenda. O círculo
+   interno recorta o grupo (ver `recortes` em src/ajustes.js), então nada escapa dele. */
+#palco .deriva { animation: deriva 64s linear infinite; }
+
+@keyframes deriva {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-587px); }
+}
+
+/* No último passo a cena descansa: o fogo para onde está, em vez de sumir de repente. */
+#palco.parado .anima-fogo path { animation-play-state: paused; }
+
+@media (prefers-reduced-motion: reduce) {
+  #palco .deriva { animation: none; }
+}

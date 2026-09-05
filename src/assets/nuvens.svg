@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Nuvens da eternidade futura. Desenhadas duas vezes lado a lado (0..587 e 587..1174)
+     para que o deslize de uma largura inteira volte ao ponto de partida sem emenda.
+     Quem as prende dentro do círculo é o recorte declarado em src/ajustes.js. -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+     width="587" height="587" viewBox="0 0 587 587">
+  <defs>
+    <g id="nuvem">
+      <ellipse cx="0" cy="0" rx="78" ry="17"/>
+      <ellipse cx="-30" cy="-9" rx="36" ry="19"/>
+      <ellipse cx="14" cy="-13" rx="45" ry="24"/>
+      <ellipse cx="52" cy="-3" rx="30" ry="15"/>
+    </g>
+    <g id="banco-de-nuvens" fill="#ffffff">
+      <g opacity="0.20"><use xlink:href="#nuvem" transform="translate(96,150) scale(0.85)"/></g>
+      <g opacity="0.14"><use xlink:href="#nuvem" transform="translate(330,92) scale(0.62)"/></g>
+      <g opacity="0.24"><use xlink:href="#nuvem" transform="translate(268,232) scale(1.05)"/></g>
+      <g opacity="0.13"><use xlink:href="#nuvem" transform="translate(482,205) scale(0.7)"/></g>
+      <g opacity="0.19"><use xlink:href="#nuvem" transform="translate(140,352) scale(0.78)"/></g>
+      <g opacity="0.15"><use xlink:href="#nuvem" transform="translate(404,404) scale(0.95)"/></g>
+      <g opacity="0.11"><use xlink:href="#nuvem" transform="translate(214,478) scale(0.6)"/></g>
+    </g>
+  </defs>
+  <g class="deriva">
+    <use xlink:href="#banco-de-nuvens"/>
+    <use xlink:href="#banco-de-nuvens" transform="translate(587,0)"/>
+  </g>
+</svg>

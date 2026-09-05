@@ -11,24 +11,86 @@ export const geometria = {
 };
 
 // Passo de entrada: sobrescreve quando a ordem do deck não é a desejada.
+//
+// A numeração aqui é a da rolagem (0 é o primeiro passo). O deck tinha um passo morto
+// entre a 1ª morte e a Geena — nada entrava nele —, então tudo o que vinha depois subiu
+// uma casa e a narrativa terminou em 16 (ver `passosTotais`).
 export const passos = {
-  // Espírito, Alma e Corpo entram junto com Justificação · Santificação · Redenção
-  flowRoot6067: 'flowRoot6020',
-  flowRoot6140: 'flowRoot6020',
-  flowRoot6175: 'flowRoot6020',
+  // Espírito, Alma e Corpo acompanham cada um a sua faixa roxa e o seu título
+  flowRoot6067: 12,   // Espírito, com JUSTIFICAÇÃO
+  flowRoot6140: 14,   // Alma, com SANTIFICAÇÃO
+  flowRoot6175: 15,   // Corpo, com GLORIFICAÇÃO
   // path6060 é o remendo roxo que existe só para cobrir o círculo branco da Geena — o
-  // branco delimita o fogo e não deve ficar à mostra. Ele entrava dois passos depois das
-  // colunas; agora entra junto com elas.
-  path6060: 'forma-1155x1681',
+  // branco delimita o fogo e não deve ficar à mostra. Ele acompanha a faixa que o
+  // sustenta, a terceira.
+  path6060: 15,
+  // a Geena inteira (o passo morto que havia antes dela foi removido)
+  circle4539: 10,
+  circle5931: 10,
+  circle5578: 10,
+  text6327: 10,
+  text6040: 10,
   // as chamas não têm animação própria no deck (quem anima é o grupo), então herdaram um
   // passo cedo demais e o fogo aparecia antes do círculo da Geena
-  g5929: 'circle4539',
+  g5929: 10,
   // o título da 1ª morte e o thanatos pertencem à seta: entram com Gn 2:17, não antes dela
-  flowRoot4797: 'flowRoot6315',
-  flowRoot4813: 'flowRoot6315',
-  // estes dois textos ficam sobre o círculo amarelo; sem ele, flutuam no globo
-  text6005: 'circle4893',
-  text6387: 'circle4893',
+  flowRoot4797: 9,
+  flowRoot4813: 9,
+  // a cruz e o caminho verde que ela devolve
+  'forma-127x506': 11,
+  rect4678: 11,
+  rect4680: 11,
+  // o que a cruz significa entra com ela: o texto do resgate e Ts 5:23, isolado lá em cima
+  flowRoot5959: 11,
+  flowRoot6124: 11,
+  // a bola amarela da igreja e os textos que a rotulam (estes entram atrasados, ver `ritmo`)
+  path4835: 13,
+  circle4893: 13,
+  text6005: 13,
+  text6387: 13,
+};
+
+// Passos da narrativa. O deck vinha com 18; um passo morto saiu do meio.
+export const passosTotais = 17;
+
+// Renumeração do "magic move" pela mesma razão: o círculo da igreja cresce no passo final.
+export const transicoes = {
+  path4835: { 17: 16 },
+  circle4893: { 17: 16 },
+};
+
+// Camadas que não entram em cena. As três peças verdes que o Keynote trazia de volta
+// logo depois do corte da ponte deixavam um trecho de caminho boiando entre a queda e a
+// eternidade futura — sem apoio nenhum embaixo. O caminho só volta com a cruz.
+export const remover = ['forma-672x108', 'forma-681x109', 'forma-643x101'];
+
+// Fatias: um asset com vários desenhos vira várias camadas, cada uma com o seu passo.
+// A ordem aqui é a de desenho — a faixa da direita primeiro, porque no original as da
+// esquerda cobrem a emenda com a vizinha.
+export const fatias = {
+  'forma-1155x1681': [
+    { grupos: [0], passo: 15 },   // faixa da direita  · Glorificação
+    { grupos: [1], passo: 14 },   // faixa do meio     · Santificação
+    { grupos: [2], passo: 12 },   // faixa da esquerda · Justificação
+  ],
+  flowRoot6020: [
+    { linhas: [0], passo: 12 },      // JUSTIFICAÇÃO
+    { linhas: [1, 2], passo: 14 },   // · SANTIFICAÇÃO
+    { linhas: [3, 4], passo: 15 },   // · GLORIFICAÇÃO
+  ],
+};
+
+// Camadas novas, que não vêm do deck.
+export const extras = [
+  // nuvens dentro da eternidade futura; o círculo interno as recorta (ver `recortes`)
+  { asset: 'nuvens', apos: 'circle6215', passo: 16, x: 2247, y: 322, w: 587, h: 587 },
+];
+
+// Ritmo de entrada, em frações de passo: `atraso` segura a camada, `duracao` estica a
+// entrada. "A ESTRATÉGIA · A IGREJA" rotula a bola amarela, então espera a bola aparecer.
+export const ritmo = {
+  text6005: { atraso: 0.42, duracao: 1.5 },
+  text6387: { atraso: 0.42, duracao: 1.5 },
 };
 
 // Ordem de camadas: joga um asset para trás de outro. (Nada por enquanto.)
@@ -48,6 +110,7 @@ export const contornos = {
 export const ponte = {
   aPartirDe: 1700,                       // só as peças à direita desta coordenada de palco
   nivelar: { path4731: 762, path4734: 770 },
+  saida: 7,                              // somem junto com a queda; ver `remover`
 };
 
 // Camadas com animação contínua (não ligada à rolagem).
@@ -59,4 +122,5 @@ export const continuas = {
 // borda da Geena; o círculo vermelho passa a contê-las.
 export const recortes = {
   g5929: { disco: 'circle4539' },
+  nuvens: { disco: 'circle6215' },
 };

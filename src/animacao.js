@@ -67,6 +67,14 @@ export function estado(camada, avanco, cursor) {
     opacidade = suavizar(avanco);
   }
 
+  // Saída suave: o oposto do `fim`. A ponte à direita do corte não é substituída por
+  // nada — some enquanto a queda acontece, e um corte seco ali apareceria como um susto.
+  if (camada.saida != null) {
+    const recuo = Math.min(Math.max((cursor - camada.saida + 1) / FRACAO_ENTRADA, 0), 1);
+    if (recuo >= 1) return { opacidade: 0, transform: '' };
+    opacidade *= 1 - suavizar(recuo);
+  }
+
   // magic move das viradas de slide — um objeto pode passar por mais de uma
   for (const t of camada.transicoes || []) {
     const f = suavizar(Math.min(Math.max(cursor - t.passo + 1, 0), 1));
