@@ -230,8 +230,32 @@
   "rot": 0,
   "linhas": [
    {
-    "texto": "JUSTIFICAÇÃO   ·   SANTIFICAÇÃO   ·   REDENÇÃO",
+    "texto": "JUSTIFICAÇÃO",
     "x": 0,
+    "y": 9.71,
+    "size": 10.54
+   },
+   {
+    "texto": "·",
+    "x": 85.43,
+    "y": 9.71,
+    "size": 10.54
+   },
+   {
+    "texto": "SANTIFICAÇÃO",
+    "x": 98.26,
+    "y": 9.71,
+    "size": 10.54
+   },
+   {
+    "texto": "·",
+    "x": 185.39,
+    "y": 9.71,
+    "size": 10.54
+   },
+   {
+    "texto": "REDENÇÃO",
+    "x": 197.92,
     "y": 9.71,
     "size": 10.54
    }

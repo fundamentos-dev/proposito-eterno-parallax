@@ -56,17 +56,15 @@ export function estado(camada, avanco, cursor) {
     opacidade = suavizar(avanco);
   }
 
-  // magic move da virada de slide
-  const t = camada.transicao;
-  if (t) {
+  // magic move das viradas de slide — um objeto pode passar por mais de uma
+  for (const t of camada.transicoes || []) {
     const f = suavizar(Math.min(Math.max(cursor - t.passo + 1, 0), 1));
-    if (f > 0) {
-      const sx = 1 + ((t.sx ?? 1) - 1) * f;
-      const sy = 1 + ((t.sy ?? t.sx ?? 1) - 1) * f;
-      partes.push(`translate(${((t.dx || 0) * f).toFixed(2)},${((t.dy || 0) * f).toFixed(2)})`);
-      if (sx !== 1 || sy !== 1) {
-        partes.push(`translate(${cx},${cy}) scale(${sx.toFixed(4)},${sy.toFixed(4)}) translate(${-cx},${-cy})`);
-      }
+    if (f <= 0) continue;
+    const sx = 1 + ((t.sx ?? 1) - 1) * f;
+    const sy = 1 + ((t.sy ?? t.sx ?? 1) - 1) * f;
+    partes.push(`translate(${((t.dx || 0) * f).toFixed(2)},${((t.dy || 0) * f).toFixed(2)})`);
+    if (sx !== 1 || sy !== 1) {
+      partes.push(`translate(${cx},${cy}) scale(${sx.toFixed(4)},${sy.toFixed(4)}) translate(${-cx},${-cy})`);
     }
   }
 

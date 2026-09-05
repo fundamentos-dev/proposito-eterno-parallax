@@ -131,26 +131,52 @@ for (const f of fs.readdirSync(SRC).filter(f => f.endsWith('.svg'))) {
     lines.sort((a, b) => a.base - b.base);
     for (const L of lines) L.items.sort((a, b) => a.U.x - b.U.x);
 
-    // reinsere os espaços consumindo o aria-label na ordem das linhas
+    // Reinsere os espaços consumindo o aria-label na ordem das linhas, e quebra a linha
+    // em segmentos quando há um vão largo. Sem isso, "JUSTIFICAÇÃO · SANTIFICAÇÃO ·
+    // REDENÇÃO" viraria uma string só e o espaçamento da fonte web decidiria onde caem os
+    // pontos — que precisam coincidir com as bordas das colunas roxas.
+    const VAO_SEGMENTO = 0.6;   // em ems
     const all = [...label];
     let ci = 0;
     const th = rot * Math.PI / 180;
-    const linhas = lines.map(L => {
-      let need = L.items.length, s = '';
+    const paraLocal = (ux, uy) => ({
+      x: +(ux * Math.cos(th) - uy * Math.sin(th) + LT.x).toFixed(2),
+      y: +(ux * Math.sin(th) + uy * Math.cos(th) + LT.y).toFixed(2),
+    });
+    const linhas = [];
+    for (const L of lines) {
+      let need = L.items.length, texto = '';
       while (ci < all.length && /\s/.test(all[ci])) ci++;
-      while (need > 0 && ci < all.length) { const ch = all[ci++]; s += ch; if (!/\s/.test(ch)) need--; }
+      while (need > 0 && ci < all.length) { const ch = all[ci++]; texto += ch; if (!/\s/.test(ch)) need--; }
       const caps = L.items.filter(i => CAPS.test(i.c)).map(i => i.U.h);
       const xhs = L.items.filter(i => XH.test(i.c)).map(i => i.U.h);
       const em = caps.length ? median(caps) / CAP_RATIO : (xhs.length ? median(xhs) / X_RATIO : nominalEm);
-      // âncora: canto esquerdo da baseline, medido desgirado e trazido de volta ao quadro local
-      const ux = L.items[0].U.x, uy = L.base;
-      return {
-        texto: s,
-        x: +(ux * Math.cos(th) - uy * Math.sin(th) + LT.x).toFixed(2),
-        y: +(ux * Math.sin(th) + uy * Math.cos(th) + LT.y).toFixed(2),
-        size: +em.toFixed(2),
-      };
-    });
+
+      // corta onde o vão entre glifos passa do limite
+      const cortes = [0];
+      for (let i = 1; i < L.items.length; i++) {
+        const vao = L.items[i].U.x - (L.items[i - 1].U.x + L.items[i - 1].U.w);
+        if (vao > VAO_SEGMENTO * em) cortes.push(i);
+      }
+      // reparte o texto entre os segmentos, respeitando os caracteres não-espaço
+      const pedacos = [];
+      let idx = 0, atual = '', naoEspaco = 0, corte = 1;
+      for (const ch of texto) {
+        if (corte < cortes.length && naoEspaco === cortes[corte]) {
+          pedacos.push(atual.trim()); atual = ''; corte++;
+        }
+        atual += ch;
+        if (!/\s/.test(ch)) naoEspaco++;
+      }
+      pedacos.push(atual.trim());
+
+      pedacos.forEach((t, i) => {
+        const primeiro = L.items[cortes[i]];
+        const { x, y } = paraLocal(primeiro.U.x, L.base);
+        linhas.push({ texto: t, x, y, size: +em.toFixed(2) });
+      });
+      idx += 0;
+    }
     out[name] = { tipo: 'linhas', rot: +rot.toFixed(2), linhas, ...common };
   }
 }

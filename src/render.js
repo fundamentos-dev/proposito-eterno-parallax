@@ -95,7 +95,7 @@ function desenhaTexto(grupo, geo, linhas, id) {
   });
 }
 
-export function montaCena(cena, geometria, textos, links) {
+export function montaCena(cena, geometria, textos, links, continuas = {}) {
   const svg = el('svg', {
     viewBox: `0 0 ${cena.palco.width} ${cena.palco.height}`,
     xmlns: NS, id: 'palco',
@@ -111,6 +111,7 @@ export function montaCena(cena, geometria, textos, links) {
     // Dois níveis: o de fora é do controlador (animação, em coordenadas de palco); o de
     // dentro encaixa o asset, desenhado no seu próprio quadro, dentro do retângulo do palco.
     const g = el('g', { class: 'camada', 'data-passo': c.step, 'data-asset': c.asset.id });
+    if (continuas[c.asset.id]) g.classList.add(`anima-${continuas[c.asset.id]}`);
     const dentro = el('g', {
       transform: `translate(${c.x},${c.y}) scale(${(c.w / cx.w).toFixed(6)},${(c.h / cx.h).toFixed(6)})`
         + (c.rotation ? ` rotate(${c.rotation * 180 / Math.PI},${cx.w / 2},${cx.h / 2})` : ''),

@@ -64,3 +64,27 @@ body {
 @media (prefers-reduced-motion: reduce) {
   .camada { transition: none; }
 }
+
+/* As chamas da Geena. O Keynote usava um "piscar" no grupo inteiro; aqui cada língua de
+   fogo tem seu próprio ritmo, o que lê como fogo em vez de um pisca-pisca. A origem da
+   transformação fica na base, para a chama lamber para cima. */
+.anima-fogo path {
+  transform-box: fill-box;
+  transform-origin: 50% 100%;
+  animation: chama 1.9s ease-in-out infinite alternate;
+}
+.anima-fogo path:nth-child(3n)   { animation-duration: 1.35s; animation-delay: -0.4s; }
+.anima-fogo path:nth-child(3n+1) { animation-duration: 2.4s;  animation-delay: -1.1s; }
+.anima-fogo path:nth-child(5n)   { animation-duration: 1.05s; animation-delay: -0.7s; }
+.anima-fogo path:nth-child(7n)   { animation-duration: 2.9s;  animation-delay: -1.6s; }
+
+@keyframes chama {
+  0%   { transform: scaleY(1)    scaleX(1);     opacity: 0.88; }
+  35%  { transform: scaleY(1.06) scaleX(0.985); opacity: 1; }
+  70%  { transform: scaleY(0.96) scaleX(1.02);  opacity: 0.93; }
+  100% { transform: scaleY(1.09) scaleX(0.97);  opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .anima-fogo path { animation: none; }
+}

@@ -5,11 +5,40 @@ import './estilo.css';
 import cena from './scene/cena.json';
 import geometria from './scene/text.json';
 import { textos, links } from './conteudo.js';
+import * as ajustes from './ajustes.js';
 import { montaCena } from './render.js';
 import { estado, suavizar } from './animacao.js';
 
+// correções manuais sobre os dados gerados (ver src/ajustes.js)
+const geo = { ...geometria };
+for (const [id, campos] of Object.entries(ajustes.geometria || {})) {
+  if (geo[id]) geo[id] = { ...geo[id], ...campos };
+}
+for (const [id, alvo] of Object.entries(ajustes.passos || {})) {
+  const c = cena.camadas.find((l) => l.asset.id === id);
+  const ref = typeof alvo === 'string' ? cena.camadas.find((l) => l.asset.id === alvo) : null;
+  const passo = ref ? ref.step : alvo;
+  if (c && typeof passo === 'number') c.step = passo;
+}
+if (ajustes.ponte) {
+  for (const c of cena.camadas) {
+    const y = ajustes.ponte.nivelar[c.asset.id];
+    if (y == null) continue;
+    const xFinal = c.x + (c.transicoes || []).reduce((s, t) => s + (t.dx || 0), 0);
+    if (xFinal < ajustes.ponte.aPartirDe) continue;
+    c.y = y;
+    if (c.transicoes) c.transicoes = c.transicoes.map((t) => ({ ...t, dy: 0 }));
+  }
+}
+
+for (const [id, regra] of Object.entries(ajustes.ordem || {})) {
+  const i = cena.camadas.findIndex((l) => l.asset.id === id);
+  const j = cena.camadas.findIndex((l) => l.asset.id === regra.atrasDe);
+  if (i >= 0 && j >= 0 && i > j) cena.camadas.splice(j, 0, ...cena.camadas.splice(i, 1));
+}
+
 const palco = document.getElementById('palco-wrap');
-palco.appendChild(montaCena(cena, geometria, textos, links));
+palco.appendChild(montaCena(cena, geo, textos, links, ajustes.continuas || {}));
 
 // A entrada ocupa esta fração de um passo; o resto é respiro antes do próximo.
 const FRACAO_ENTRADA = 0.62;

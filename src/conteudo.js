@@ -20,8 +20,8 @@ export const textos = {
   flowRoot5943: ["A QUEDA · O PECADO","Rm 5:12","Rm 3:12","Gn 5:3","Rm 3:23"],
   // 5 linha(s)
   flowRoot5959: ["O RESGATE · JUSTIFICAÇÃO","Rm 6:3-7","2 Co 14-17 (nova vida)","Gl 2:20","Cl 1:27"],
-  // 1 linha(s)
-  flowRoot6020: ["JUSTIFICAÇÃO   ·   SANTIFICAÇÃO   ·   REDENÇÃO"],
+  // 5 linha(s)
+  flowRoot6020: ["JUSTIFICAÇÃO","·","SANTIFICAÇÃO","·","REDENÇÃO"],
   // 5 linha(s)
   flowRoot6067: ["Espírito","Rm 3:23-35","Rm 5:8-10","Ef 2:4-6","Rm 6:3-7"],
   // 1 linha(s)

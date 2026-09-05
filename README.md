@@ -85,6 +85,7 @@ arquivo do deck, não são invenção. São quatro formas, em [`src/animacao.js`
 | Forma | Movimento | Onde aparece |
 |---|---|---|
 | `fade` | opacidade 0 → 1 | a maioria dos blocos de texto |
+| `fogo` | cada língua de fogo pulsa em ritmo próprio, contínua | as chamas da Geena |
 | `pop` | escala `[0,001 · 1,125 · 0,952 · 1]` — cresce passando do alvo e assenta | o hebraico e Gn 1:26 |
 | `queda` | deslocamento vertical `[-816 · 0 · -190 · 0]` — cai, bate, quica | a árvore |
 | `giro` | rotação em Y `[-1,571 · 0,233 · -0,05 · 0]` rad | o globo, virando como uma placa |
@@ -97,6 +98,17 @@ Na virada de slide o Keynote faz *magic move*, e é dele que vêm dois momentos 
 
 SVG não tem rotação em Y; o giro do globo é aproximado pela projeção de uma placa girando
 (o cosseno do ângulo aplicado na escala horizontal).
+
+## Ajustes manuais
+
+[`src/ajustes.js`](src/ajustes.js) corrige o que os dados extraídos não acertam sozinhos, e
+sobrevive a uma reextração (ao contrário de `src/scene/*.json`, que são gerados). Hoje ele:
+
+- afasta "Mt 25:41" da borda da Geena;
+- faz Espírito, Alma e Corpo entrarem junto com Justificação · Santificação · Redenção;
+- põe o círculo branco da Geena atrás das colunas roxas — ele só delimita o fogo;
+- nivela o topo das peças da direita da ponte verde;
+- marca as chamas como animação contínua.
 
 ## Tipografia
 
