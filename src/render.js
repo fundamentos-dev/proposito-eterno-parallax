@@ -108,19 +108,19 @@ export function montaCena(cena, geometria, textos, links) {
     if (!bruto) { faltando.add(c.asset.id); return; }
     const cx = caixa(bruto);
 
-    const g = el('g', {
-      class: 'camada',
-      'data-passo': c.step,
-      'data-asset': c.asset.id,
-      // o asset é desenhado no seu próprio quadro; aqui ele é encaixado no retângulo do palco
+    // Dois níveis: o de fora é do controlador (animação, em coordenadas de palco); o de
+    // dentro encaixa o asset, desenhado no seu próprio quadro, dentro do retângulo do palco.
+    const g = el('g', { class: 'camada', 'data-passo': c.step, 'data-asset': c.asset.id });
+    const dentro = el('g', {
       transform: `translate(${c.x},${c.y}) scale(${(c.w / cx.w).toFixed(6)},${(c.h / cx.h).toFixed(6)})`
         + (c.rotation ? ` rotate(${c.rotation * 180 / Math.PI},${cx.w / 2},${cx.h / 2})` : ''),
       opacity: c.opacity,
     });
+    g.appendChild(dentro);
 
     const geo = geometria[c.asset.id];
-    if (geo) desenhaTexto(g, geo, textos[c.asset.id], `${c.asset.id}-${c.z}`);
-    else g.innerHTML = miolo(bruto, `${c.asset.id}-${c.z}`);
+    if (geo) desenhaTexto(dentro, geo, textos[c.asset.id], `${c.asset.id}-${c.z}`);
+    else dentro.innerHTML = miolo(bruto, `${c.asset.id}-${c.z}`);
 
     const url = links[c.asset.id];
     if (url) {

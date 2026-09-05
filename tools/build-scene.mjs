@@ -31,13 +31,24 @@ for (const s of scene.slides) {
     const key = `${asset.id}|${Math.round(l.x)},${Math.round(l.y)},${Math.round(l.w)}x${Math.round(l.h)}`;
     const step = offsets[s.index] + (l.step ?? 0);
     const prev = objs.get(key);
-    if (prev) { prev.step = Math.min(prev.step, step); prev.z = Math.max(prev.z, l.z); continue; }
+    if (prev) {
+      prev.step = Math.min(prev.step, step);
+      prev.z = Math.max(prev.z, l.z);
+      if (!prev.entrada && l.entrada) prev.entrada = l.entrada;
+      if (!prev.transicao && l.transicao) {
+        prev.transicao = { ...l.transicao, passo: offsets[s.index] + Math.max(s.buildCount, 1) };
+      }
+      continue;
+    }
     objs.set(key, {
       asset, step, z: l.z, slide: s.index,
       x: l.x, y: l.y, w: l.w, h: l.h,
       rotation: l.rotation || undefined,
       opacity: l.opacity === 1 ? undefined : l.opacity,
       texto: text[alvo] ? true : undefined,
+      entrada: l.entrada || undefined,
+      // a transição do slide dispara na virada para o próximo
+      transicao: l.transicao ? { ...l.transicao, passo: offsets[s.index] + Math.max(s.buildCount, 1) } : undefined,
     });
   }
 }
@@ -101,3 +112,7 @@ export const links = {
 
 console.log(`cena unificada: ${layers.length} camadas, ${totalSteps} passos de revelação`);
 console.log(`  ${layers.filter(l => l.texto).length} camadas de texto, ${layers.filter(l => l.asset.tipo === 'keynote').length} formas nativas do Keynote`);
+const tipos = {};
+for (const l of layers) if (l.entrada) tipos[l.entrada.tipo] = (tipos[l.entrada.tipo] || 0) + 1;
+console.log(`  entradas: ${Object.entries(tipos).map(([k, v]) => `${v} ${k}`).join(', ') || 'nenhuma'}`);
+console.log(`  transições de slide: ${layers.filter(l => l.transicao).length}`);

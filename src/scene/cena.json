@@ -37,26 +37,34 @@
     "tipo": "inkscape",
     "id": "circle4539"
    },
-   "step": 7,
+   "step": 11,
    "z": 2,
    "slide": 1,
    "x": 2486,
    "y": 979,
    "w": 397,
-   "h": 398
+   "h": 398,
+   "entrada": {
+    "tipo": "fade",
+    "dur": 1
+   }
   },
   {
    "asset": {
     "tipo": "inkscape",
     "id": "circle5931"
    },
-   "step": 7,
+   "step": 11,
    "z": 3,
    "slide": 1,
    "x": 2542,
    "y": 1021,
    "w": 304,
-   "h": 303
+   "h": 303,
+   "entrada": {
+    "tipo": "fade",
+    "dur": 1
+   }
   },
   {
    "asset": {
@@ -76,13 +84,17 @@
     "tipo": "inkscape",
     "id": "circle5578"
    },
-   "step": 7,
+   "step": 11,
    "z": 5,
    "slide": 1,
    "x": 2436,
    "y": 913,
    "w": 519,
-   "h": 519
+   "h": 519,
+   "entrada": {
+    "tipo": "fade",
+    "dur": 1
+   }
   },
   {
    "asset": {
@@ -102,28 +114,36 @@
     "tipo": "inkscape",
     "id": "text6327"
    },
-   "step": 7,
+   "step": 11,
    "z": 7,
    "slide": 1,
    "x": 2510,
    "y": 1283,
    "w": 100,
    "h": 92,
-   "texto": true
+   "texto": true,
+   "entrada": {
+    "tipo": "fade",
+    "dur": 1
+   }
   },
   {
    "asset": {
     "tipo": "inkscape",
     "id": "text6040"
    },
-   "step": 7,
+   "step": 11,
    "z": 8,
    "slide": 1,
    "x": 2645,
    "y": 1000,
    "w": 217,
    "h": 195,
-   "texto": true
+   "texto": true,
+   "entrada": {
+    "tipo": "fade",
+    "dur": 1
+   }
   },
   {
    "asset": {
@@ -143,26 +163,46 @@
     "tipo": "inkscape",
     "id": "circle18"
    },
-   "step": 6,
+   "step": 5,
    "z": 10,
    "slide": 0,
    "x": 1004,
    "y": 197,
    "w": 1097,
-   "h": 1097
+   "h": 1097,
+   "entrada": {
+    "tipo": "giro",
+    "dur": 1,
+    "chaves": [
+     -1.5707963267948966,
+     0.23325376062786132,
+     -0.05,
+     0
+    ]
+   }
   },
   {
    "asset": {
     "tipo": "inkscape",
     "id": "g4676"
    },
-   "step": 6,
+   "step": 5,
    "z": 11,
    "slide": 0,
    "x": 1017,
    "y": 215,
    "w": 1071,
-   "h": 1015
+   "h": 1015,
+   "entrada": {
+    "tipo": "giro",
+    "dur": 1,
+    "chaves": [
+     -1.5707963267948966,
+     0.23495421844342707,
+     -0.05,
+     0
+    ]
+   }
   },
   {
    "asset": {
@@ -249,13 +289,17 @@
     "tipo": "inkscape",
     "id": "path3732"
    },
-   "step": 2,
+   "step": 1,
    "z": 18,
    "slide": 0,
    "x": 845,
    "y": 567,
    "w": 179,
-   "h": 263
+   "h": 263,
+   "entrada": {
+    "tipo": "fade",
+    "dur": 1
+   }
   },
   {
    "asset": {
@@ -275,13 +319,17 @@
     "tipo": "inkscape",
     "id": "path4688"
    },
-   "step": 1,
+   "step": 0,
    "z": 20,
    "slide": 0,
    "x": 738,
    "y": 614,
    "w": 84,
-   "h": 297
+   "h": 297,
+   "entrada": {
+    "tipo": "fade",
+    "dur": 1
+   }
   },
   {
    "asset": {
@@ -359,7 +407,12 @@
    "x": 1289,
    "y": 771,
    "w": 643,
-   "h": 100
+   "h": 100,
+   "transicao": {
+    "dx": 510,
+    "dy": -1,
+    "passo": 7
+   }
   },
   {
    "asset": {
@@ -372,7 +425,14 @@
    "x": 1289,
    "y": 762,
    "w": 643,
-   "h": 100
+   "h": 100,
+   "transicao": {
+    "dx": 510,
+    "dy": -0.5,
+    "sx": 1,
+    "sy": 1.01,
+    "passo": 7
+   }
   },
   {
    "asset": {
@@ -385,7 +445,12 @@
    "x": 1837,
    "y": 771,
    "w": 643,
-   "h": 100
+   "h": 100,
+   "transicao": {
+    "dx": 0,
+    "dy": -1,
+    "passo": 7
+   }
   },
   {
    "asset": {
@@ -398,7 +463,12 @@
    "x": 1799,
    "y": 770,
    "w": 643,
-   "h": 100
+   "h": 100,
+   "transicao": {
+    "dx": 0,
+    "dy": 7,
+    "passo": 12
+   }
   },
   {
    "asset": {
@@ -411,7 +481,12 @@
    "x": 1799,
    "y": 761,
    "w": 643,
-   "h": 101
+   "h": 101,
+   "transicao": {
+    "dx": 0,
+    "dy": 9,
+    "passo": 12
+   }
   },
   {
    "asset": {
@@ -424,7 +499,12 @@
    "x": 1837,
    "y": 770,
    "w": 643,
-   "h": 100
+   "h": 100,
+   "transicao": {
+    "dx": 0,
+    "dy": 7,
+    "passo": 12
+   }
   },
   {
    "asset": {
@@ -437,7 +517,12 @@
    "x": 1837,
    "y": 762,
    "w": 643,
-   "h": 100
+   "h": 100,
+   "transicao": {
+    "dx": 0,
+    "dy": 9,
+    "passo": 12
+   }
   },
   {
    "asset": {
@@ -496,97 +581,143 @@
     "tipo": "inkscape",
     "id": "image132"
    },
-   "step": 2,
+   "step": 1,
    "z": 37,
    "slide": 0,
    "x": 407,
    "y": 335,
    "w": 193,
    "h": 86,
-   "texto": true
+   "texto": true,
+   "entrada": {
+    "tipo": "pop",
+    "dur": 0.75,
+    "chaves": [
+     0.001,
+     1.125,
+     0.952,
+     0.9999999999999999
+    ]
+   }
   },
   {
    "asset": {
     "tipo": "inkscape",
     "id": "flowRoot4641"
    },
-   "step": 2,
+   "step": 1,
    "z": 38,
    "slide": 0,
    "x": 423,
    "y": 418,
    "w": 79,
    "h": 19,
-   "texto": true
+   "texto": true,
+   "entrada": {
+    "tipo": "pop",
+    "dur": 0.75,
+    "chaves": [
+     0.001,
+     1.125,
+     0.952,
+     0.9999999999999999
+    ]
+   }
   },
   {
    "asset": {
     "tipo": "inkscape",
     "id": "path4692"
    },
-   "step": 3,
+   "step": 2,
    "z": 39,
    "slide": 0,
    "x": 1029,
    "y": 552,
    "w": 355,
-   "h": 264
+   "h": 264,
+   "entrada": {
+    "tipo": "queda",
+    "dur": 0.75,
+    "chaves": [
+     -816,
+     0,
+     -190.3430987313464,
+     0
+    ]
+   }
   },
   {
    "asset": {
     "tipo": "inkscape",
     "id": "flowRoot5933"
    },
-   "step": 3,
+   "step": 2,
    "z": 40,
    "slide": 0,
    "x": 779,
    "y": 304,
    "w": 160,
    "h": 133,
-   "texto": true
+   "texto": true,
+   "entrada": {
+    "tipo": "fade",
+    "dur": 1
+   }
   },
   {
    "asset": {
     "tipo": "inkscape",
     "id": "flowRoot6261"
    },
-   "step": 4,
+   "step": 3,
    "z": 41,
    "slide": 0,
    "x": 956,
    "y": 364,
    "w": 234,
    "h": 128,
-   "texto": true
+   "texto": true,
+   "entrada": {
+    "tipo": "fade",
+    "dur": 1
+   }
   },
   {
    "asset": {
     "tipo": "inkscape",
     "id": "text6281"
    },
-   "step": 4,
+   "step": 3,
    "z": 42,
    "slide": 0,
    "x": 172,
    "y": 1169,
    "w": 1170,
    "h": 28,
-   "texto": true
+   "texto": true,
+   "entrada": {
+    "tipo": "fade",
+    "dur": 1
+   }
   },
   {
    "asset": {
     "tipo": "inkscape",
     "id": "flowRoot4633"
    },
-   "step": 5,
+   "step": 4,
    "z": 43,
    "slide": 0,
    "x": 210,
    "y": 1091,
    "w": 631,
    "h": 32,
-   "texto": true
+   "texto": true,
+   "entrada": {
+    "tipo": "fade",
+    "dur": 1
+   }
   },
   {
    "asset": {
@@ -619,14 +750,18 @@
     "tipo": "inkscape",
     "id": "flowRoot5943"
    },
-   "step": 9,
+   "step": 8,
    "z": 46,
    "slide": 1,
    "x": 918,
    "y": 893,
    "w": 386,
    "h": 217,
-   "texto": true
+   "texto": true,
+   "entrada": {
+    "tipo": "fade",
+    "dur": 1
+   }
   },
   {
    "asset": {
@@ -654,21 +789,29 @@
    "y": 1193,
    "w": 322,
    "h": 30,
-   "texto": true
+   "texto": true,
+   "entrada": {
+    "tipo": "fade",
+    "dur": 1
+   }
   },
   {
    "asset": {
     "tipo": "inkscape",
     "id": "flowRoot6315"
    },
-   "step": 10,
+   "step": 9,
    "z": 49,
    "slide": 1,
    "x": 1489,
    "y": 985,
    "w": 80,
    "h": 86,
-   "texto": true
+   "texto": true,
+   "entrada": {
+    "tipo": "fade",
+    "dur": 1
+   }
   },
   {
    "asset": {
@@ -785,7 +928,14 @@
    "x": 1754,
    "y": 753,
    "w": 36,
-   "h": 36
+   "h": 36,
+   "transicao": {
+    "dx": 16.89,
+    "dy": -47.08,
+    "sx": 15.8857,
+    "sy": 15.4167,
+    "passo": 17
+   }
   },
   {
    "asset": {
@@ -847,42 +997,54 @@
     "tipo": "inkscape",
     "id": "flowRoot6124"
    },
-   "step": 15,
+   "step": 14,
    "z": 63,
    "slide": 2,
    "x": 2086,
    "y": 29,
    "w": 208,
    "h": 20,
-   "texto": true
+   "texto": true,
+   "entrada": {
+    "tipo": "fade",
+    "dur": 1
+   }
   },
   {
    "asset": {
     "tipo": "inkscape",
     "id": "flowRoot6020"
    },
-   "step": 16,
+   "step": 15,
    "z": 64,
    "slide": 2,
    "x": 1708,
    "y": 76,
    "w": 911,
    "h": 46,
-   "texto": true
+   "texto": true,
+   "entrada": {
+    "tipo": "fade",
+    "dur": 1
+   }
   },
   {
    "asset": {
     "tipo": "inkscape",
     "id": "flowRoot6067"
    },
-   "step": 12,
+   "step": 16,
    "z": 65,
    "slide": 2,
    "x": 1703,
    "y": 131,
    "w": 159,
    "h": 179,
-   "texto": true
+   "texto": true,
+   "entrada": {
+    "tipo": "fade",
+    "dur": 1
+   }
   },
   {
    "asset": {
@@ -937,7 +1099,14 @@
    "x": 1754,
    "y": 753,
    "w": 35,
-   "h": 36
+   "h": 36,
+   "transicao": {
+    "dx": 14.31,
+    "dy": -47.59,
+    "sx": 15.3889,
+    "sy": 15.3889,
+    "passo": 17
+   }
   },
   {
    "asset": {
@@ -972,14 +1141,18 @@
     "tipo": "inkscape",
     "id": "flowRoot6339"
    },
-   "step": 0,
+   "step": 6,
    "z": 72,
    "slide": 0,
    "x": 1033,
    "y": 200,
    "w": 205,
    "h": 31,
-   "texto": true
+   "texto": true,
+   "entrada": {
+    "tipo": "fade",
+    "dur": 1
+   }
   }
  ]
 }

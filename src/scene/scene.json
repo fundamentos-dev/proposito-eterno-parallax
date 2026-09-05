@@ -21,7 +21,9 @@
      "opacity": 1,
      "pdfPage": 1,
      "step": null,
-     "fit": null
+     "fit": null,
+     "entrada": null,
+     "transicao": null
     },
     {
      "svg": "path4607",
@@ -34,7 +36,9 @@
      "opacity": 1,
      "pdfPage": 2,
      "step": 0,
-     "fit": 7.71
+     "fit": 7.71,
+     "entrada": null,
+     "transicao": null
     },
     {
      "svg": "path4605",
@@ -47,7 +51,9 @@
      "opacity": 1,
      "pdfPage": 3,
      "step": 0,
-     "fit": 10.45
+     "fit": 10.45,
+     "entrada": null,
+     "transicao": null
     },
     {
      "svg": "circle18",
@@ -59,8 +65,19 @@
      "rotation": 0,
      "opacity": 1,
      "pdfPage": 4,
-     "step": 6,
-     "fit": 9.47
+     "step": 5,
+     "fit": 9.47,
+     "entrada": {
+      "tipo": "giro",
+      "dur": 1,
+      "chaves": [
+       -1.5707963267948966,
+       0.23325376062786132,
+       -0.05,
+       0
+      ]
+     },
+     "transicao": null
     },
     {
      "svg": "g4676",
@@ -72,8 +89,19 @@
      "rotation": 0,
      "opacity": 1,
      "pdfPage": 5,
-     "step": 6,
-     "fit": 8.19
+     "step": 5,
+     "fit": 8.19,
+     "entrada": {
+      "tipo": "giro",
+      "dur": 1,
+      "chaves": [
+       -1.5707963267948966,
+       0.23495421844342707,
+       -0.05,
+       0
+      ]
+     },
+     "transicao": null
     },
     {
      "svg": "path4734",
@@ -86,7 +114,9 @@
      "opacity": 1,
      "pdfPage": 6,
      "step": 0,
-     "fit": 9.04
+     "fit": 9.04,
+     "entrada": null,
+     "transicao": null
     },
     {
      "svg": "path4731",
@@ -99,7 +129,9 @@
      "opacity": 1,
      "pdfPage": 7,
      "step": 0,
-     "fit": 7.6
+     "fit": 7.6,
+     "entrada": null,
+     "transicao": null
     },
     {
      "svg": "flowRoot58",
@@ -112,7 +144,9 @@
      "opacity": 1,
      "pdfPage": 8,
      "step": 0,
-     "fit": 7.81
+     "fit": 7.81,
+     "entrada": null,
+     "transicao": null
     },
     {
      "svg": "path14",
@@ -125,7 +159,9 @@
      "opacity": 1,
      "pdfPage": 9,
      "step": 0,
-     "fit": 8.83
+     "fit": 8.83,
+     "entrada": null,
+     "transicao": null
     },
     {
      "svg": "circle4751",
@@ -138,7 +174,9 @@
      "opacity": 1,
      "pdfPage": 10,
      "step": 0,
-     "fit": 8.71
+     "fit": 8.71,
+     "entrada": null,
+     "transicao": null
     },
     {
      "svg": "text4775",
@@ -151,7 +189,9 @@
      "opacity": 1,
      "pdfPage": 11,
      "step": 0,
-     "fit": 8.93
+     "fit": 8.93,
+     "entrada": null,
+     "transicao": null
     },
     {
      "svg": "path3732",
@@ -163,8 +203,13 @@
      "rotation": 0,
      "opacity": 1,
      "pdfPage": 12,
-     "step": 2,
-     "fit": 8.17
+     "step": 1,
+     "fit": 8.17,
+     "entrada": {
+      "tipo": "fade",
+      "dur": 1
+     },
+     "transicao": null
     },
     {
      "svg": "path4690",
@@ -177,7 +222,9 @@
      "opacity": 1,
      "pdfPage": 13,
      "step": 1,
-     "fit": 10.07
+     "fit": 10.07,
+     "entrada": null,
+     "transicao": null
     },
     {
      "svg": "path4688",
@@ -189,8 +236,13 @@
      "rotation": 0,
      "opacity": 1,
      "pdfPage": 14,
-     "step": 1,
-     "fit": 9.73
+     "step": 0,
+     "fit": 9.73,
+     "entrada": {
+      "tipo": "fade",
+      "dur": 1
+     },
+     "transicao": null
     },
     {
      "svg": "path4682",
@@ -203,7 +255,9 @@
      "opacity": 1,
      "pdfPage": 15,
      "step": 1,
-     "fit": 6.56
+     "fit": 6.56,
+     "entrada": null,
+     "transicao": null
     },
     {
      "svg": "path4686",
@@ -216,7 +270,9 @@
      "opacity": 1,
      "pdfPage": 16,
      "step": 1,
-     "fit": 10.92
+     "fit": 10.92,
+     "entrada": null,
+     "transicao": null
     },
     {
      "svg": "path4694",
@@ -229,7 +285,9 @@
      "opacity": 1,
      "pdfPage": 17,
      "step": 0,
-     "fit": 10.75
+     "fit": 10.75,
+     "entrada": null,
+     "transicao": null
     },
     {
      "svg": "path4684",
@@ -242,7 +300,9 @@
      "opacity": 1,
      "pdfPage": 18,
      "step": 1,
-     "fit": 7.87
+     "fit": 7.87,
+     "entrada": null,
+     "transicao": null
     },
     {
      "svg": "flowRoot4813",
@@ -255,7 +315,9 @@
      "opacity": 1,
      "pdfPage": 19,
      "step": 0,
-     "fit": 9.85
+     "fit": 9.85,
+     "entrada": null,
+     "transicao": null
     },
     {
      "svg": "flowRoot4797",
@@ -268,7 +330,9 @@
      "opacity": 1,
      "pdfPage": 20,
      "step": 0,
-     "fit": 7.68
+     "fit": 7.68,
+     "entrada": null,
+     "transicao": null
     },
     {
      "svg": "rect4593",
@@ -281,7 +345,9 @@
      "opacity": 1,
      "pdfPage": 21,
      "step": 0,
-     "fit": 9.17
+     "fit": 9.17,
+     "entrada": null,
+     "transicao": null
     },
     {
      "svg": "path4734",
@@ -294,7 +360,12 @@
      "opacity": 1,
      "pdfPage": 22,
      "step": 0,
-     "fit": 7.26
+     "fit": 7.26,
+     "entrada": null,
+     "transicao": {
+      "dx": 510,
+      "dy": -1
+     }
     },
     {
      "svg": "path4731",
@@ -307,7 +378,14 @@
      "opacity": 1,
      "pdfPage": 23,
      "step": 0,
-     "fit": 7.83
+     "fit": 7.83,
+     "entrada": null,
+     "transicao": {
+      "dx": 510,
+      "dy": -0.5,
+      "sx": 1,
+      "sy": 1.01
+     }
     },
     {
      "svg": "path4734",
@@ -320,7 +398,12 @@
      "opacity": 1,
      "pdfPage": 24,
      "step": 0,
-     "fit": 7.26
+     "fit": 7.26,
+     "entrada": null,
+     "transicao": {
+      "dx": 0,
+      "dy": -1
+     }
     },
     {
      "svg": "path4731",
@@ -333,7 +416,9 @@
      "opacity": 1,
      "pdfPage": 23,
      "step": 0,
-     "fit": 7.83
+     "fit": 7.83,
+     "entrada": null,
+     "transicao": null
     },
     {
      "svg": "circle29",
@@ -346,7 +431,9 @@
      "opacity": 1,
      "pdfPage": 25,
      "step": 0,
-     "fit": 8.83
+     "fit": 8.83,
+     "entrada": null,
+     "transicao": null
     },
     {
      "svg": "circle6215",
@@ -359,7 +446,9 @@
      "opacity": 1,
      "pdfPage": 26,
      "step": 0,
-     "fit": 8.06
+     "fit": 8.06,
+     "entrada": null,
+     "transicao": null
     },
     {
      "svg": "image132",
@@ -371,8 +460,19 @@
      "rotation": 0,
      "opacity": 1,
      "pdfPage": 27,
-     "step": 2,
-     "fit": 9.7
+     "step": 1,
+     "fit": 9.7,
+     "entrada": {
+      "tipo": "pop",
+      "dur": 0.75,
+      "chaves": [
+       0.001,
+       1.125,
+       0.952,
+       0.9999999999999999
+      ]
+     },
+     "transicao": null
     },
     {
      "svg": "flowRoot4641",
@@ -384,8 +484,19 @@
      "rotation": 0,
      "opacity": 1,
      "pdfPage": 28,
-     "step": 2,
-     "fit": 8.37
+     "step": 1,
+     "fit": 8.37,
+     "entrada": {
+      "tipo": "pop",
+      "dur": 0.75,
+      "chaves": [
+       0.001,
+       1.125,
+       0.952,
+       0.9999999999999999
+      ]
+     },
+     "transicao": null
     },
     {
      "svg": "path4692",
@@ -397,8 +508,19 @@
      "rotation": 0,
      "opacity": 1,
      "pdfPage": 29,
-     "step": 3,
-     "fit": 10.19
+     "step": 2,
+     "fit": 10.19,
+     "entrada": {
+      "tipo": "queda",
+      "dur": 0.75,
+      "chaves": [
+       -816,
+       0,
+       -190.3430987313464,
+       0
+      ]
+     },
+     "transicao": null
     },
     {
      "svg": "flowRoot5933",
@@ -410,8 +532,13 @@
      "rotation": 0,
      "opacity": 1,
      "pdfPage": 30,
-     "step": 3,
-     "fit": 7.86
+     "step": 2,
+     "fit": 7.86,
+     "entrada": {
+      "tipo": "fade",
+      "dur": 1
+     },
+     "transicao": null
     },
     {
      "svg": "flowRoot6261",
@@ -423,8 +550,13 @@
      "rotation": 0,
      "opacity": 1,
      "pdfPage": 31,
-     "step": 4,
-     "fit": 7.9
+     "step": 3,
+     "fit": 7.9,
+     "entrada": {
+      "tipo": "fade",
+      "dur": 1
+     },
+     "transicao": null
     },
     {
      "svg": "text6281",
@@ -436,8 +568,13 @@
      "rotation": 0,
      "opacity": 1,
      "pdfPage": 32,
-     "step": 4,
-     "fit": 8.49
+     "step": 3,
+     "fit": 8.49,
+     "entrada": {
+      "tipo": "fade",
+      "dur": 1
+     },
+     "transicao": null
     },
     {
      "svg": "flowRoot4633",
@@ -449,8 +586,13 @@
      "rotation": 0,
      "opacity": 1,
      "pdfPage": 33,
-     "step": 5,
-     "fit": 9.48
+     "step": 4,
+     "fit": 9.48,
+     "entrada": {
+      "tipo": "fade",
+      "dur": 1
+     },
+     "transicao": null
     },
     {
      "svg": "flowRoot6339",
@@ -462,8 +604,13 @@
      "rotation": 0,
      "opacity": 1,
      "pdfPage": 34,
-     "step": null,
-     "fit": 9.54
+     "step": 6,
+     "fit": 9.54,
+     "entrada": {
+      "tipo": "fade",
+      "dur": 1
+     },
+     "transicao": null
     },
     {
      "svg": "text6203",
@@ -476,7 +623,9 @@
      "opacity": 1,
      "pdfPage": 35,
      "step": 0,
-     "fit": 7.33
+     "fit": 7.33,
+     "entrada": null,
+     "transicao": null
     }
    ]
   },
@@ -496,7 +645,9 @@
      "opacity": 1,
      "pdfPage": 1,
      "step": null,
-     "fit": null
+     "fit": null,
+     "entrada": null,
+     "transicao": null
     },
     {
      "svg": "circle4539",
@@ -508,8 +659,13 @@
      "rotation": 0,
      "opacity": 1,
      "pdfPage": 2,
-     "step": null,
-     "fit": 8.65
+     "step": 4,
+     "fit": 8.65,
+     "entrada": {
+      "tipo": "fade",
+      "dur": 1
+     },
+     "transicao": null
     },
     {
      "svg": "circle5931",
@@ -521,8 +677,13 @@
      "rotation": 0,
      "opacity": 1,
      "pdfPage": 3,
-     "step": null,
-     "fit": 8.82
+     "step": 4,
+     "fit": 8.82,
+     "entrada": {
+      "tipo": "fade",
+      "dur": 1
+     },
+     "transicao": null
     },
     {
      "svg": "g5929",
@@ -535,7 +696,9 @@
      "opacity": 1,
      "pdfPage": 4,
      "step": null,
-     "fit": 9.12
+     "fit": 9.12,
+     "entrada": null,
+     "transicao": null
     },
     {
      "svg": "circle5578",
@@ -547,8 +710,13 @@
      "rotation": 0,
      "opacity": 1,
      "pdfPage": 5,
-     "step": null,
-     "fit": 9.11
+     "step": 4,
+     "fit": 9.11,
+     "entrada": {
+      "tipo": "fade",
+      "dur": 1
+     },
+     "transicao": null
     },
     {
      "svg": "text6327",
@@ -560,8 +728,13 @@
      "rotation": 0,
      "opacity": 1,
      "pdfPage": 6,
-     "step": null,
-     "fit": 6.7
+     "step": 4,
+     "fit": 6.7,
+     "entrada": {
+      "tipo": "fade",
+      "dur": 1
+     },
+     "transicao": null
     },
     {
      "svg": "text6040",
@@ -573,8 +746,13 @@
      "rotation": 0,
      "opacity": 1,
      "pdfPage": 7,
-     "step": null,
-     "fit": 7.93
+     "step": 4,
+     "fit": 7.93,
+     "entrada": {
+      "tipo": "fade",
+      "dur": 1
+     },
+     "transicao": null
     },
     {
      "svg": "path4607",
@@ -587,7 +765,9 @@
      "opacity": 1,
      "pdfPage": 8,
      "step": 0,
-     "fit": 7.71
+     "fit": 7.71,
+     "entrada": null,
+     "transicao": null
     },
     {
      "svg": "path4605",
@@ -600,7 +780,9 @@
      "opacity": 1,
      "pdfPage": 9,
      "step": 0,
-     "fit": 10.45
+     "fit": 10.45,
+     "entrada": null,
+     "transicao": null
     },
     {
      "svg": "circle18",
@@ -613,7 +795,9 @@
      "opacity": 1,
      "pdfPage": 10,
      "step": 0,
-     "fit": 9.47
+     "fit": 9.47,
+     "entrada": null,
+     "transicao": null
     },
     {
      "svg": "g4676",
@@ -626,7 +810,9 @@
      "opacity": 1,
      "pdfPage": 11,
      "step": 0,
-     "fit": 8.19
+     "fit": 8.19,
+     "entrada": null,
+     "transicao": null
     },
     {
      "svg": "path4734",
@@ -639,7 +825,9 @@
      "opacity": 1,
      "pdfPage": 12,
      "step": 0,
-     "fit": 9.04
+     "fit": 9.04,
+     "entrada": null,
+     "transicao": null
     },
     {
      "svg": "path4731",
@@ -652,7 +840,9 @@
      "opacity": 1,
      "pdfPage": 13,
      "step": 0,
-     "fit": 7.6
+     "fit": 7.6,
+     "entrada": null,
+     "transicao": null
     },
     {
      "svg": "flowRoot58",
@@ -665,7 +855,9 @@
      "opacity": 1,
      "pdfPage": 14,
      "step": 0,
-     "fit": 7.81
+     "fit": 7.81,
+     "entrada": null,
+     "transicao": null
     },
     {
      "svg": "path14",
@@ -678,7 +870,9 @@
      "opacity": 1,
      "pdfPage": 15,
      "step": 0,
-     "fit": 8.83
+     "fit": 8.83,
+     "entrada": null,
+     "transicao": null
     },
     {
      "svg": "circle4751",
@@ -691,7 +885,9 @@
      "opacity": 1,
      "pdfPage": 16,
      "step": 0,
-     "fit": 8.71
+     "fit": 8.71,
+     "entrada": null,
+     "transicao": null
     },
     {
      "svg": "text4775",
@@ -704,7 +900,9 @@
      "opacity": 1,
      "pdfPage": 17,
      "step": 0,
-     "fit": 8.93
+     "fit": 8.93,
+     "entrada": null,
+     "transicao": null
     },
     {
      "svg": "path3732",
@@ -717,7 +915,9 @@
      "opacity": 1,
      "pdfPage": 18,
      "step": 0,
-     "fit": 8.17
+     "fit": 8.17,
+     "entrada": null,
+     "transicao": null
     },
     {
      "svg": "path4690",
@@ -730,7 +930,9 @@
      "opacity": 1,
      "pdfPage": 19,
      "step": 0,
-     "fit": 10.07
+     "fit": 10.07,
+     "entrada": null,
+     "transicao": null
     },
     {
      "svg": "path4688",
@@ -743,7 +945,9 @@
      "opacity": 1,
      "pdfPage": 20,
      "step": 0,
-     "fit": 9.73
+     "fit": 9.73,
+     "entrada": null,
+     "transicao": null
     },
     {
      "svg": "path4682",
@@ -756,7 +960,9 @@
      "opacity": 1,
      "pdfPage": 21,
      "step": 0,
-     "fit": 6.56
+     "fit": 6.56,
+     "entrada": null,
+     "transicao": null
     },
     {
      "svg": "path4686",
@@ -769,7 +975,9 @@
      "opacity": 1,
      "pdfPage": 22,
      "step": 0,
-     "fit": 10.92
+     "fit": 10.92,
+     "entrada": null,
+     "transicao": null
     },
     {
      "svg": "path4694",
@@ -782,7 +990,9 @@
      "opacity": 1,
      "pdfPage": 23,
      "step": 0,
-     "fit": 10.75
+     "fit": 10.75,
+     "entrada": null,
+     "transicao": null
     },
     {
      "svg": "path4684",
@@ -795,7 +1005,9 @@
      "opacity": 1,
      "pdfPage": 24,
      "step": 0,
-     "fit": 7.87
+     "fit": 7.87,
+     "entrada": null,
+     "transicao": null
     },
     {
      "svg": "flowRoot4813",
@@ -808,7 +1020,9 @@
      "opacity": 1,
      "pdfPage": 25,
      "step": 0,
-     "fit": 9.85
+     "fit": 9.85,
+     "entrada": null,
+     "transicao": null
     },
     {
      "svg": "flowRoot4797",
@@ -820,8 +1034,13 @@
      "rotation": 0,
      "opacity": 1,
      "pdfPage": 26,
-     "step": 0,
-     "fit": 7.68
+     "step": 3,
+     "fit": 7.68,
+     "entrada": {
+      "tipo": "fade",
+      "dur": 1
+     },
+     "transicao": null
     },
     {
      "svg": "rect4593",
@@ -834,7 +1053,9 @@
      "opacity": 1,
      "pdfPage": 27,
      "step": 0,
-     "fit": 9.17
+     "fit": 9.17,
+     "entrada": null,
+     "transicao": null
     },
     {
      "svg": "path4734",
@@ -847,7 +1068,12 @@
      "opacity": 1,
      "pdfPage": 28,
      "step": 0,
-     "fit": 7.58
+     "fit": 7.58,
+     "entrada": null,
+     "transicao": {
+      "dx": 0,
+      "dy": 7
+     }
     },
     {
      "svg": "path4731",
@@ -860,7 +1086,12 @@
      "opacity": 1,
      "pdfPage": 29,
      "step": 0,
-     "fit": 9.15
+     "fit": 9.15,
+     "entrada": null,
+     "transicao": {
+      "dx": 0,
+      "dy": 9
+     }
     },
     {
      "svg": "path4734",
@@ -873,7 +1104,12 @@
      "opacity": 1,
      "pdfPage": 30,
      "step": 0,
-     "fit": 7.26
+     "fit": 7.26,
+     "entrada": null,
+     "transicao": {
+      "dx": 0,
+      "dy": 7
+     }
     },
     {
      "svg": "path4731",
@@ -886,7 +1122,12 @@
      "opacity": 1,
      "pdfPage": 31,
      "step": 0,
-     "fit": 7.83
+     "fit": 7.83,
+     "entrada": null,
+     "transicao": {
+      "dx": 0,
+      "dy": 9
+     }
     },
     {
      "svg": "image132",
@@ -899,7 +1140,9 @@
      "opacity": 1,
      "pdfPage": 32,
      "step": 0,
-     "fit": 9.7
+     "fit": 9.7,
+     "entrada": null,
+     "transicao": null
     },
     {
      "svg": "flowRoot4641",
@@ -912,7 +1155,9 @@
      "opacity": 1,
      "pdfPage": 33,
      "step": 0,
-     "fit": 8.37
+     "fit": 8.37,
+     "entrada": null,
+     "transicao": null
     },
     {
      "svg": "path4692",
@@ -925,7 +1170,9 @@
      "opacity": 1,
      "pdfPage": 34,
      "step": 0,
-     "fit": 10.19
+     "fit": 10.19,
+     "entrada": null,
+     "transicao": null
     },
     {
      "svg": "flowRoot5933",
@@ -938,7 +1185,9 @@
      "opacity": 1,
      "pdfPage": 35,
      "step": 0,
-     "fit": 7.86
+     "fit": 7.86,
+     "entrada": null,
+     "transicao": null
     },
     {
      "svg": "flowRoot6261",
@@ -951,7 +1200,9 @@
      "opacity": 1,
      "pdfPage": 36,
      "step": 0,
-     "fit": 7.9
+     "fit": 7.9,
+     "entrada": null,
+     "transicao": null
     },
     {
      "svg": "text6281",
@@ -964,7 +1215,9 @@
      "opacity": 1,
      "pdfPage": 37,
      "step": 0,
-     "fit": 8.49
+     "fit": 8.49,
+     "entrada": null,
+     "transicao": null
     },
     {
      "svg": "flowRoot4633",
@@ -977,7 +1230,9 @@
      "opacity": 1,
      "pdfPage": 38,
      "step": 0,
-     "fit": 9.48
+     "fit": 9.48,
+     "entrada": null,
+     "transicao": null
     },
     {
      "svg": null,
@@ -990,7 +1245,9 @@
      "opacity": 1,
      "pdfPage": 39,
      "step": null,
-     "fit": null
+     "fit": null,
+     "entrada": null,
+     "transicao": null
     },
     {
      "svg": "flowRoot5943",
@@ -1002,8 +1259,13 @@
      "rotation": 0,
      "opacity": 1,
      "pdfPage": 40,
-     "step": 2,
-     "fit": 7.97
+     "step": 1,
+     "fit": 7.97,
+     "entrada": {
+      "tipo": "fade",
+      "dur": 1
+     },
+     "transicao": null
     },
     {
      "svg": "flowRoot4813",
@@ -1016,7 +1278,9 @@
      "opacity": 1,
      "pdfPage": 25,
      "step": 0,
-     "fit": 9.85
+     "fit": 9.85,
+     "entrada": null,
+     "transicao": null
     },
     {
      "svg": "flowRoot4797",
@@ -1028,8 +1292,13 @@
      "rotation": 0,
      "opacity": 1,
      "pdfPage": 26,
-     "step": 0,
-     "fit": 7.68
+     "step": 3,
+     "fit": 7.68,
+     "entrada": {
+      "tipo": "fade",
+      "dur": 1
+     },
+     "transicao": null
     },
     {
      "svg": "flowRoot6315",
@@ -1041,8 +1310,13 @@
      "rotation": 0,
      "opacity": 1,
      "pdfPage": 41,
-     "step": 3,
-     "fit": 9.54
+     "step": 2,
+     "fit": 9.54,
+     "entrada": {
+      "tipo": "fade",
+      "dur": 1
+     },
+     "transicao": null
     },
     {
      "svg": null,
@@ -1055,7 +1329,9 @@
      "opacity": 1,
      "pdfPage": 46,
      "step": null,
-     "fit": null
+     "fit": null,
+     "entrada": null,
+     "transicao": null
     },
     {
      "svg": null,
@@ -1068,7 +1344,9 @@
      "opacity": 1,
      "pdfPage": 47,
      "step": null,
-     "fit": null
+     "fit": null,
+     "entrada": null,
+     "transicao": null
     },
     {
      "svg": null,
@@ -1081,7 +1359,9 @@
      "opacity": 1,
      "pdfPage": 29,
      "step": null,
-     "fit": null
+     "fit": null,
+     "entrada": null,
+     "transicao": null
     },
     {
      "svg": "circle29",
@@ -1094,7 +1374,9 @@
      "opacity": 1,
      "pdfPage": 42,
      "step": 0,
-     "fit": 8.83
+     "fit": 8.83,
+     "entrada": null,
+     "transicao": null
     },
     {
      "svg": "circle6215",
@@ -1107,7 +1389,9 @@
      "opacity": 1,
      "pdfPage": 43,
      "step": 0,
-     "fit": 8.06
+     "fit": 8.06,
+     "entrada": null,
+     "transicao": null
     },
     {
      "svg": "text6203",
@@ -1120,7 +1404,9 @@
      "opacity": 1,
      "pdfPage": 44,
      "step": 0,
-     "fit": 7.33
+     "fit": 7.33,
+     "entrada": null,
+     "transicao": null
     },
     {
      "svg": null,
@@ -1133,7 +1419,9 @@
      "opacity": 1,
      "pdfPage": 48,
      "step": null,
-     "fit": null
+     "fit": null,
+     "entrada": null,
+     "transicao": null
     },
     {
      "svg": "flowRoot6339",
@@ -1146,7 +1434,9 @@
      "opacity": 1,
      "pdfPage": 45,
      "step": 0,
-     "fit": 9.54
+     "fit": 9.54,
+     "entrada": null,
+     "transicao": null
     }
    ]
   },
@@ -1166,7 +1456,9 @@
      "opacity": 1,
      "pdfPage": 1,
      "step": null,
-     "fit": null
+     "fit": null,
+     "entrada": null,
+     "transicao": null
     },
     {
      "svg": "path4607",
@@ -1179,7 +1471,9 @@
      "opacity": 1,
      "pdfPage": 2,
      "step": 0,
-     "fit": 7.71
+     "fit": 7.71,
+     "entrada": null,
+     "transicao": null
     },
     {
      "svg": null,
@@ -1192,7 +1486,9 @@
      "opacity": 1,
      "pdfPage": 3,
      "step": null,
-     "fit": null
+     "fit": null,
+     "entrada": null,
+     "transicao": null
     },
     {
      "svg": "circle4539",
@@ -1205,7 +1501,9 @@
      "opacity": 1,
      "pdfPage": 4,
      "step": 0,
-     "fit": 8.65
+     "fit": 8.65,
+     "entrada": null,
+     "transicao": null
     },
     {
      "svg": "circle5931",
@@ -1218,7 +1516,9 @@
      "opacity": 1,
      "pdfPage": 5,
      "step": 0,
-     "fit": 8.82
+     "fit": 8.82,
+     "entrada": null,
+     "transicao": null
     },
     {
      "svg": "g5929",
@@ -1231,7 +1531,9 @@
      "opacity": 1,
      "pdfPage": 6,
      "step": 0,
-     "fit": 9.12
+     "fit": 9.12,
+     "entrada": null,
+     "transicao": null
     },
     {
      "svg": "circle5578",
@@ -1244,7 +1546,9 @@
      "opacity": 1,
      "pdfPage": 7,
      "step": 0,
-     "fit": 9.11
+     "fit": 9.11,
+     "entrada": null,
+     "transicao": null
     },
     {
      "svg": "path6060",
@@ -1257,7 +1561,9 @@
      "opacity": 1,
      "pdfPage": 8,
      "step": 2,
-     "fit": 10.03
+     "fit": 10.03,
+     "entrada": null,
+     "transicao": null
     },
     {
      "svg": "text6327",
@@ -1270,7 +1576,9 @@
      "opacity": 1,
      "pdfPage": 9,
      "step": 0,
-     "fit": 6.7
+     "fit": 6.7,
+     "entrada": null,
+     "transicao": null
     },
     {
      "svg": "text6040",
@@ -1283,7 +1591,9 @@
      "opacity": 1,
      "pdfPage": 10,
      "step": 0,
-     "fit": 7.93
+     "fit": 7.93,
+     "entrada": null,
+     "transicao": null
     },
     {
      "svg": "path4605",
@@ -1296,7 +1606,9 @@
      "opacity": 1,
      "pdfPage": 59,
      "step": 0,
-     "fit": 10.45
+     "fit": 10.45,
+     "entrada": null,
+     "transicao": null
     },
     {
      "svg": "circle18",
@@ -1309,7 +1621,9 @@
      "opacity": 1,
      "pdfPage": 12,
      "step": 0,
-     "fit": 9.47
+     "fit": 9.47,
+     "entrada": null,
+     "transicao": null
     },
     {
      "svg": "g4676",
@@ -1322,7 +1636,9 @@
      "opacity": 1,
      "pdfPage": 13,
      "step": 0,
-     "fit": 8.19
+     "fit": 8.19,
+     "entrada": null,
+     "transicao": null
     },
     {
      "svg": "path4734",
@@ -1335,7 +1651,9 @@
      "opacity": 1,
      "pdfPage": 14,
      "step": 0,
-     "fit": 9.04
+     "fit": 9.04,
+     "entrada": null,
+     "transicao": null
     },
     {
      "svg": "path4731",
@@ -1348,7 +1666,9 @@
      "opacity": 1,
      "pdfPage": 15,
      "step": 0,
-     "fit": 7.6
+     "fit": 7.6,
+     "entrada": null,
+     "transicao": null
     },
     {
      "svg": "flowRoot58",
@@ -1361,7 +1681,9 @@
      "opacity": 1,
      "pdfPage": 16,
      "step": 0,
-     "fit": 7.81
+     "fit": 7.81,
+     "entrada": null,
+     "transicao": null
     },
     {
      "svg": "path14",
@@ -1374,7 +1696,9 @@
      "opacity": 1,
      "pdfPage": 17,
      "step": 0,
-     "fit": 8.83
+     "fit": 8.83,
+     "entrada": null,
+     "transicao": null
     },
     {
      "svg": "circle4751",
@@ -1387,7 +1711,9 @@
      "opacity": 1,
      "pdfPage": 18,
      "step": 0,
-     "fit": 8.71
+     "fit": 8.71,
+     "entrada": null,
+     "transicao": null
     },
     {
      "svg": "text4775",
@@ -1400,7 +1726,9 @@
      "opacity": 1,
      "pdfPage": 19,
      "step": 0,
-     "fit": 8.93
+     "fit": 8.93,
+     "entrada": null,
+     "transicao": null
     },
     {
      "svg": "path3732",
@@ -1413,7 +1741,9 @@
      "opacity": 1,
      "pdfPage": 20,
      "step": 0,
-     "fit": 8.17
+     "fit": 8.17,
+     "entrada": null,
+     "transicao": null
     },
     {
      "svg": "path4690",
@@ -1426,7 +1756,9 @@
      "opacity": 1,
      "pdfPage": 21,
      "step": 0,
-     "fit": 10.07
+     "fit": 10.07,
+     "entrada": null,
+     "transicao": null
     },
     {
      "svg": "path4688",
@@ -1439,7 +1771,9 @@
      "opacity": 1,
      "pdfPage": 22,
      "step": 0,
-     "fit": 9.73
+     "fit": 9.73,
+     "entrada": null,
+     "transicao": null
     },
     {
      "svg": "path4682",
@@ -1452,7 +1786,9 @@
      "opacity": 1,
      "pdfPage": 23,
      "step": 0,
-     "fit": 6.56
+     "fit": 6.56,
+     "entrada": null,
+     "transicao": null
     },
     {
      "svg": "path4686",
@@ -1465,7 +1801,9 @@
      "opacity": 1,
      "pdfPage": 24,
      "step": 0,
-     "fit": 10.92
+     "fit": 10.92,
+     "entrada": null,
+     "transicao": null
     },
     {
      "svg": "path4694",
@@ -1478,7 +1816,9 @@
      "opacity": 1,
      "pdfPage": 25,
      "step": 0,
-     "fit": 10.75
+     "fit": 10.75,
+     "entrada": null,
+     "transicao": null
     },
     {
      "svg": "path4684",
@@ -1491,7 +1831,9 @@
      "opacity": 1,
      "pdfPage": 26,
      "step": 0,
-     "fit": 7.87
+     "fit": 7.87,
+     "entrada": null,
+     "transicao": null
     },
     {
      "svg": "flowRoot4813",
@@ -1504,7 +1846,9 @@
      "opacity": 1,
      "pdfPage": 27,
      "step": 0,
-     "fit": 9.85
+     "fit": 9.85,
+     "entrada": null,
+     "transicao": null
     },
     {
      "svg": "flowRoot4797",
@@ -1517,7 +1861,9 @@
      "opacity": 1,
      "pdfPage": 28,
      "step": 0,
-     "fit": 7.68
+     "fit": 7.68,
+     "entrada": null,
+     "transicao": null
     },
     {
      "svg": "rect4593",
@@ -1530,7 +1876,9 @@
      "opacity": 1,
      "pdfPage": 29,
      "step": 0,
-     "fit": 9.17
+     "fit": 9.17,
+     "entrada": null,
+     "transicao": null
     },
     {
      "svg": "path4734",
@@ -1543,7 +1891,9 @@
      "opacity": 1,
      "pdfPage": 11,
      "step": 0,
-     "fit": 7.58
+     "fit": 7.58,
+     "entrada": null,
+     "transicao": null
     },
     {
      "svg": "path4731",
@@ -1556,7 +1906,9 @@
      "opacity": 1,
      "pdfPage": 30,
      "step": 0,
-     "fit": 10.15
+     "fit": 10.15,
+     "entrada": null,
+     "transicao": null
     },
     {
      "svg": "path4734",
@@ -1569,7 +1921,9 @@
      "opacity": 1,
      "pdfPage": 31,
      "step": 0,
-     "fit": 7.26
+     "fit": 7.26,
+     "entrada": null,
+     "transicao": null
     },
     {
      "svg": "path4731",
@@ -1582,7 +1936,9 @@
      "opacity": 1,
      "pdfPage": 32,
      "step": 0,
-     "fit": 7.83
+     "fit": 7.83,
+     "entrada": null,
+     "transicao": null
     },
     {
      "svg": "image132",
@@ -1595,7 +1951,9 @@
      "opacity": 1,
      "pdfPage": 33,
      "step": 0,
-     "fit": 9.7
+     "fit": 9.7,
+     "entrada": null,
+     "transicao": null
     },
     {
      "svg": "flowRoot4641",
@@ -1608,7 +1966,9 @@
      "opacity": 1,
      "pdfPage": 34,
      "step": 0,
-     "fit": 8.37
+     "fit": 8.37,
+     "entrada": null,
+     "transicao": null
     },
     {
      "svg": "path4692",
@@ -1621,7 +1981,9 @@
      "opacity": 1,
      "pdfPage": 35,
      "step": 0,
-     "fit": 10.19
+     "fit": 10.19,
+     "entrada": null,
+     "transicao": null
     },
     {
      "svg": "flowRoot5933",
@@ -1634,7 +1996,9 @@
      "opacity": 1,
      "pdfPage": 36,
      "step": 0,
-     "fit": 7.86
+     "fit": 7.86,
+     "entrada": null,
+     "transicao": null
     },
     {
      "svg": "flowRoot6261",
@@ -1647,7 +2011,9 @@
      "opacity": 1,
      "pdfPage": 37,
      "step": 0,
-     "fit": 7.9
+     "fit": 7.9,
+     "entrada": null,
+     "transicao": null
     },
     {
      "svg": "text6281",
@@ -1660,7 +2026,9 @@
      "opacity": 1,
      "pdfPage": 38,
      "step": 0,
-     "fit": 8.49
+     "fit": 8.49,
+     "entrada": null,
+     "transicao": null
     },
     {
      "svg": "flowRoot4633",
@@ -1673,7 +2041,9 @@
      "opacity": 1,
      "pdfPage": 39,
      "step": 0,
-     "fit": 9.48
+     "fit": 9.48,
+     "entrada": null,
+     "transicao": null
     },
     {
      "svg": null,
@@ -1686,7 +2056,9 @@
      "opacity": 1,
      "pdfPage": 40,
      "step": null,
-     "fit": null
+     "fit": null,
+     "entrada": null,
+     "transicao": null
     },
     {
      "svg": "flowRoot5943",
@@ -1699,7 +2071,9 @@
      "opacity": 1,
      "pdfPage": 41,
      "step": 0,
-     "fit": 7.97
+     "fit": 7.97,
+     "entrada": null,
+     "transicao": null
     },
     {
      "svg": "flowRoot4813",
@@ -1712,7 +2086,9 @@
      "opacity": 1,
      "pdfPage": 27,
      "step": 0,
-     "fit": 9.85
+     "fit": 9.85,
+     "entrada": null,
+     "transicao": null
     },
     {
      "svg": "flowRoot4797",
@@ -1725,7 +2101,9 @@
      "opacity": 1,
      "pdfPage": 28,
      "step": 0,
-     "fit": 7.68
+     "fit": 7.68,
+     "entrada": null,
+     "transicao": null
     },
     {
      "svg": "flowRoot6315",
@@ -1738,7 +2116,9 @@
      "opacity": 1,
      "pdfPage": 42,
      "step": 0,
-     "fit": 9.54
+     "fit": 9.54,
+     "entrada": null,
+     "transicao": null
     },
     {
      "svg": "rect4680",
@@ -1751,7 +2131,9 @@
      "opacity": 1,
      "pdfPage": 43,
      "step": 0,
-     "fit": 8.66
+     "fit": 8.66,
+     "entrada": null,
+     "transicao": null
     },
     {
      "svg": "rect4678",
@@ -1764,7 +2146,9 @@
      "opacity": 1,
      "pdfPage": 44,
      "step": 0,
-     "fit": 7.79
+     "fit": 7.79,
+     "entrada": null,
+     "transicao": null
     },
     {
      "svg": "path4731",
@@ -1777,7 +2161,9 @@
      "opacity": 1,
      "pdfPage": 30,
      "step": 0,
-     "fit": 8.15
+     "fit": 8.15,
+     "entrada": null,
+     "transicao": null
     },
     {
      "svg": "circle29",
@@ -1790,7 +2176,9 @@
      "opacity": 1,
      "pdfPage": 45,
      "step": 0,
-     "fit": 8.83
+     "fit": 8.83,
+     "entrada": null,
+     "transicao": null
     },
     {
      "svg": "circle6215",
@@ -1803,7 +2191,9 @@
      "opacity": 1,
      "pdfPage": 46,
      "step": 0,
-     "fit": 8.06
+     "fit": 8.06,
+     "entrada": null,
+     "transicao": null
     },
     {
      "svg": "path4835",
@@ -1816,7 +2206,14 @@
      "opacity": 1,
      "pdfPage": 47,
      "step": 1,
-     "fit": 10.04
+     "fit": 10.04,
+     "entrada": null,
+     "transicao": {
+      "dx": 16.89,
+      "dy": -47.08,
+      "sx": 15.8857,
+      "sy": 15.4167
+     }
     },
     {
      "svg": "text6203",
@@ -1829,7 +2226,9 @@
      "opacity": 1,
      "pdfPage": 48,
      "step": 0,
-     "fit": 7.33
+     "fit": 7.33,
+     "entrada": null,
+     "transicao": null
     },
     {
      "svg": null,
@@ -1842,7 +2241,9 @@
      "opacity": 1,
      "pdfPage": 49,
      "step": null,
-     "fit": null
+     "fit": null,
+     "entrada": null,
+     "transicao": null
     },
     {
      "svg": "flowRoot5959",
@@ -1855,7 +2256,9 @@
      "opacity": 1,
      "pdfPage": 50,
      "step": 1,
-     "fit": 9.15
+     "fit": 9.15,
+     "entrada": null,
+     "transicao": null
     },
     {
      "svg": "flowRoot6124",
@@ -1867,8 +2270,13 @@
      "rotation": 0,
      "opacity": 1,
      "pdfPage": 51,
-     "step": 3,
-     "fit": 8.59
+     "step": 2,
+     "fit": 8.59,
+     "entrada": {
+      "tipo": "fade",
+      "dur": 1
+     },
+     "transicao": null
     },
     {
      "svg": "flowRoot6020",
@@ -1880,8 +2288,13 @@
      "rotation": 0,
      "opacity": 1,
      "pdfPage": 52,
-     "step": 4,
-     "fit": 8.7
+     "step": 3,
+     "fit": 8.7,
+     "entrada": {
+      "tipo": "fade",
+      "dur": 1
+     },
+     "transicao": null
     },
     {
      "svg": "flowRoot6067",
@@ -1893,8 +2306,13 @@
      "rotation": 0,
      "opacity": 1,
      "pdfPage": 53,
-     "step": null,
-     "fit": 7.75
+     "step": 4,
+     "fit": 7.75,
+     "entrada": {
+      "tipo": "fade",
+      "dur": 1
+     },
+     "transicao": null
     },
     {
      "svg": "flowRoot6140",
@@ -1907,7 +2325,9 @@
      "opacity": 1,
      "pdfPage": 54,
      "step": null,
-     "fit": 8.87
+     "fit": 8.87,
+     "entrada": null,
+     "transicao": null
     },
     {
      "svg": "flowRoot6175",
@@ -1920,7 +2340,9 @@
      "opacity": 1,
      "pdfPage": 55,
      "step": null,
-     "fit": 7.72
+     "fit": 7.72,
+     "entrada": null,
+     "transicao": null
     },
     {
      "svg": null,
@@ -1933,7 +2355,9 @@
      "opacity": 1,
      "pdfPage": 60,
      "step": null,
-     "fit": null
+     "fit": null,
+     "entrada": null,
+     "transicao": null
     },
     {
      "svg": "circle4893",
@@ -1946,7 +2370,14 @@
      "opacity": 1,
      "pdfPage": 57,
      "step": 1,
-     "fit": 8.69
+     "fit": 8.69,
+     "entrada": null,
+     "transicao": {
+      "dx": 14.31,
+      "dy": -47.59,
+      "sx": 15.3889,
+      "sy": 15.3889
+     }
     },
     {
      "svg": null,
@@ -1959,7 +2390,9 @@
      "opacity": 1,
      "pdfPage": 61,
      "step": null,
-     "fit": null
+     "fit": null,
+     "entrada": null,
+     "transicao": null
     },
     {
      "svg": null,
@@ -1972,7 +2405,9 @@
      "opacity": 1,
      "pdfPage": 62,
      "step": null,
-     "fit": null
+     "fit": null,
+     "entrada": null,
+     "transicao": null
     },
     {
      "svg": "flowRoot6339",
@@ -1985,7 +2420,9 @@
      "opacity": 1,
      "pdfPage": 58,
      "step": 0,
-     "fit": 9.54
+     "fit": 9.54,
+     "entrada": null,
+     "transicao": null
     }
    ]
   },
@@ -2005,7 +2442,9 @@
      "opacity": 1,
      "pdfPage": 2,
      "step": null,
-     "fit": null
+     "fit": null,
+     "entrada": null,
+     "transicao": null
     },
     {
      "svg": null,
@@ -2018,7 +2457,9 @@
      "opacity": 1,
      "pdfPage": 1,
      "step": null,
-     "fit": null
+     "fit": null,
+     "entrada": null,
+     "transicao": null
     }
    ]
   }

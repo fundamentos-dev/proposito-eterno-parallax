@@ -1,26 +1,32 @@
-// Controlador da narrativa: a rolagem avança os passos de revelação e move as camadas
-// em profundidades diferentes (parallax). Setas, espaço e Home/End também navegam.
+// Controlador da narrativa. A rolagem percorre os passos; cada camada entra com a
+// animação que o Keynote usava (ver src/animacao.js) e as viradas de slide aplicam o
+// "magic move" — a ponte que se parte, o círculo da igreja que cresce.
 import './estilo.css';
 import cena from './scene/cena.json';
 import geometria from './scene/text.json';
 import { textos, links } from './conteudo.js';
 import { montaCena } from './render.js';
+import { estado, suavizar } from './animacao.js';
 
 const palco = document.getElementById('palco-wrap');
-const svg = montaCena(cena, geometria, textos, links);
-palco.appendChild(svg);
+palco.appendChild(montaCena(cena, geometria, textos, links));
 
-const camadas = [...svg.querySelectorAll('.camada')].map((el) => {
-  const passo = +el.dataset.passo;
-  // profundidade: o que entra cedo é fundo e se move menos; o que entra depois vem à frente
-  const profundidade = cena.passos > 1 ? passo / (cena.passos - 1) : 0;
-  return { el, passo, profundidade, base: el.getAttribute('transform') };
+// A entrada ocupa esta fração de um passo; o resto é respiro antes do próximo.
+const FRACAO_ENTRADA = 0.62;
+const PARALLAX = 14;   // unidades de palco
+
+const camadas = [...palco.querySelectorAll('.camada')].map((el, i) => {
+  const dados = cena.camadas[i];
+  return {
+    el,
+    dados,
+    passo: dados.step ?? 0,
+    profundidade: cena.camadas.length > 1 ? i / (cena.camadas.length - 1) : 0,
+  };
 });
 
 const trilha = document.getElementById('trilha');
-trilha.style.height = `${(cena.passos + 1) * 90}vh`;
-
-const AMPLITUDE = 26;   // deslocamento máximo do parallax, em unidades de palco
+trilha.style.height = `${(cena.passos + 1) * 85}vh`;
 
 function progresso() {
   const total = trilha.offsetHeight - window.innerHeight;
@@ -30,20 +36,20 @@ function progresso() {
 function pinta(p) {
   const cursor = p * cena.passos;
   for (const c of camadas) {
-    // cada camada abre ao longo de um passo; o passo 0 já nasce visível, como no Keynote
-    const a = Math.min(Math.max(cursor - c.passo + 1, 0), 1);
-    c.el.style.opacity = a;
-    c.el.style.visibility = a <= 0.001 ? 'hidden' : 'visible';
-    const desloc = (1 - a) * AMPLITUDE * (0.35 + c.profundidade);
-    c.el.setAttribute('transform', `translate(0,${desloc.toFixed(2)}) ${c.base}`);
+    const avanco = Math.min(Math.max((cursor - c.passo + 1) / FRACAO_ENTRADA, 0), 1);
+    const { opacidade, transform } = estado(c.dados, avanco, cursor);
+    c.el.style.opacity = opacidade;
+    c.el.style.visibility = opacidade <= 0.002 ? 'hidden' : 'visible';
+    // um leve deslocamento por profundidade dá relevo à rolagem sem competir com a animação
+    const desloc = (1 - suavizar(avanco)) * PARALLAX * (0.3 + c.profundidade);
+    c.el.setAttribute('transform', desloc > 0.01 ? `translate(0,${desloc.toFixed(2)}) ${transform}` : transform);
   }
   document.getElementById('passo-atual').textContent =
-    `${Math.min(Math.floor(cursor) + 1, cena.passos)} / ${cena.passos}`;
+    `${Math.min(Math.round(cursor) + 1, cena.passos)} / ${cena.passos}`;
 }
 
 // Repinta no máximo uma vez por quadro. Em aba oculta o requestAnimationFrame não roda,
-// então ali a pintura é direta — assim o estado nunca fica preso esperando um quadro
-// que não vem, e ao voltar para a aba a cena já está correta.
+// então ali a pintura é direta — o estado nunca fica preso esperando um quadro que não vem.
 let quadro = 0;
 function agenda() {
   if (document.hidden) { pinta(progresso()); return; }
@@ -53,18 +59,23 @@ function agenda() {
 
 addEventListener('scroll', agenda, { passive: true });
 addEventListener('resize', agenda);
-// ao voltar de uma aba em segundo plano não chega evento de scroll, e o rAF esteve parado
 addEventListener('visibilitychange', () => { if (!document.hidden) agenda(); });
 
+// Navegação discreta: arredondar (e não truncar) evita o clique que não sai do lugar
+// quando o cursor está logo acima de um passo inteiro.
+function passoAtual() { return Math.round(progresso() * cena.passos); }
 function vaiPara(passo) {
   const total = trilha.offsetHeight - window.innerHeight;
-  const p = Math.min(Math.max(passo / cena.passos, 0), 1);
-  scrollTo({ top: p * total, behavior: 'smooth' });
+  const alvo = Math.min(Math.max(passo, 0), cena.passos);
+  scrollTo({ top: (alvo / cena.passos) * total, behavior: 'smooth' });
 }
 addEventListener('keydown', (e) => {
-  const cursor = progresso() * cena.passos;
-  if (e.key === 'ArrowRight' || e.key === 'ArrowDown' || e.key === ' ') { e.preventDefault(); vaiPara(Math.floor(cursor) + 1); }
-  else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') { e.preventDefault(); vaiPara(Math.ceil(cursor) - 1); }
+  if (e.metaKey || e.ctrlKey || e.altKey) return;
+  const teclas = {
+    ArrowRight: 1, ArrowDown: 1, PageDown: 1, ' ': 1,
+    ArrowLeft: -1, ArrowUp: -1, PageUp: -1,
+  };
+  if (e.key in teclas) { e.preventDefault(); vaiPara(passoAtual() + teclas[e.key]); }
   else if (e.key === 'Home') { e.preventDefault(); vaiPara(0); }
   else if (e.key === 'End') { e.preventDefault(); vaiPara(cena.passos); }
 });

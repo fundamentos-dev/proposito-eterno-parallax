@@ -77,6 +77,27 @@ As quatro etapas ([`tools/`](tools/)):
    blocos vetorizados.
 4. `build-scene.mjs` — funde os 4 slides numa cena só com linha do tempo contínua.
 
+## As animações
+
+Cada objeto entra com a animação que o Keynote usava — os valores-chave saem do próprio
+arquivo do deck, não são invenção. São quatro formas, em [`src/animacao.js`](src/animacao.js):
+
+| Forma | Movimento | Onde aparece |
+|---|---|---|
+| `fade` | opacidade 0 → 1 | a maioria dos blocos de texto |
+| `pop` | escala `[0,001 · 1,125 · 0,952 · 1]` — cresce passando do alvo e assenta | o hebraico e Gn 1:26 |
+| `queda` | deslocamento vertical `[-816 · 0 · -190 · 0]` — cai, bate, quica | a árvore |
+| `giro` | rotação em Y `[-1,571 · 0,233 · -0,05 · 0]` rad | o globo, virando como uma placa |
+
+Na virada de slide o Keynote faz *magic move*, e é dele que vêm dois momentos da narrativa:
+
+- a **ponte verde se parte** — a peça central desliza 510px para a direita, abrindo o vão por
+  onde a seta da 1ª morte desce;
+- o **círculo da igreja cresce 15,4×**, de um ponto de 33px até os ~550px do desenho original.
+
+SVG não tem rotação em Y; o giro do globo é aproximado pela projeção de uma placa girando
+(o cosseno do ângulo aplicado na escala horizontal).
+
 ## Tipografia
 
 O original usa **Bitstream Charter**. A web recebe **Charis SIL** (Google Fonts), que é a
@@ -85,9 +106,6 @@ derivada livre — as larguras foram conferidas contra os vetores originais e ba
 
 ## Diferenças conhecidas em relação ao Keynote
 
-- O círculo amarelo da igreja aparece como um ponto de ~33px. Isso vem do próprio deck: a
-  acessibilidade do Keynote registra o objeto com 32,6×32,6. No desenho original do Inkscape
-  ele tem 155,9mm. Provavelmente foi encolhido sem querer.
 - "A ESTRATÉGIA · A IGREJA" e "Ef 4:11-16 · Cl 2:19" foram redesenhados dentro do Keynote.
   Aqui eles voltaram a ser texto editável, ligados aos blocos originais, e por isso o corpo
   da fonte ficou um pouco menor que no deck. Ajuste em `src/scene/text.json` se quiser.
