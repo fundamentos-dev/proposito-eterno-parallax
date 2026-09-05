@@ -7,7 +7,7 @@ import geometria from './scene/text.json';
 import { textos, links } from './conteudo.js';
 import * as ajustes from './ajustes.js';
 import { montaCena } from './render.js';
-import { estado, suavizar } from './animacao.js';
+import { estado, suavizar, FRACAO_ENTRADA } from './animacao.js';
 
 // correções manuais sobre os dados gerados (ver src/ajustes.js)
 const geo = { ...geometria };
@@ -40,8 +40,6 @@ for (const [id, regra] of Object.entries(ajustes.ordem || {})) {
 const palco = document.getElementById('palco-wrap');
 palco.appendChild(montaCena(cena, geo, textos, links, ajustes.continuas || {}, ajustes.recortes || {}, ajustes.contornos || {}));
 
-// A entrada ocupa esta fração de um passo; o resto é respiro antes do próximo.
-const FRACAO_ENTRADA = 0.62;
 const PARALLAX = 14;   // unidades de palco
 
 const camadas = [...palco.querySelectorAll('.camada')].map((el, i) => {

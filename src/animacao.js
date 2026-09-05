@@ -26,6 +26,10 @@ export function chave(valores, t) {
 
 export const suavizar = (t) => (t < 0.5 ? 2 * t * t : 1 - (-2 * t + 2) ** 2 / 2);
 
+// Fração de um passo que a entrada de uma camada ocupa; o resto do passo é respiro.
+// A saída de uma camada substituída acontece exatamente no fim dessa janela.
+export const FRACAO_ENTRADA = 0.62;
+
 // Estado visual de uma camada num dado ponto da narrativa.
 // `avanco` é 0 antes de entrar e 1 quando a entrada terminou.
 export function estado(camada, avanco, cursor) {
@@ -34,18 +38,16 @@ export function estado(camada, avanco, cursor) {
   const partes = [];
   let opacidade = 1;
 
-  let opacidadeSaida = 1;
   const tipo = camada.entrada ? camada.entrada.tipo : 'fade';
   const ch = camada.entrada && camada.entrada.chaves;
 
   if (avanco <= 0) return { opacidade: 0, transform: '' };
 
-  // Objetos que o Keynote retira na virada de slide. Sem isso a peça velha da ponte fica
-  // desenhada sob a nova e a quebra do caminho vira uma sobreposição.
-  if (camada.fim != null) {
-    const saida = Math.min(Math.max(cursor - camada.fim + 1, 0), 1);
-    if (saida >= 1) return { opacidade: 0, transform: '' };
-    opacidadeSaida = 1 - suavizar(saida);
+  // Objetos que o Keynote retira na virada de slide. A peça que sai e a que entra ocupam o
+  // mesmo retângulo, então a troca é um corte seco no instante em que a nova termina de
+  // entrar: esmaecer a velha durante a entrada da nova deixaria o fundo aparecer no meio.
+  if (camada.fim != null && cursor >= camada.fim - 1 + FRACAO_ENTRADA) {
+    return { opacidade: 0, transform: '' };
   }
 
   if (tipo === 'pop') {
@@ -77,5 +79,5 @@ export function estado(camada, avanco, cursor) {
     }
   }
 
-  return { opacidade: opacidade * opacidadeSaida, transform: partes.join(' ') };
+  return { opacidade, transform: partes.join(' ') };
 }

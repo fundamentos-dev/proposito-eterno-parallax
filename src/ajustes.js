@@ -23,6 +23,12 @@ export const passos = {
   // as chamas não têm animação própria no deck (quem anima é o grupo), então herdaram um
   // passo cedo demais e o fogo aparecia antes do círculo da Geena
   g5929: 'circle4539',
+  // o título da 1ª morte e o thanatos pertencem à seta: entram com Gn 2:17, não antes dela
+  flowRoot4797: 'flowRoot6315',
+  flowRoot4813: 'flowRoot6315',
+  // estes dois textos ficam sobre o círculo amarelo; sem ele, flutuam no globo
+  text6005: 'circle4893',
+  text6387: 'circle4893',
 };
 
 // Ordem de camadas: joga um asset para trás de outro. (Nada por enquanto.)
