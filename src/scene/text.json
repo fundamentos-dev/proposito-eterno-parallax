@@ -1,0 +1,683 @@
+{
+ "flowRoot4633": {
+  "tipo": "linhas",
+  "rot": 0,
+  "linhas": [
+   {
+    "texto": "O propósito de Deus não é salvar o homem",
+    "x": 0,
+    "y": 6.64,
+    "size": 9.1
+   }
+  ],
+  "fill": "#808080",
+  "bold": false,
+  "italic": false,
+  "serif": false,
+  "viewBox": [
+   177.002,
+   8.261
+  ]
+ },
+ "flowRoot4641": {
+  "tipo": "linhas",
+  "rot": 0,
+  "linhas": [
+   {
+    "texto": "Gn 1:26",
+    "x": 0,
+    "y": 4.39,
+    "size": 6.22
+   }
+  ],
+  "fill": "#000000",
+  "bold": false,
+  "italic": false,
+  "serif": true,
+  "viewBox": [
+   21.044,
+   4.425
+  ]
+ },
+ "flowRoot4797": {
+  "tipo": "linhas",
+  "rot": 0,
+  "linhas": [
+   {
+    "texto": "1ª MORTE · SHEOL",
+    "x": 0,
+    "y": 6.97,
+    "size": 10.64
+   }
+  ],
+  "fill": "#ffffff",
+  "bold": false,
+  "italic": false,
+  "serif": true,
+  "viewBox": [
+   89.911,
+   7.601
+  ]
+ },
+ "flowRoot4813": {
+  "tipo": "linhas",
+  "rot": 0,
+  "linhas": [
+   {
+    "texto": "thanatos · 1Co 15:26, Ap 6:8, Rm 6:23, Hb:2",
+    "x": 0,
+    "y": 5.23,
+    "size": 7.04
+   }
+  ],
+  "fill": "#ffffff",
+  "bold": false,
+  "italic": false,
+  "serif": true,
+  "viewBox": [
+   136.527,
+   6.695
+  ]
+ },
+ "flowRoot58": {
+  "tipo": "linhas",
+  "rot": 0,
+  "linhas": [
+   {
+    "texto": "Propósito Eterno",
+    "x": 0,
+    "y": 16.38,
+    "size": 21.51
+   },
+   {
+    "texto": "de Deus",
+    "x": 0.26,
+    "y": 38.2,
+    "size": 21.51
+   }
+  ],
+  "fill": "#000000",
+  "bold": true,
+  "italic": false,
+  "serif": true,
+  "viewBox": [
+   169.319,
+   38.267
+  ]
+ },
+ "flowRoot5933": {
+  "tipo": "linhas",
+  "rot": 0,
+  "linhas": [
+   {
+    "texto": "O INÍCIO",
+    "x": 0.19,
+    "y": 9.9,
+    "size": 10.8
+   },
+   {
+    "texto": "Ef 1:4-5,11",
+    "x": 0,
+    "y": 23.03,
+    "size": 8.47
+   },
+   {
+    "texto": "Gn 1:26-28",
+    "x": 0.09,
+    "y": 36.15,
+    "size": 8.63
+   }
+  ],
+  "fill": "#000000",
+  "bold": false,
+  "italic": false,
+  "serif": false,
+  "viewBox": [
+   44.054,
+   36.417
+  ]
+ },
+ "flowRoot5943": {
+  "tipo": "linhas",
+  "rot": 0,
+  "linhas": [
+   {
+    "texto": "A QUEDA · O PECADO",
+    "x": 0,
+    "y": 7.25,
+    "size": 10.54
+   },
+   {
+    "texto": "Rm 5:12",
+    "x": 0.38,
+    "y": 20.53,
+    "size": 8.47
+   },
+   {
+    "texto": "Rm 3:12",
+    "x": 0.38,
+    "y": 33.77,
+    "size": 8.49
+   },
+   {
+    "texto": "Gn 5:3",
+    "x": 0.45,
+    "y": 47.03,
+    "size": 8.62
+   },
+   {
+    "texto": "Rm 3:23",
+    "x": 0.38,
+    "y": 60.24,
+    "size": 8.62
+   }
+  ],
+  "fill": "#000000",
+  "bold": true,
+  "italic": false,
+  "serif": true,
+  "viewBox": [
+   107.874,
+   60.281
+  ]
+ },
+ "flowRoot5959": {
+  "tipo": "linhas",
+  "rot": 0,
+  "linhas": [
+   {
+    "texto": "O RESGATE · JUSTIFICAÇÃO",
+    "x": 0.17,
+    "y": 9.66,
+    "size": 10.61
+   },
+   {
+    "texto": "Rm 6:3-7",
+    "x": 0,
+    "y": 22.71,
+    "size": 8.77
+   },
+   {
+    "texto": "2 Co 14-17 (nova vida)",
+    "x": 0.14,
+    "y": 36.18,
+    "size": 8.64
+   },
+   {
+    "texto": "Gl 2:20",
+    "x": 0.08,
+    "y": 49.35,
+    "size": 8.63
+   },
+   {
+    "texto": "Cl 1:27",
+    "x": 0.08,
+    "y": 62.61,
+    "size": 8.64
+   }
+  ],
+  "fill": "#000000",
+  "bold": true,
+  "italic": false,
+  "serif": true,
+  "viewBox": [
+   139.514,
+   62.825
+  ]
+ },
+ "flowRoot6020": {
+  "tipo": "linhas",
+  "rot": 0,
+  "linhas": [
+   {
+    "texto": "JUSTIFICAÇÃO",
+    "x": 0,
+    "y": 9.71,
+    "size": 10.54
+   },
+   {
+    "texto": "·",
+    "x": 85.43,
+    "y": 9.71,
+    "size": 10.54
+   },
+   {
+    "texto": "SANTIFICAÇÃO",
+    "x": 98.26,
+    "y": 9.71,
+    "size": 10.54
+   },
+   {
+    "texto": "·",
+    "x": 185.39,
+    "y": 9.71,
+    "size": 10.54
+   },
+   {
+    "texto": "REDENÇÃO",
+    "x": 197.92,
+    "y": 9.71,
+    "size": 10.54
+   }
+  ],
+  "fill": "#000000",
+  "bold": true,
+  "italic": false,
+  "serif": true,
+  "viewBox": [
+   254.874,
+   12.054
+  ]
+ },
+ "flowRoot6067": {
+  "tipo": "linhas",
+  "rot": 0,
+  "linhas": [
+   {
+    "texto": "Espírito",
+    "x": 0.49,
+    "y": 6.37,
+    "size": 8.34
+   },
+   {
+    "texto": "Rm 3:23-35",
+    "x": 0.53,
+    "y": 17.09,
+    "size": 8.63
+   },
+   {
+    "texto": "Rm 5:8-10",
+    "x": 0.53,
+    "y": 27.65,
+    "size": 8.49
+   },
+   {
+    "texto": "Ef 2:4-6",
+    "x": 0.53,
+    "y": 38.22,
+    "size": 8.88
+   },
+   {
+    "texto": "Rm 6:3-7",
+    "x": 0,
+    "y": 48.85,
+    "size": 8.8
+   }
+  ],
+  "fill": "#000000",
+  "bold": false,
+  "italic": false,
+  "serif": false,
+  "viewBox": [
+   43.594,
+   49.32
+  ]
+ },
+ "flowRoot6124": {
+  "tipo": "linhas",
+  "rot": 0,
+  "linhas": [
+   {
+    "texto": "Tessalonicenses 5:23",
+    "x": 0,
+    "y": 4.71,
+    "size": 6.37
+   }
+  ],
+  "fill": "#000000",
+  "bold": false,
+  "italic": false,
+  "serif": true,
+  "viewBox": [
+   57.432,
+   4.743
+  ]
+ },
+ "flowRoot6140": {
+  "tipo": "linhas",
+  "rot": 0,
+  "linhas": [
+   {
+    "texto": "Alma",
+    "x": 0,
+    "y": 6.28,
+    "size": 8.43
+   },
+   {
+    "texto": "1Ts 4:7",
+    "x": 0.89,
+    "y": 16.97,
+    "size": 8.8
+   },
+   {
+    "texto": "Rm 6:22",
+    "x": 0.37,
+    "y": 27.46,
+    "size": 8.49
+   },
+   {
+    "texto": "1 Pe 1:5-15",
+    "x": 0.89,
+    "y": 37.85,
+    "size": 8.49
+   },
+   {
+    "texto": "Fp 2:12-16",
+    "x": 0.3,
+    "y": 48.47,
+    "size": 8.49
+   }
+  ],
+  "fill": "#000000",
+  "bold": false,
+  "italic": false,
+  "serif": true,
+  "viewBox": [
+   42.052,
+   50.436
+  ]
+ },
+ "flowRoot6175": {
+  "tipo": "linhas",
+  "rot": 0,
+  "linhas": [
+   {
+    "texto": "Corpo",
+    "x": 0.13,
+    "y": 5.93,
+    "size": 8.64
+   },
+   {
+    "texto": "1 Ts 4:13",
+    "x": 0.58,
+    "y": 16.45,
+    "size": 8.49
+   },
+   {
+    "texto": "Rm 8:17-18",
+    "x": 0.06,
+    "y": 26.84,
+    "size": 8.72
+   },
+   {
+    "texto": "Fp 3:20,21",
+    "x": 0,
+    "y": 37.72,
+    "size": 8.49
+   },
+   {
+    "texto": "1 Co 15. 42-44",
+    "x": 0.58,
+    "y": 48.07,
+    "size": 8.64
+   }
+  ],
+  "fill": "#000000",
+  "bold": false,
+  "italic": false,
+  "serif": true,
+  "viewBox": [
+   54.639,
+   48.429
+  ]
+ },
+ "flowRoot6261": {
+  "tipo": "linhas",
+  "rot": 0,
+  "linhas": [
+   {
+    "texto": "predestinação? *",
+    "x": 0.33,
+    "y": 5.97,
+    "size": 9.27
+   },
+   {
+    "texto": "- 1 Tm 2:4",
+    "x": 0,
+    "y": 15.47,
+    "size": 8.31
+   },
+   {
+    "texto": "- 2 Pe 3:9",
+    "x": 0,
+    "y": 25.22,
+    "size": 8.62
+   },
+   {
+    "texto": "- 1 Pe 1:2",
+    "x": 0,
+    "y": 34.89,
+    "size": 8.31
+   }
+  ],
+  "fill": "#000000",
+  "bold": false,
+  "italic": false,
+  "serif": false,
+  "viewBox": [
+   65.265,
+   35.243
+  ]
+ },
+ "flowRoot6315": {
+  "tipo": "linhas",
+  "rot": 51.24,
+  "linhas": [
+   {
+    "texto": "Gn 2:17",
+    "x": -1.13,
+    "y": 2.55,
+    "size": 8.64
+   }
+  ],
+  "fill": "#ffffff",
+  "bold": false,
+  "italic": false,
+  "serif": true,
+  "viewBox": [
+   21.698,
+   23.34
+  ]
+ },
+ "flowRoot6339": {
+  "tipo": "linhas",
+  "rot": 0,
+  "linhas": [
+   {
+    "texto": "Rm 8:28-29",
+    "x": 0,
+    "y": 7.14,
+    "size": 10.88
+   }
+  ],
+  "fill": "#000000",
+  "bold": true,
+  "italic": false,
+  "serif": true,
+  "viewBox": [
+   56.693,
+   7.81
+  ]
+ },
+ "flowRoot6357": {
+  "tipo": "linhas",
+  "rot": 0,
+  "linhas": [
+   {
+    "texto": "Ef 4:24 - Criado segundo Deus (falando do espírito)",
+    "x": 0,
+    "y": 6.39,
+    "size": 8.64
+   }
+  ],
+  "fill": "#000000",
+  "bold": false,
+  "italic": false,
+  "serif": true,
+  "viewBox": [
+   190.324,
+   8.145
+  ]
+ },
+ "text4775": {
+  "tipo": "curvo",
+  "texto": "ETERNIDADE PASSADA Sl 30:2",
+  "cx": 71.39,
+  "cy": 72.39,
+  "r": 69.79,
+  "a0": -170.67,
+  "arco": 80.28,
+  "size": 7.06,
+  "fill": "#000000",
+  "bold": false,
+  "italic": false,
+  "serif": true,
+  "viewBox": [
+   72.546,
+   63.122
+  ]
+ },
+ "text6005": {
+  "tipo": "curvo",
+  "texto": "A ESTRATÉGIA · A IGREJA",
+  "cx": 67.19,
+  "cy": 71.1,
+  "r": 67.74,
+  "a0": -160,
+  "arco": 101.4,
+  "size": 7.76,
+  "fill": "#000000",
+  "bold": false,
+  "italic": false,
+  "serif": true,
+  "viewBox": [
+   105.52,
+   51.243
+  ]
+ },
+ "text6040": {
+  "tipo": "curvo",
+  "texto": "2ª MORTE · INFERNO · GEENA",
+  "cx": 13.21,
+  "cy": 47.01,
+  "r": 44.97,
+  "a0": -104.81,
+  "arco": 111.3,
+  "size": 6.35,
+  "fill": "#000000",
+  "bold": false,
+  "italic": false,
+  "serif": true,
+  "viewBox": [
+   60.369,
+   54.173
+  ]
+ },
+ "text6203": {
+  "tipo": "curvo",
+  "texto": "ETERNIDADE FUTURA",
+  "cx": -52.72,
+  "cy": 71.45,
+  "r": 88.06,
+  "a0": -49.63,
+  "arco": 67.66,
+  "size": 10.58,
+  "fill": "#ffffff",
+  "bold": false,
+  "italic": false,
+  "serif": true,
+  "viewBox": [
+   39.09,
+   101.908
+  ]
+ },
+ "text6281": {
+  "tipo": "linhas",
+  "rot": 0,
+  "linhas": [
+   {
+    "texto": "* O propósito então não foi para todos e Deus precisava do pecado para salvar os escolhidos",
+    "x": 0,
+    "y": 5.7,
+    "size": 7.84
+   }
+  ],
+  "fill": "#aa0000",
+  "bold": false,
+  "italic": false,
+  "serif": false,
+  "viewBox": [
+   328.517,
+   7.111
+  ]
+ },
+ "text6327": {
+  "tipo": "curvo",
+  "texto": "Mt 25:41",
+  "cx": 43.39,
+  "cy": -21.14,
+  "r": 46.55,
+  "a0": 146.78,
+  "arco": -33.12,
+  "size": 8.47,
+  "fill": "#101010",
+  "bold": false,
+  "italic": false,
+  "serif": true,
+  "viewBox": [
+   26.809,
+   24.729
+  ]
+ },
+ "text6387": {
+  "tipo": "curvo",
+  "texto": "Ef 4:11-16 · Cl 2:19",
+  "cx": 50.53,
+  "cy": 58.16,
+  "r": 54.62,
+  "a0": -148.74,
+  "arco": 78.41,
+  "size": 10.58,
+  "fill": "#000000",
+  "bold": false,
+  "italic": false,
+  "serif": false,
+  "viewBox": [
+   71.435,
+   32.993
+  ]
+ },
+ "image132": {
+  "tipo": "linhas",
+  "rot": 0,
+  "fill": "#000000",
+  "bold": false,
+  "italic": false,
+  "serif": true,
+  "viewBox": [
+   51.065,
+   22.225
+  ],
+  "linhas": [
+   {
+    "texto": "כִּדְמוּתֵנוּ",
+    "x": 3.44,
+    "y": 6.88,
+    "size": 8.5,
+    "rtl": true
+   },
+   {
+    "texto": "kidemutenu",
+    "x": 3.44,
+    "y": 13.23,
+    "size": 5.3
+   },
+   {
+    "texto": "à-nossa-semelhança",
+    "x": 3.44,
+    "y": 19.58,
+    "size": 5.3
+   }
+  ]
+ }
+}

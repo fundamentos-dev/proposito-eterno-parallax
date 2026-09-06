@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Nuvens da eternidade futura: os desenhos de public/nuvens/*.png.
+     O href é relativo ao documento de propósito — o site é publicado com `base: './'`,
+     então uma URL absoluta quebraria em qualquer subdiretório.
+     O banco é desenhado duas vezes lado a lado (0..587 e 587..1174) para que o deslize de
+     uma largura inteira volte ao ponto de partida sem emenda; quem prende tudo dentro do
+     círculo é o recorte declarado em src/ajustes.js. -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+     width="587" height="587" viewBox="0 0 587 587">
+  <defs>
+    <g id="banco-de-nuvens">
+      <image xlink:href="nuvens/nuvem003.png" x="14"  y="252" width="300" height="192" opacity="0.58"/>
+      <image xlink:href="nuvens/nuvem001.png" x="248" y="104" width="250" height="143" opacity="0.5"/>
+      <image xlink:href="nuvens/nuvem002.png" x="398" y="296" width="210" height="126" opacity="0.46"/>
+      <image xlink:href="nuvens/nuvem002.png" x="86"  y="418" width="170" height="102" opacity="0.4"/>
+      <image xlink:href="nuvens/nuvem001.png" x="326" y="424" width="190" height="109" opacity="0.44"/>
+      <image xlink:href="nuvens/nuvem003.png" x="118" y="146" width="160" height="102" opacity="0.34"/>
+      <image xlink:href="nuvens/nuvem001.png" x="474" y="166" width="150" height="86"  opacity="0.36"/>
+    </g>
+  </defs>
+  <g class="deriva">
+    <use xlink:href="#banco-de-nuvens"/>
+    <use xlink:href="#banco-de-nuvens" transform="translate(587,0)"/>
+  </g>
+</svg>
