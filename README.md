@@ -10,6 +10,8 @@ Rm 8:28-29
 
 ## Sobre
 
+![Banner do Propósito Eterno](https://github.com/fundamentos-dev/proposito-eterno-parallax/blob/main/src/assets/proposito_eterno_preview.jpg?raw=true)
+
 Versão web da apresentação que estava no ar em https://propositoeterno.filipelopes.me/,
 que era um export HTML do Keynote (branch `feature/keynote-version`).
 
