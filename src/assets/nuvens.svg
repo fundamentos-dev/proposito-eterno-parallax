@@ -1,24 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Nuvens da eternidade futura. Desenhadas duas vezes lado a lado (0..587 e 587..1174)
-     para que o deslize de uma largura inteira volte ao ponto de partida sem emenda.
-     Quem as prende dentro do círculo é o recorte declarado em src/ajustes.js. -->
+<!-- Nuvens da eternidade futura: os desenhos de public/nuvens/*.png.
+     O href é relativo ao documento de propósito — o site é publicado com `base: './'`,
+     então uma URL absoluta quebraria em qualquer subdiretório.
+     O banco é desenhado duas vezes lado a lado (0..587 e 587..1174) para que o deslize de
+     uma largura inteira volte ao ponto de partida sem emenda; quem prende tudo dentro do
+     círculo é o recorte declarado em src/ajustes.js. -->
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
      width="587" height="587" viewBox="0 0 587 587">
   <defs>
-    <g id="nuvem">
-      <ellipse cx="0" cy="0" rx="78" ry="17"/>
-      <ellipse cx="-30" cy="-9" rx="36" ry="19"/>
-      <ellipse cx="14" cy="-13" rx="45" ry="24"/>
-      <ellipse cx="52" cy="-3" rx="30" ry="15"/>
-    </g>
-    <g id="banco-de-nuvens" fill="#ffffff">
-      <g opacity="0.20"><use xlink:href="#nuvem" transform="translate(96,150) scale(0.85)"/></g>
-      <g opacity="0.14"><use xlink:href="#nuvem" transform="translate(330,92) scale(0.62)"/></g>
-      <g opacity="0.24"><use xlink:href="#nuvem" transform="translate(268,232) scale(1.05)"/></g>
-      <g opacity="0.13"><use xlink:href="#nuvem" transform="translate(482,205) scale(0.7)"/></g>
-      <g opacity="0.19"><use xlink:href="#nuvem" transform="translate(140,352) scale(0.78)"/></g>
-      <g opacity="0.15"><use xlink:href="#nuvem" transform="translate(404,404) scale(0.95)"/></g>
-      <g opacity="0.11"><use xlink:href="#nuvem" transform="translate(214,478) scale(0.6)"/></g>
+    <g id="banco-de-nuvens">
+      <image xlink:href="nuvens/nuvem003.png" x="14"  y="252" width="300" height="192" opacity="0.58"/>
+      <image xlink:href="nuvens/nuvem001.png" x="248" y="104" width="250" height="143" opacity="0.5"/>
+      <image xlink:href="nuvens/nuvem002.png" x="398" y="296" width="210" height="126" opacity="0.46"/>
+      <image xlink:href="nuvens/nuvem002.png" x="86"  y="418" width="170" height="102" opacity="0.4"/>
+      <image xlink:href="nuvens/nuvem001.png" x="326" y="424" width="190" height="109" opacity="0.44"/>
+      <image xlink:href="nuvens/nuvem003.png" x="118" y="146" width="160" height="102" opacity="0.34"/>
+      <image xlink:href="nuvens/nuvem001.png" x="474" y="166" width="150" height="86"  opacity="0.36"/>
     </g>
   </defs>
   <g class="deriva">

@@ -36,14 +36,17 @@ export const passos = {
   // o título da 1ª morte e o thanatos pertencem à seta: entram com Gn 2:17, não antes dela
   flowRoot4797: 9,
   flowRoot4813: 9,
+  // "A QUEDA · O PECADO" nomeia a seta vermelha: entra com ela, não um passo depois
+  flowRoot5943: 7,
   // a cruz e o caminho verde que ela devolve
   'forma-127x506': 11,
   rect4678: 11,
   rect4680: 11,
-  // o que a cruz significa entra com ela: o texto do resgate e Ts 5:23, isolado lá em cima
+  // o que a cruz significa entra com ela
   flowRoot5959: 11,
-  flowRoot6124: 11,
-  // a bola amarela da igreja e os textos que a rotulam (estes entram atrasados, ver `ritmo`)
+  // Ts 5:23 é o versículo das três colunas; só faz sentido quando a última fecha o trio
+  flowRoot6124: 15,
+  // a bola amarela da igreja, que já entra crescendo (ver `transicoes`), e os seus textos
   path4835: 13,
   circle4893: 13,
   text6005: 13,
@@ -53,10 +56,11 @@ export const passos = {
 // Passos da narrativa. O deck vinha com 18; um passo morto saiu do meio.
 export const passosTotais = 17;
 
-// Renumeração do "magic move" pela mesma razão: o círculo da igreja cresce no passo final.
+// Renumeração do "magic move": o círculo da igreja crescia no passo final, longe do
+// texto que o nomeia. Ele passa a crescer no passo em que entra, junto com o texto.
 export const transicoes = {
-  path4835: { 17: 16 },
-  circle4893: { 17: 16 },
+  path4835: { 17: 13 },
+  circle4893: { 17: 13 },
 };
 
 // Camadas que não entram em cena. As três peças verdes que o Keynote trazia de volta
@@ -86,13 +90,6 @@ export const extras = [
   { asset: 'nuvens', apos: 'circle6215', passo: 16, x: 2247, y: 322, w: 587, h: 587 },
 ];
 
-// Ritmo de entrada, em frações de passo: `atraso` segura a camada, `duracao` estica a
-// entrada. "A ESTRATÉGIA · A IGREJA" rotula a bola amarela, então espera a bola aparecer.
-export const ritmo = {
-  text6005: { atraso: 0.42, duracao: 1.5 },
-  text6387: { atraso: 0.42, duracao: 1.5 },
-};
-
 // Ordem de camadas: joga um asset para trás de outro. (Nada por enquanto.)
 export const ordem = {};
 
@@ -110,7 +107,10 @@ export const contornos = {
 export const ponte = {
   aPartirDe: 1700,                       // só as peças à direita desta coordenada de palco
   nivelar: { path4731: 762, path4734: 770 },
-  saida: 7,                              // somem junto com a queda; ver `remover`
+  // Só as peças que deslizam somem quando a queda acontece: são exatamente as que a cruz
+  // devolve depois (rect4678/rect4680). As que chegam à eternidade futura ficam — o
+  // caminho não some inteiro, ele fica interrompido no ponto do corte.
+  saida: 7,
 };
 
 // Camadas com animação contínua (não ligada à rolagem).

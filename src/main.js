@@ -28,9 +28,13 @@ if (ajustes.ponte) {
     if (xFinal < ajustes.ponte.aPartirDe) continue;
     c.y = y;
     if (c.transicoes) c.transicoes = c.transicoes.map((t) => ({ ...t, dy: 0 }));
-    // depois do corte não há caminho: essas peças esmaecem junto com a queda e o verde
-    // só volta com a cruz (rect4678/rect4680)
-    if (ajustes.ponte.saida != null) { c.saida = ajustes.ponte.saida; c.transicoes = []; }
+    // A peça que desliza na virada é a que a cruz devolve depois; em vez de deslizar,
+    // ela esmaece junto com a queda. As demais ficam: o caminho não some inteiro, fica
+    // interrompido no ponto do corte.
+    if (ajustes.ponte.saida != null && (c.transicoes || []).some((t) => t.dx)) {
+      c.saida = ajustes.ponte.saida;
+      c.transicoes = [];
+    }
   }
 }
 
@@ -89,14 +93,10 @@ const PARALLAX = 14;   // unidades de palco
 
 const camadas = [...palco.querySelectorAll('.camada')].map((el, i) => {
   const dados = cena.camadas[i];
-  const ritmo = (ajustes.ritmo || {})[dados.asset.id] || {};
   return {
     el,
     dados,
     passo: dados.step ?? 0,
-    // atraso e duração em frações de passo: deixam um rótulo esperar o objeto que rotula
-    atraso: ritmo.atraso || 0,
-    duracao: ritmo.duracao || 1,
     profundidade: cena.camadas.length > 1 ? i / (cena.camadas.length - 1) : 0,
   };
 });
@@ -112,8 +112,7 @@ function progresso() {
 function pinta(p) {
   const cursor = p * cena.passos;
   for (const c of camadas) {
-    const janela = FRACAO_ENTRADA * c.duracao;
-    const avanco = Math.min(Math.max((cursor - c.passo + 1 - c.atraso) / janela, 0), 1);
+    const avanco = Math.min(Math.max((cursor - c.passo + 1) / FRACAO_ENTRADA, 0), 1);
     const { opacidade, transform } = estado(c.dados, avanco, cursor);
     c.el.style.opacity = opacidade;
     c.el.style.visibility = opacidade <= 0.002 ? 'hidden' : 'visible';
