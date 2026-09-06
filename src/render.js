@@ -96,7 +96,8 @@ function desenhaTexto(grupo, geo, linhas, id, fatia) {
   });
 }
 
-export function montaCena(cena, geometria, textos, links, continuas = {}, recortes = {}, contornos = {}) {
+export function montaCena(cena, geometria, textos, links, ajustes = {}) {
+  const { continuas = {}, recortes = {}, contornos = {}, revelacoes = {} } = ajustes;
   const svg = el('svg', {
     viewBox: `0 0 ${cena.palco.width} ${cena.palco.height}`,
     xmlns: NS, id: 'palco',
@@ -131,6 +132,17 @@ export function montaCena(cena, geometria, textos, links, continuas = {}, recort
     const g = el('g', { class: 'camada', 'data-passo': c.step, 'data-asset': c.asset.id });
     if (continuas[c.asset.id]) g.classList.add(`anima-${continuas[c.asset.id]}`);
     if (clipDe[c.asset.id]) g.setAttribute('clip-path', `url(#${clipDe[c.asset.id]})`);
+
+    // revelação: em vez de esmaecer, a camada é descoberta por uma faixa que cresce.
+    // Aqui só se monta o recorte; quem move a borda a cada quadro é o controlador.
+    if (revelacoes[c.asset.id]) {
+      const id = `revela-${c.asset.id}-${c.z}`;
+      const cp = el('clipPath', { id, clipPathUnits: 'userSpaceOnUse' });
+      cp.appendChild(el('rect', { x: c.x - 1, y: c.y - 1, width: c.w + 2, height: 0 }));
+      defsGlobais.appendChild(cp);
+      g.setAttribute('clip-path', `url(#${id})`);
+      g.setAttribute('data-revela', id);
+    }
     const dentro = el('g', {
       transform: `translate(${c.x},${c.y}) scale(${(c.w / cx.w).toFixed(6)},${(c.h / cx.h).toFixed(6)})`
         + (c.rotation ? ` rotate(${c.rotation * 180 / Math.PI},${cx.w / 2},${cx.h / 2})` : ''),

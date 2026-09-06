@@ -107,10 +107,18 @@ export const contornos = {
 export const ponte = {
   aPartirDe: 1700,                       // só as peças à direita desta coordenada de palco
   nivelar: { path4731: 762, path4734: 770 },
-  // Só as peças que deslizam somem quando a queda acontece: são exatamente as que a cruz
-  // devolve depois (rect4678/rect4680). As que chegam à eternidade futura ficam — o
-  // caminho não some inteiro, ele fica interrompido no ponto do corte.
-  saida: 7,
+  // Só as peças que deslizam saem de cena quando a queda acontece: são exatamente as que
+  // a cruz devolve depois (rect4678/rect4680). Elas esmaecem ao longo do passo inteiro,
+  // enquanto ainda deslizam, para o buraco abrir num movimento e não num corte. As que
+  // chegam à eternidade futura ficam — o caminho não some inteiro, fica interrompido.
+  saida: { passo: 7, janela: 1 },
+  fim: 11,                               // as que ficaram dão lugar ao caminho da cruz
+};
+
+// Revelação: em vez de esmaecer, a camada é descoberta por uma faixa que desce sobre ela.
+// A seta da queda é desenhada de cima para baixo, no sentido em que se lê a queda.
+export const revelacoes = {
+  'forma-1173x520': 'cima',
 };
 
 // Camadas com animação contínua (não ligada à rolagem).

@@ -28,12 +28,16 @@ if (ajustes.ponte) {
     if (xFinal < ajustes.ponte.aPartirDe) continue;
     c.y = y;
     if (c.transicoes) c.transicoes = c.transicoes.map((t) => ({ ...t, dy: 0 }));
-    // A peça que desliza na virada é a que a cruz devolve depois; em vez de deslizar,
-    // ela esmaece junto com a queda. As demais ficam: o caminho não some inteiro, fica
-    // interrompido no ponto do corte.
-    if (ajustes.ponte.saida != null && (c.transicoes || []).some((t) => t.dx)) {
-      c.saida = ajustes.ponte.saida;
-      c.transicoes = [];
+    // A peça que desliza na virada é a que a cruz devolve depois. Ela sai deslizando para
+    // a direita enquanto esmaece — o buraco abre num movimento, não num corte. As demais
+    // ficam: o caminho não some inteiro, fica interrompido no ponto do corte.
+    if (ajustes.ponte.saida && (c.transicoes || []).some((t) => t.dx)) {
+      c.saida = ajustes.ponte.saida.passo;
+      c.saidaJanela = ajustes.ponte.saida.janela;
+    } else if (ajustes.ponte.fim != null) {
+      // as que ficam saem no instante em que a cruz termina de trazer o caminho dela:
+      // são o mesmo verde no mesmo lugar, e sobrepostas as bordas se somam
+      c.fim = ajustes.ponte.fim;
     }
   }
 }
@@ -87,15 +91,18 @@ for (const [id, regra] of Object.entries(ajustes.ordem || {})) {
 }
 
 const palco = document.getElementById('palco-wrap');
-palco.appendChild(montaCena(cena, geo, textos, links, ajustes.continuas || {}, ajustes.recortes || {}, ajustes.contornos || {}));
+palco.appendChild(montaCena(cena, geo, textos, links, ajustes));
 
 const PARALLAX = 14;   // unidades de palco
 
 const camadas = [...palco.querySelectorAll('.camada')].map((el, i) => {
   const dados = cena.camadas[i];
+  const revela = el.getAttribute('data-revela');
   return {
     el,
     dados,
+    // a faixa que descobre a camada, quando ela entra por revelação (ver src/render.js)
+    faixa: revela ? document.getElementById(revela).firstElementChild : null,
     passo: dados.step ?? 0,
     profundidade: cena.camadas.length > 1 ? i / (cena.camadas.length - 1) : 0,
   };
@@ -114,8 +121,11 @@ function pinta(p) {
   for (const c of camadas) {
     const avanco = Math.min(Math.max((cursor - c.passo + 1) / FRACAO_ENTRADA, 0), 1);
     const { opacidade, transform } = estado(c.dados, avanco, cursor);
-    c.el.style.opacity = opacidade;
-    c.el.style.visibility = opacidade <= 0.002 ? 'hidden' : 'visible';
+    // numa revelação a camada não esmaece: ela é descoberta de cima para baixo, e o que
+    // avança é a borda da faixa que a recorta
+    if (c.faixa) c.faixa.setAttribute('height', (c.dados.h * suavizar(avanco)).toFixed(2));
+    c.el.style.opacity = c.faixa ? (avanco > 0 ? 1 : 0) : opacidade;
+    c.el.style.visibility = c.el.style.opacity <= 0.002 ? 'hidden' : 'visible';
     // um leve deslocamento por profundidade dá relevo à rolagem sem competir com a animação
     const desloc = (1 - suavizar(avanco)) * PARALLAX * (0.3 + c.profundidade);
     c.el.setAttribute('transform', desloc > 0.01 ? `translate(0,${desloc.toFixed(2)}) ${transform}` : transform);

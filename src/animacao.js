@@ -70,7 +70,8 @@ export function estado(camada, avanco, cursor) {
   // Saída suave: o oposto do `fim`. A ponte à direita do corte não é substituída por
   // nada — some enquanto a queda acontece, e um corte seco ali apareceria como um susto.
   if (camada.saida != null) {
-    const recuo = Math.min(Math.max((cursor - camada.saida + 1) / FRACAO_ENTRADA, 0), 1);
+    const janela = camada.saidaJanela || FRACAO_ENTRADA;
+    const recuo = Math.min(Math.max((cursor - camada.saida + 1) / janela, 0), 1);
     if (recuo >= 1) return { opacidade: 0, transform: '' };
     opacidade *= 1 - suavizar(recuo);
   }
