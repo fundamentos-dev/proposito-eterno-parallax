@@ -1,6 +1,10 @@
 // Correções manuais sobre os dados extraídos. Fica separado de src/scene/*.json porque
 // aqueles são gerados: reextrair sobrescreve lá, não aqui.
 
+// Título da cena: sobrescreve scene.json (usado como aria-label do SVG). O extraído do
+// Keynote tem erro de digitação e o sufixo "- Animação", que não fazem sentido fora do deck.
+export const titulo = 'Propósito Eterno de Deus';
+
 // Geometria de texto: sobrescreve campos de src/scene/text.json.
 export const geometria = {
   // afasta "Mt 25:41" da borda vermelha da Geena

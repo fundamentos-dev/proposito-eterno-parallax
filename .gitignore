@@ -26,3 +26,4 @@ dist-ssr
 
 # saída de ferramentas de teste de navegador
 .playwright-cli/
+.playwright-mcp/

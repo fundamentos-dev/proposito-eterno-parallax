@@ -11,6 +11,7 @@ import { estado, suavizar, FRACAO_ENTRADA } from './animacao.js';
 import { montaGlobo } from './globo.js';
 
 // correções manuais sobre os dados gerados (ver src/ajustes.js)
+if (ajustes.titulo) cena.titulo = ajustes.titulo;
 const geo = { ...geometria };
 for (const [id, campos] of Object.entries(ajustes.geometria || {})) {
   if (geo[id]) geo[id] = { ...geo[id], ...campos };
@@ -174,6 +175,5 @@ addEventListener('keydown', (e) => {
   else if (e.key === 'End') { e.preventDefault(); vaiPara(cena.passos); }
 });
 
-document.title = cena.titulo;
 agenda();
 pinta(0);
