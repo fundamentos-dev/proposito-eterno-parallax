@@ -90,7 +90,8 @@ arquivo do deck, não são invenção. São quatro formas, em [`src/animacao.js`
 | `fogo` | cada língua de fogo pulsa em ritmo próprio, contínua | as chamas da Geena |
 | `pop` | escala `[0,001 · 1,125 · 0,952 · 1]` — cresce passando do alvo e assenta | o hebraico e Gn 1:26 |
 | `queda` | deslocamento vertical `[-816 · 0 · -190 · 0]` — cai, bate, quica | a árvore |
-| `giro` | rotação em Y `[-1,571 · 0,233 · -0,05 · 0]` rad | o globo, virando como uma placa |
+| globo 3D | uma volta sobre o próprio eixo, vinculada à rolagem | a Terra, com entrada suave |
+| `giro` | rotação em Y `[-1,571 · 0,233 · -0,05 · 0]` rad | alternativa SVG quando WebGL não está disponível |
 
 Na virada de slide o Keynote faz *magic move*, e é dele que vêm dois momentos da narrativa:
 
@@ -98,8 +99,19 @@ Na virada de slide o Keynote faz *magic move*, e é dele que vêm dois momentos 
   onde a seta da 1ª morte desce;
 - o **círculo da igreja cresce 15,4×**, de um ponto de 33px até os ~550px do desenho original.
 
-SVG não tem rotação em Y; o giro do globo é aproximado pela projeção de uma placa girando
-(o cosseno do ângulo aplicado na escala horizontal).
+O globo usa WebGL nativo em [`src/globo.js`](src/globo.js), sem dependências 3D.
+Um shader projeta o mapa em uma esfera com iluminação suave, mantendo os cinzas do
+desenho. O canvas ocupa a camada original no SVG, atrás dos textos e demais formas.
+A rolagem controla uma volta completa desde a entrada até o fim da narrativa; voltar
+a página inverte o movimento. Sem rolagem não há loop de renderização, e a resolução
+é limitada a 1536px e densidade 2 para conter o custo da GPU.
+
+Com `prefers-reduced-motion`, a esfera permanece numa orientação fixa. Se WebGL ou a
+textura falharem, ou se o contexto gráfico for perdido, o desenho SVG original reaparece.
+O contexto restaurado reativa o 3D. A textura local
+[`src/assets/mapa-terra.svg`](src/assets/mapa-terra.svg) usa os contornos `ne_110m_land`
+do [Natural Earth](https://www.naturalearthdata.com/), em domínio público; não há
+download de mapas de terceiros durante a visita.
 
 ## Ajustes manuais
 

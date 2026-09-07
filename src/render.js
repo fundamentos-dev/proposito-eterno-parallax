@@ -1,7 +1,7 @@
 // Monta a cena como um único SVG em coordenadas de palco (3058x1560).
 // Formas vêm dos SVGs originais; texto é <text>/<textPath> de verdade, nunca vetorizado.
 
-const brutos = import.meta.glob('./assets/**/*.svg', { query: '?raw', import: 'default', eager: true });
+const brutos = import.meta.glob(['./assets/**/*.svg', '!./assets/mapa-terra.svg'], { query: '?raw', import: 'default', eager: true });
 
 const svgPorId = {};
 for (const [caminho, conteudo] of Object.entries(brutos)) {

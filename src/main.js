@@ -8,6 +8,7 @@ import { textos, links } from './conteudo.js';
 import * as ajustes from './ajustes.js';
 import { montaCena } from './render.js';
 import { estado, suavizar, FRACAO_ENTRADA } from './animacao.js';
+import { montaGlobo } from './globo.js';
 
 // correções manuais sobre os dados gerados (ver src/ajustes.js)
 const geo = { ...geometria };
@@ -110,6 +111,7 @@ const camadas = [...palco.querySelectorAll('.camada')].map((el, i) => {
 
 const trilha = document.getElementById('trilha');
 trilha.style.height = `${(cena.passos + 1) * 85}vh`;
+const globo = montaGlobo(palco, cena, agenda);
 
 function progresso() {
   const total = trilha.offsetHeight - window.innerHeight;
@@ -118,9 +120,13 @@ function progresso() {
 
 function pinta(p) {
   const cursor = p * cena.passos;
+  globo?.atualiza(cursor);
   for (const c of camadas) {
     const avanco = Math.min(Math.max((cursor - c.passo + 1) / FRACAO_ENTRADA, 0), 1);
-    const { opacidade, transform } = estado(c.dados, avanco, cursor);
+    // A esfera entra por fade: girar a camada SVG achataria o volume 3D.
+    const esfera = globo?.ativo && ['circle18', 'g4676'].includes(c.dados.asset.id);
+    const dados = esfera ? { ...c.dados, entrada: { tipo: 'fade' } } : c.dados;
+    const { opacidade, transform } = estado(dados, avanco, cursor);
     // numa revelação a camada não esmaece: ela é descoberta de cima para baixo, e o que
     // avança é a borda da faixa que a recorta
     if (c.faixa) c.faixa.setAttribute('height', (c.dados.h * suavizar(avanco)).toFixed(2));

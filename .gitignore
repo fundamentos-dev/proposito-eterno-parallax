@@ -25,4 +25,4 @@ dist-ssr
 *.sw?
 
 # saída de ferramentas de teste de navegador
-.playwright-mcp/
+.playwright-cli/
