@@ -1,6 +1,8 @@
 // Monta a cena como um único SVG em coordenadas de palco (3058x1560).
 // Formas vêm dos SVGs originais; texto é <text>/<textPath> de verdade, nunca vetorizado.
 
+import { aspectosDoPecado } from './conteudo.js';
+
 const brutos = import.meta.glob(['./assets/**/*.svg', '!./assets/mapa-terra.svg'], { query: '?raw', import: 'default', eager: true });
 
 const svgPorId = {};
@@ -96,6 +98,40 @@ function desenhaTexto(grupo, geo, linhas, id, fatia) {
   });
 }
 
+function desenhaQueda(grupo, geo, linhas) {
+  const [titulo, referencias] = geo.linhas;
+  desenhaTexto(grupo, {
+    ...geo,
+    linhas: [titulo, { ...referencias, x: titulo.x, y: 20.5, size: 7.6 }],
+  }, linhas);
+
+  // Mesmos preenchimentos das colunas Justificação, Santificação e Glorificação
+  // em forma-1155x1681.svg.
+  const cores = ['#d0c8e7', '#bfb4df', '#afa1d6'];
+  const defs = el('defs');
+  grupo.appendChild(defs);
+  const altura = 13;
+  aspectosDoPecado.forEach(({ titulo, referencias }, i) => {
+    const id = `fundo-aspecto-pecado-${i}`;
+    const gradiente = el('linearGradient', { id });
+    gradiente.append(
+      el('stop', { offset: '58%', 'stop-color': cores[i] }),
+      el('stop', { offset: '100%', 'stop-color': cores[i], 'stop-opacity': 0 }),
+    );
+    defs.appendChild(gradiente);
+
+    const y = 25.5 + i * (altura + 2);
+    grupo.appendChild(el('rect', { x: -4, y, width: 145, height: altura, fill: `url(#${id})` }));
+
+    const texto = { y: y + 9.1, 'font-family': FONTE_SERIF };
+    const rotulo = el('text', { ...texto, 'font-size': 7.5, 'font-weight': 'bold' });
+    rotulo.textContent = titulo;
+    const citacoes = el('text', { ...texto, x: 49, 'font-size': 6.3 });
+    citacoes.textContent = referencias;
+    grupo.append(rotulo, citacoes);
+  });
+}
+
 export function montaCena(cena, geometria, textos, links, ajustes = {}) {
   const { continuas = {}, recortes = {}, contornos = {}, revelacoes = {} } = ajustes;
   const svg = el('svg', {
@@ -159,8 +195,20 @@ export function montaCena(cena, geometria, textos, links, ajustes = {}) {
 
 
     const geo = geometria[c.asset.id];
-    if (geo) desenhaTexto(dentro, geo, textos[c.asset.id], `${c.asset.id}-${c.z}`, c.fatia);
-    else {
+    if (c.asset.id === 'flowRoot5943') {
+      desenhaQueda(dentro, geo, textos[c.asset.id]);
+    } else if (geo) {
+      desenhaTexto(dentro, geo, textos[c.asset.id], `${c.asset.id}-${c.z}`, c.fatia);
+      if (c.asset.id === 'flowRoot6261') {
+        const pergunta = dentro.firstElementChild;
+        if (pergunta.textContent.endsWith('*')) {
+          const asterisco = el('tspan', { fill: geometria.text6281.fill });
+          asterisco.textContent = '*';
+          pergunta.textContent = pergunta.textContent.slice(0, -1);
+          pergunta.appendChild(asterisco);
+        }
+      }
+    } else {
       dentro.innerHTML = miolo(bruto, `${c.asset.id}-${c.z}`);
       // fatia por grupo: o asset traz vários desenhos independentes (as três faixas roxas,
       // por exemplo) e cada fatia mostra só os seus, para entrarem em passos diferentes
