@@ -5,13 +5,14 @@ const referencias = Object.keys(passagens)
   .sort((a, b) => b.length - a.length)
   .map((ref) => ref.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'));
 const padrao = new RegExp(
-  `(?<![\\p{L}\\d])(?:${referencias.join('|')})(?![\\p{L}\\d]|[,;–-]\\s*\\d)`,
+  `(?<![\\p{L}\\d])(?:${referencias.join('|')})(?![\\p{L}\\d]|[,;–-]\\s*\\d+(?![\\p{L}\\d]))`,
   'gu',
 );
 
-function marcaReferencias(palco) {
+function marcaReferencias(textos) {
   const referenciasMarcadas = [];
-  for (const texto of palco.querySelectorAll('text')) {
+  for (const texto of textos) {
+    const emSvg = texto.namespaceURI === SVG;
     const walker = document.createTreeWalker(texto, NodeFilter.SHOW_TEXT);
     const nos = [];
     while (walker.nextNode()) nos.push(walker.currentNode);
@@ -24,7 +25,7 @@ function marcaReferencias(palco) {
       let fim = 0;
       for (const { 0: rotulo, index } of trechos) {
         fragmento.append(conteudo.slice(fim, index));
-        const ref = document.createElementNS(SVG, 'tspan');
+        const ref = emSvg ? document.createElementNS(SVG, 'tspan') : document.createElement('span');
         ref.classList.add('referencia-biblica');
         ref.setAttribute('tabindex', '0');
         ref.setAttribute('aria-describedby', 'legenda-biblica');
@@ -101,6 +102,8 @@ export function montaLegendas(palco, legenda) {
   const fundo = document.createElementNS(SVG, 'path');
   fundo.classList.add('realce-biblico');
   fundo.setAttribute('aria-hidden', 'true');
+  const origem = legenda.parentElement;
+  const modais = [...document.querySelectorAll('.modal-estudo')];
   let ativa;
 
   function fechar() {
@@ -111,6 +114,8 @@ export function montaLegendas(palco, legenda) {
   }
 
   function abrir(ref, toque = false) {
+    const modal = ref.closest('dialog');
+    if (document.querySelector('dialog[open]') !== modal) return;
     if (ref === ativa) {
       if (toque) legenda.dataset.toque = 'true';
       return;
@@ -118,14 +123,17 @@ export function montaLegendas(palco, legenda) {
     fechar();
     legenda.dataset.toque = String(toque);
     ativa = ref;
-    realca(ref, fundo);
+    if (ref.namespaceURI === SVG) realca(ref, fundo);
     ref.classList.add('ativa');
     preencheLegenda(legenda, passagens[ref.textContent]);
+    const destino = modal || origem;
+    if (legenda.parentElement !== destino) destino.appendChild(legenda);
     legenda.hidden = false;
     legenda.scrollTop = 0;
   }
 
-  for (const ref of marcaReferencias(palco)) {
+  const textos = [...palco.querySelectorAll('text'), ...document.querySelectorAll('.modal-estudo__referencias')];
+  for (const ref of marcaReferencias(textos)) {
     ref.addEventListener('pointerenter', (e) => { if (e.pointerType !== 'touch') abrir(ref); });
     ref.addEventListener('pointerleave', (e) => { if (e.pointerType !== 'touch' && ativa === ref) fechar(); });
     ref.addEventListener('pointerup', (e) => { if (e.pointerType === 'touch') abrir(ref, true); });
@@ -137,6 +145,13 @@ export function montaLegendas(palco, legenda) {
   document.addEventListener('pointerdown', (e) => {
     if (ativa && !ativa.contains(e.target) && !legenda.contains(e.target)) fechar();
   });
+  for (const modal of modais) {
+    modal.addEventListener('close', () => {
+      if (legenda.parentElement !== modal) return;
+      fechar();
+      origem.appendChild(legenda);
+    });
+  }
 
   return () => {
     if (ativa?.closest('.camada')?.style.visibility === 'hidden') fechar();

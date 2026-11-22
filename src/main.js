@@ -10,6 +10,7 @@ import { montaCena } from './render.js';
 import { estado, montaPorta, suavizar, FRACAO_ENTRADA } from './animacao.js';
 import { montaGlobo } from './globo.js';
 import { montaLegendas } from './legendas.js';
+import { montaModalPorta } from './modais.js';
 
 // correções manuais sobre os dados gerados (ver src/ajustes.js)
 if (ajustes.titulo) cena.titulo = ajustes.titulo;
@@ -100,6 +101,7 @@ for (const [id, regra] of Object.entries(ajustes.ordem || {})) {
 const palco = document.getElementById('palco-wrap');
 palco.appendChild(montaCena(cena, geo, textos, links, ajustes));
 const atualizaLegenda = montaLegendas(palco.firstElementChild, document.getElementById('legenda-biblica'));
+montaModalPorta(palco.firstElementChild, ajustes.modais.porta);
 
 const PARALLAX = 14;   // unidades de palco
 const reduzMovimento = matchMedia('(prefers-reduced-motion: reduce)');
@@ -179,7 +181,7 @@ function vaiPara(passo) {
   scrollTo({ top: (alvo / cena.passos) * total, behavior: 'smooth' });
 }
 addEventListener('keydown', (e) => {
-  if (e.metaKey || e.ctrlKey || e.altKey) return;
+  if (e.defaultPrevented || e.metaKey || e.ctrlKey || e.altKey || document.querySelector('dialog[open]')) return;
   const teclas = {
     ArrowRight: 1, ArrowDown: 1, PageDown: 1, ' ': 1,
     ArrowLeft: -1, ArrowUp: -1, PageUp: -1,

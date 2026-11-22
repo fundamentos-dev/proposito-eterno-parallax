@@ -28,18 +28,23 @@
       d="M 54,205 C 130,199 207,184 291,168 L 316,229 C 225,244 129,249 60,238 Z"/>
   </g>
 
-  <!-- A folha é desenhada fechada e gira sobre a borda vertical em x=46. -->
-  <g data-folha-porta="" transform="matrix(-1.158 -.913 0 1 99.268 41.998)">
-    <path fill="url(#folha)" stroke="#6c5523" stroke-width="2.2" stroke-linejoin="round"
-      d="M 8,178.3 V 29 C 8,16 13,12 20,15 C 35,21 46,51 46,94 V 246.22 Z"/>
-    <ellipse cx="14.1" cy="107" rx="2.2" ry="5.5" fill="#756022"/>
-    <circle cx="13.7" cy="106.7" r="4.45" fill="url(#macaneta)"/>
+  <g data-estrutura-porta="">
+    <!-- A folha é desenhada fechada e gira sobre a borda vertical em x=46. -->
+    <g data-folha-porta="" transform="matrix(-1.158 -.913 0 1 99.268 41.998)">
+      <path fill="url(#folha)" stroke="#6c5523" stroke-width="2.2" stroke-linejoin="round"
+        d="M 8,178.3 V 29 C 8,16 13,12 20,15 C 35,21 46,51 46,94 V 246.22 Z"/>
+      <ellipse cx="14.1" cy="107" rx="2.2" ry="5.5" fill="#756022"/>
+      <circle cx="13.7" cy="106.7" r="4.45" fill="url(#macaneta)"/>
+    </g>
+
+    <!-- A moldura vazada deixa aparecer a cena. A base acompanha a diagonal da cruz. -->
+    <path fill="#540000" d="M 19,2 C 40,1 62,36 62.06,94 V 274.8 L 53.52,259.67 V 92 C 53.52,40 38,5 19,2 Z"/>
+    <path fill="#800000" fill-rule="evenodd"
+      d="M 0,164 V 22 C 0,7 8,0 19,2 C 38,5 53.52,40 53.52,92 V 259.67 Z
+         M 8,178.3 V 29 C 8,16 13,12 20,15 C 35,21 46,51 46,94 V 246.22 Z"/>
+    <path data-luz-porta="" fill="#f5ff9b" fill-opacity="0.46" d="M 8,178.3 L 46,246.22 V 249 L 8,181.1 Z"/>
   </g>
 
-  <!-- A moldura vazada deixa aparecer a cena. A base acompanha a diagonal da cruz. -->
-  <path fill="#540000" d="M 19,2 C 40,1 62,36 62.06,94 V 274.8 L 53.52,259.67 V 92 C 53.52,40 38,5 19,2 Z"/>
-  <path fill="#800000" fill-rule="evenodd"
-    d="M 0,164 V 22 C 0,7 8,0 19,2 C 38,5 53.52,40 53.52,92 V 259.67 Z
-       M 8,178.3 V 29 C 8,16 13,12 20,15 C 35,21 46,51 46,94 V 246.22 Z"/>
-  <path data-luz-porta="" fill="#f5ff9b" fill-opacity="0.46" d="M 8,178.3 L 46,246.22 V 249 L 8,181.1 Z"/>
+  <path data-aciona-porta="" fill="transparent"
+    d="M -4,164 V 22 C -4,5 7,-4 20,-2 C 42,-2 50,17 57,35 C 77,31 98,34 98,59 V 216 L 64,242 V 276 Z"/>
 </svg>

@@ -7,6 +7,11 @@ const [linhaGenesis] = textosExtraidos.flowRoot4641.linhas;
 const [linhaHebraica, ...linhasExplicativas] = textosExtraidos.image132.linhas;
 const quadroAlvo = { x: 2315, y: 682, w: 154, h: 154 };
 
+// Enquadra o estudo entre o contorno do desenho e a faixa da Justificação.
+export const modais = {
+  porta: { x: 171, y: 279, w: 1437, h: 872, origem: { x: 1785, y: 735 } },
+};
+
 // Título da cena: sobrescreve scene.json (usado como aria-label do SVG). O extraído do
 // Keynote tem erro de digitação e o sufixo "- Animação", que não fazem sentido fora do deck.
 export const titulo = 'Propósito Eterno de Deus';
