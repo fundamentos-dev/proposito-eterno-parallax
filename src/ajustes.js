@@ -43,7 +43,7 @@ export const deslocamentosX = {
 //
 // A numeração aqui é a da rolagem (0 é o primeiro passo). O deck tinha um passo morto
 // entre a 1ª morte e a Geena — nada entrava nele —, então tudo o que vinha depois subiu
-// uma casa e a narrativa terminou em 16 (ver `passosTotais`).
+// uma casa e a eternidade futura entra no passo 16.
 export const passos = {
   // Espírito, Alma e Corpo acompanham cada um a sua faixa roxa e o seu título
   flowRoot6067: 12,   // Espírito, com JUSTIFICAÇÃO
@@ -82,8 +82,8 @@ export const passos = {
   text6387: 13,
 };
 
-// Passos da narrativa. O deck vinha com 18; um passo morto saiu do meio.
-export const passosTotais = 17;
+// O passo 17 (slide 18) apresenta a porta.
+export const passosTotais = 18;
 
 // Renumeração do "magic move": o círculo da igreja crescia no passo final, longe do
 // texto que o nomeia. Ele passa a crescer no passo em que entra, junto com o texto.
@@ -118,6 +118,7 @@ export const extras = [
   { asset: 'propositoDaSalvacao', apos: 'flowRoot4633', passo: 4, x: 3000, y: 37, w: 1020, h: 40 },
   // nuvens dentro da eternidade futura; o círculo interno as recorta (ver `recortes`)
   { asset: 'nuvens', apos: 'circle6215', passo: 16, x: 2247, y: 322, w: 587, h: 587 },
+  { asset: 'porta-da-cruz', apos: 'forma-127x506', passo: 17, x: 1741.46, y: 608.04, w: 63, h: 275 },
 ];
 
 // Ordem de camadas: joga um asset para trás de outro. (Nada por enquanto.)
