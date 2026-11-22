@@ -9,6 +9,7 @@ import * as ajustes from './ajustes.js';
 import { montaCena } from './render.js';
 import { estado, suavizar, FRACAO_ENTRADA } from './animacao.js';
 import { montaGlobo } from './globo.js';
+import { montaLegendas } from './legendas.js';
 
 // correções manuais sobre os dados gerados (ver src/ajustes.js)
 if (ajustes.titulo) cena.titulo = ajustes.titulo;
@@ -97,6 +98,7 @@ for (const [id, regra] of Object.entries(ajustes.ordem || {})) {
 
 const palco = document.getElementById('palco-wrap');
 palco.appendChild(montaCena(cena, geo, textos, links, ajustes));
+const atualizaLegenda = montaLegendas(palco.firstElementChild, document.getElementById('legenda-biblica'));
 
 const PARALLAX = 14;   // unidades de palco
 
@@ -140,6 +142,7 @@ function pinta(p) {
     const desloc = (1 - suavizar(avanco)) * PARALLAX * (0.3 + c.profundidade);
     c.el.setAttribute('transform', desloc > 0.01 ? `translate(0,${desloc.toFixed(2)}) ${transform}` : transform);
   }
+  atualizaLegenda();
   // no último passo o fogo da Geena congela: a cena vira quadro, não mais animação
   palco.firstElementChild.classList.toggle('parado', cursor >= cena.passos - 2 + FRACAO_ENTRADA);
   document.getElementById('passo-atual').textContent =

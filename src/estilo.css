@@ -2,7 +2,7 @@
    livre com métricas praticamente idênticas — larguras conferidas contra os vetores. */
 @import url('https://fonts.googleapis.com/css2?family=Charis+SIL:ital,wght@0,400;0,700;1,400&family=Frank+Ruhl+Libre:wght@400;500&display=swap');
 
-:root { --fundo: #ffffff; --tinta: #1a1a1a; }
+:root { --fundo: #ffffff; --tinta: #1a1a1a; --fundo-legenda: #fef8cd; }
 
 * { box-sizing: border-box; }
 html { scroll-behavior: auto; }
@@ -52,6 +52,33 @@ body {
 
 /* texto continua selecionável e pesquisável */
 #palco text { paint-order: stroke fill; }
+
+#palco .referencia-biblica { cursor: help; pointer-events: bounding-box; }
+#palco .referencia-biblica.ativa { fill: var(--tinta); }
+#palco .realce-biblico { fill: var(--fundo-legenda); pointer-events: none; }
+
+#legenda-biblica {
+  position: fixed;
+  inset-inline: 0;
+  bottom: 1.5rem;
+  width: min(100%, 64rem);
+  max-height: min(52dvh, 28rem);
+  overflow: auto;
+  overscroll-behavior: contain;
+  pointer-events: none;
+  margin-inline: auto;
+  padding: 0.9rem clamp(1.4rem, 11vw, 10rem);
+  background: linear-gradient(90deg, transparent, var(--fundo-legenda) 23% 77%, transparent);
+  color: var(--tinta);
+  font: 400 0.875rem/1.35 'DejaVu Sans', system-ui, sans-serif;
+}
+
+#legenda-biblica[data-toque='true'] { pointer-events: auto; }
+#legenda-biblica[data-extensao='media'] { font-size: 0.8125rem; }
+#legenda-biblica[data-extensao='longa'] { font-size: 0.75rem; }
+#legenda-biblica p { margin: 0; }
+#legenda-biblica sup { font-size: 0.65em; vertical-align: 0.2em; }
+#legenda-biblica small { display: block; margin-top: 0.35rem; }
 
 #hud {
   position: fixed;
