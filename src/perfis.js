@@ -81,27 +81,68 @@ function posicao(x, y, escala) {
   return `translate(${x}px, ${y}px) scale(${escala})`;
 }
 
-function animacaoOrbital(origem, centro, destino, escala) {
-  const dx = origem.x - centro.x;
-  const dy = origem.y - centro.y;
-  return Array.from({ length: 41 }, (_, i) => {
-    const t = i / 40;
-    const giro = suavizar(Math.min(1, t / 0.75));
-    const angulo = 2 * Math.PI * giro;
-    const raioOrbita = 1 + 0.65 * Math.sin(Math.PI * giro);
-    const orbitaX = centro.x + raioOrbita * (dx * Math.cos(angulo) - dy * Math.sin(angulo));
-    const orbitaY = centro.y + raioOrbita * (dx * Math.sin(angulo) + dy * Math.cos(angulo));
-    const encaixe = suavizar(Math.max(0, (t - 0.66) / 0.34));
-    const crescimento = suavizar(Math.max(0, (t - 0.16) / 0.84));
+const duracaoOrbita = 1700;
+
+function animacaoOrbital(origens, destinos, escalaFinal, largura, altura) {
+  const volta = 2 * Math.PI;
+  const direcao = ([azul, , verde]) => Math.atan2(verde.y - azul.y, verde.x - azul.x);
+  const eixo = direcao(destinos);
+  const giro = volta + (eixo - direcao(origens) + volta) % volta;
+  const centro = {
+    x: origens.reduce((soma, p) => soma + p.x, 0) / origens.length,
+    y: origens.reduce((soma, p) => soma + p.y, 0) / origens.length,
+  };
+
+  // O polo termina ao lado da fileira. Assim até o perfil do meio tem uma
+  // órbita própria e continua se afastando do polo enquanto chega ao lugar.
+  const recuo = Math.hypot(destinos[1].x - destinos[0].x, destinos[1].y - destinos[0].y) * 0.45;
+  const polo = { x: destinos[1].x - recuo * Math.sin(eixo), y: destinos[1].y + recuo * Math.cos(eixo) };
+  const orbitas = origens.map((origem, i) => {
+    const dx = origem.x - centro.x;
+    const dy = origem.y - centro.y;
+    const fx = destinos[i].x - polo.x;
+    const fy = destinos[i].y - polo.y;
+    const fase = Math.atan2(dy, dx);
+    // Escolhe o ângulo de chegada no mesmo giro do grupo.
+    const ajuste = Math.atan2(fy, fx) - fase - giro;
     return {
-      transform: posicao(
-        orbitaX + (destino.x - orbitaX) * encaixe,
-        orbitaY + (destino.y - orbitaY) * encaixe,
-        origem.escala + (escala - origem.escala) * crescimento,
-      ),
-      opacity: 0.48 + 0.52 * crescimento,
+      fase, arco: giro + Math.atan2(Math.sin(ajuste), Math.cos(ajuste)),
+      inicio: Math.hypot(dx, dy), fim: Math.hypot(fx, fy),
     };
   });
+  const escalaInicial = origens[0].escala;
+  const quadros = origens.map(() => []);
+  for (let i = 0; i <= 100; i++) {
+    const t = suavizar(i / 100);
+    const cx = centro.x + (polo.x - centro.x) * t;
+    const cy = centro.y + (polo.y - centro.y) * t;
+    const pontos = orbitas.map(({ fase, arco, inicio, fim }) => {
+      const distancia = inicio * (fim / inicio) ** t;
+      const angulo = fase + arco * t;
+      return { x: cx + distancia * Math.cos(angulo), y: cy + distancia * Math.sin(angulo) };
+    });
+
+    const distancias = pontos.map((a, k) => {
+      const b = pontos[(k + 1) % pontos.length];
+      return Math.hypot(a.x - b.x, a.y - b.y);
+    });
+    const escala = Math.min(escalaInicial * (escalaFinal / escalaInicial) ** t, Math.min(...distancias) * 0.97 / (2 * raio));
+    // Se uma borda se aproxima da janela, desloca o polo com o grupo inteiro.
+    // Uma correção por círculo mudaria a distância entre as órbitas.
+    const margem = escala * raio + 6;
+    const ajusteNaTela = (coordenadas, limite) => {
+      const minimo = margem - Math.min(...coordenadas);
+      const maximo = limite - margem - Math.max(...coordenadas);
+      return Math.min(Math.max(0, minimo), maximo);
+    };
+    const dx = ajusteNaTela(pontos.map(p => p.x), largura);
+    const dy = ajusteNaTela(pontos.map(p => p.y), altura);
+    pontos.forEach(({ x, y }, k) => quadros[k].push({
+      transform: posicao(x + dx, y + dy, escala),
+      opacity: 0.48 + 0.52 * t,
+    }));
+  }
+  return quadros;
 }
 
 export function montaPerfis(palco, quadro) {
@@ -129,7 +170,8 @@ export function montaPerfis(palco, quadro) {
       ? { x: 12, y: 12, largura: largura - 24, altura: altura - 24 - Math.min(140, altura * 0.25) }
       : { x: inicio.x - esquerda, y: inicio.y - topo, largura: fim.x - inicio.x, altura: fim.y - inicio.y };
     const { x, y, largura: larguraQuadro, altura: alturaQuadro } = caixa;
-    const { centros, escala } = medeQuadro(caixa, compacto && altura > largura);
+    const vertical = compacto && altura > largura;
+    const { centros, escala } = medeQuadro(caixa, vertical);
     papel.setAttribute('x', x);
     papel.setAttribute('y', y);
     papel.setAttribute('width', larguraQuadro);
@@ -143,14 +185,14 @@ export function montaPerfis(palco, quadro) {
       y: origem.y + origem.height / 2 - topo,
       escala: origem.width / (2 * raio),
     }));
-    const centro = locais?.reduce((p, o) => ({ x: p.x + o.x / locais.length, y: p.y + o.y / locais.length }), { x: 0, y: 0 });
+    const quadros = locais && animacaoOrbital(locais, centros, escala, largura, altura);
     circulos.forEach((circulo, i) => {
       const destino = centros[i];
       circulo.style.transform = posicao(destino.x, destino.y, escala);
-      if (locais) circulo.animate(animacaoOrbital(locais[i], centro, destino, escala), { duration: 1050 });
+      if (quadros) circulo.animate(quadros[i], { duration: duracaoOrbita });
     });
     if (origens) {
-      const entrada = { delay: 820, duration: 230, fill: 'backwards', easing: 'ease-out' };
+      const entrada = { delay: duracaoOrbita - 230, duration: 230, fill: 'backwards', easing: 'ease-out' };
       papel.animate([{ opacity: 0 }, { opacity: 1 }], entrada);
       fechar.animate([{ opacity: 0 }, { opacity: 1 }], entrada);
     }
