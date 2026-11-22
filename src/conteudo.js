@@ -32,7 +32,7 @@ export const textos = {
   // 5 linha(s)
   flowRoot6067: ["Espírito","Rm 3:23-35","Rm 5:8-10","Ef 2:4-6","Rm 6:3-7"],
   // 1 linha(s)
-  flowRoot6124: ["Tessalonicenses 5:23"],
+  flowRoot6124: ["1 Tessalonicenses 5:23"],
   // 5 linha(s)
   flowRoot6140: ["Alma","1Ts 4:7","Rm 6:22","1 Pe 1:5-15","Fp 2:12-16"],
   // 5 linha(s)
@@ -45,8 +45,14 @@ export const textos = {
   flowRoot6339: ["Rm 8:28-29"],
   // 1 linha(s)
   propositoDaSalvacao: ["A SALVAÇÃO é um meio para alcançar o seu propósito"],
+  // 1 linha(s)
+  legendaPorta: ["Porta · Jo 10:9"],
+  // 1 linha(s)
+  legendaCaminho: ["Caminho · Jo 14:6 · Fp 3:12-14"],
   // texto em caminho circular
-  text4775: "ETERNIDADE PASSADA Sl 30:2",
+  legendaAlvo: "Alvo · Hb 12:1-2 · Ef 4:13",
+  // texto em caminho circular
+  text4775: "ETERNIDADE PASSADA Sl 90:2",
   // texto em caminho circular
   text6005: "A ESTRATÉGIA · A IGREJA",
   // texto em caminho circular

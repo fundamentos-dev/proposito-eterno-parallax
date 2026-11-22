@@ -7,7 +7,7 @@ import geometria from './scene/text.json';
 import { textos, links } from './conteudo.js';
 import * as ajustes from './ajustes.js';
 import { montaCena } from './render.js';
-import { estado, suavizar, FRACAO_ENTRADA } from './animacao.js';
+import { estado, montaPorta, suavizar, FRACAO_ENTRADA } from './animacao.js';
 import { montaGlobo } from './globo.js';
 import { montaLegendas } from './legendas.js';
 
@@ -74,6 +74,7 @@ for (const extra of ajustes.extras || []) {
   const nova = {
     asset: { id: extra.asset }, z: extra.asset, step: extra.passo,
     x: extra.x, y: extra.y, w: extra.w, h: extra.h,
+    entrada: extra.entrada,
   };
   const i = extra.apos ? cena.camadas.findIndex((l) => l.asset.id === extra.apos) : -1;
   if (i >= 0) cena.camadas.splice(i + 1, 0, nova);
@@ -101,16 +102,20 @@ palco.appendChild(montaCena(cena, geo, textos, links, ajustes));
 const atualizaLegenda = montaLegendas(palco.firstElementChild, document.getElementById('legenda-biblica'));
 
 const PARALLAX = 14;   // unidades de palco
+const reduzMovimento = matchMedia('(prefers-reduced-motion: reduce)');
 
 const camadas = [...palco.querySelectorAll('.camada')].map((el, i) => {
   const dados = cena.camadas[i];
   const revela = el.getAttribute('data-revela');
+  const tipo = dados.entrada?.tipo;
   return {
     el,
     dados,
     // a faixa que descobre a camada, quando ela entra por revelação (ver src/render.js)
     faixa: revela ? document.getElementById(revela).firstElementChild : null,
     passo: dados.step ?? 0,
+    fixa: tipo === 'porta' || tipo === 'zoom',
+    atualizaPorta: tipo === 'porta' ? montaPorta(el) : null,
     profundidade: cena.camadas.length > 1 ? i / (cena.camadas.length - 1) : 0,
   };
 });
@@ -129,10 +134,12 @@ function pinta(p) {
   globo?.atualiza(cursor);
   for (const c of camadas) {
     const avanco = Math.min(Math.max((cursor - c.passo + 1) / FRACAO_ENTRADA, 0), 1);
+    const avancoVisual = c.fixa && reduzMovimento.matches ? Math.ceil(avanco) : avanco;
+    c.atualizaPorta?.(avancoVisual);
     // A esfera entra por fade: girar a camada SVG achataria o volume 3D.
     const esfera = globo?.ativo && ['circle18', 'g4676'].includes(c.dados.asset.id);
     const dados = esfera ? { ...c.dados, entrada: { tipo: 'fade' } } : c.dados;
-    const { opacidade, transform } = estado(dados, avanco, cursor);
+    const { opacidade, transform } = estado(dados, avancoVisual, cursor);
     // numa revelação a camada não esmaece: ela é descoberta de cima para baixo, e o que
     // avança é a borda da faixa que a recorta
     if (c.faixa) c.faixa.setAttribute('height', (c.dados.h * suavizar(avanco)).toFixed(2));
@@ -140,7 +147,7 @@ function pinta(p) {
     c.el.style.visibility = c.el.style.opacity <= 0.002 ? 'hidden' : 'visible';
     // um leve deslocamento por profundidade dá relevo à rolagem sem competir com a animação
     const desloc = (1 - suavizar(avanco)) * PARALLAX * (0.3 + c.profundidade);
-    c.el.setAttribute('transform', desloc > 0.01 ? `translate(0,${desloc.toFixed(2)}) ${transform}` : transform);
+    c.el.setAttribute('transform', !c.fixa && desloc > 0.01 ? `translate(0,${desloc.toFixed(2)}) ${transform}` : transform);
   }
   atualizaLegenda();
   // no último passo o fogo da Geena congela: a cena vira quadro, não mais animação
@@ -160,6 +167,7 @@ function agenda() {
 
 addEventListener('scroll', agenda, { passive: true });
 addEventListener('resize', agenda);
+reduzMovimento.addEventListener('change', agenda);
 addEventListener('visibilitychange', () => { if (!document.hidden) agenda(); });
 
 // Navegação discreta: arredondar (e não truncar) evita o clique que não sai do lugar

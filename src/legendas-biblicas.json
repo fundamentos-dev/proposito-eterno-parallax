@@ -159,11 +159,10 @@
       [6, "e, juntamente com ele, nos ressuscitou, e nos fez assentar nos lugares celestiais em Cristo Jesus;"]
     ]
   },
-  "Tessalonicenses 5:23": {
+  "1 Tessalonicenses 5:23": {
     "versiculos": [
       [23, "O mesmo Deus da paz vos santifique em tudo; e o vosso espírito, alma e corpo sejam conservados íntegros e irrepreensíveis na vinda de nosso Senhor Jesus Cristo."]
-    ],
-    "nota": "1 Tessalonicenses 5:23"
+    ]
   },
   "1Ts 4:7": {
     "versiculos": [
@@ -249,9 +248,9 @@
       [29, "Porquanto aos que de antemão conheceu, também os predestinou para serem conformes à imagem de seu Filho, a fim de que ele seja o primogênito entre muitos irmãos."]
     ]
   },
-  "Sl 30:2": {
+  "Sl 90:2": {
     "versiculos": [
-      [2, "SENHOR, meu Deus, clamei a ti por socorro, e tu me saraste."]
+      [2, "Antes que os montes nascessem e se formassem a terra e o mundo, de eternidade a eternidade, tu és Deus."]
     ]
   },
   "Mt 25:41": {
@@ -272,6 +271,34 @@
   "Cl 2:19": {
     "versiculos": [
       [19, "e não retendo a cabeça, da qual todo o corpo, suprido e bem-vinculado por suas juntas e ligamentos, cresce o crescimento que procede de Deus."]
+    ]
+  },
+  "Jo 10:9": {
+    "versiculos": [
+      [9, "Eu sou a porta. Se alguém entrar por mim, será salvo; entrará, e sairá, e achará pastagem."]
+    ]
+  },
+  "Jo 14:6": {
+    "versiculos": [
+      [6, "Respondeu-lhe Jesus: Eu sou o caminho, e a verdade, e a vida; ninguém vem ao Pai senão por mim."]
+    ]
+  },
+  "Hb 12:1-2": {
+    "versiculos": [
+      [1, "Portanto, também nós, visto que temos a rodear-nos tão grande nuvem de testemunhas, desembaraçando-nos de todo peso e do pecado que tenazmente nos assedia, corramos, com perseverança, a carreira que nos está proposta,"],
+      [2, "olhando firmemente para o Autor e Consumador da fé, Jesus, o qual, em troca da alegria que lhe estava proposta, suportou a cruz, não fazendo caso da ignomínia, e está assentado à destra do trono de Deus."]
+    ]
+  },
+  "Ef 4:13": {
+    "versiculos": [
+      [13, "até que todos cheguemos à unidade da fé e do pleno conhecimento do Filho de Deus, à perfeita varonilidade, à medida da estatura da plenitude de Cristo,"]
+    ]
+  },
+  "Fp 3:12-14": {
+    "versiculos": [
+      [12, "Não que eu o tenha já recebido ou tenha já obtido a perfeição; mas prossigo para conquistar aquilo para o que também fui conquistado por Cristo Jesus."],
+      [13, "Irmãos, quanto a mim, não julgo havê-lo alcançado; mas uma coisa faço: esquecendo-me das coisas que para trás ficam e avançando para as que diante de mim estão,"],
+      [14, "prossigo para o alvo, para o prêmio da soberana vocação de Deus em Cristo Jesus."]
     ]
   }
 }

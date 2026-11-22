@@ -30,6 +30,31 @@ export const suavizar = (t) => (t < 0.5 ? 2 * t * t : 1 - (-2 * t + 2) ** 2 / 2)
 // A saída de uma camada substituída acontece exatamente no fim dessa janela.
 export const FRACAO_ENTRADA = 0.62;
 
+export function montaPorta(camada) {
+  const folha = camada.querySelector('[data-folha-porta]');
+  const luzes = camada.querySelectorAll('[data-luz-porta]');
+  let anterior;
+
+  return (avanco) => {
+    if (avanco === anterior) return;
+    anterior = avanco;
+    const abertura = suavizar(Math.max(0, (avanco - 0.1) / 0.9));
+    const angulo = abertura * 110 * Math.PI / 180;
+    const cos = Math.cos(angulo);
+    const sen = Math.sin(angulo);
+
+    // Projeta a rotação em torno da dobradiça direita. Os vetores no chão
+    // são a diagonal da soleira (-38, -67.92) e a direção para trás (33, -60).
+    const dobradica = 46;
+    const escalaX = (-38 * cos + 33 * sen) / -38;
+    const inclinacao = (-67.92 * cos - 60 * sen + 67.92) / -38;
+    folha.setAttribute('transform', `matrix(${escalaX},${inclinacao},0,1,${dobradica * (1 - escalaX)},${-dobradica * inclinacao})`);
+
+    const intensidade = Math.max(0, (abertura - 0.18) / 0.82);
+    for (const luz of luzes) luz.setAttribute('opacity', intensidade.toFixed(3));
+  };
+}
+
 // Estado visual de uma camada num dado ponto da narrativa.
 // `avanco` é 0 antes de entrar e 1 quando a entrada terminou.
 export function estado(camada, avanco, cursor) {
@@ -54,6 +79,10 @@ export function estado(camada, avanco, cursor) {
     const s = chave(ch || [0.001, 1.125, 0.952, 1], avanco);
     partes.push(`translate(${cx},${cy}) scale(${s.toFixed(4)}) translate(${-cx},${-cy})`);
     opacidade = Math.min(1, avanco * 2.5);
+  } else if (tipo === 'zoom') {
+    const s = 0.08 + 0.92 * suavizar(avanco);
+    partes.push(`translate(${cx},${cy}) scale(${s.toFixed(4)}) translate(${-cx},${-cy})`);
+    opacidade = Math.min(1, avanco * 2.4);
   } else if (tipo === 'queda') {
     const dy = chave(ch || [-816, 0, -190, 0], avanco);
     partes.push(`translate(0,${dy.toFixed(2)})`);

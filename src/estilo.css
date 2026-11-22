@@ -52,6 +52,11 @@ body {
 
 /* texto continua selecionável e pesquisável */
 #palco text { paint-order: stroke fill; }
+#palco [data-asset='legendaAlvo'] text {
+  stroke: #214b5c;
+  stroke-width: 2.4;
+  stroke-linejoin: round;
+}
 
 #palco .referencia-biblica { cursor: help; pointer-events: bounding-box; }
 #palco .referencia-biblica.ativa { fill: var(--tinta); }

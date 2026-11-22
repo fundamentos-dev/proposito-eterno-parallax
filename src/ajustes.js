@@ -5,6 +5,7 @@ import textosExtraidos from './scene/text.json';
 
 const [linhaGenesis] = textosExtraidos.flowRoot4641.linhas;
 const [linhaHebraica, ...linhasExplicativas] = textosExtraidos.image132.linhas;
+const quadroAlvo = { x: 2315, y: 682, w: 154, h: 154 };
 
 // Título da cena: sobrescreve scene.json (usado como aria-label do SVG). O extraído do
 // Keynote tem erro de digitação e o sufixo "- Animação", que não fazem sentido fora do deck.
@@ -18,6 +19,8 @@ export const geometria = {
   flowRoot4641: {
     linhas: [0, 5.5, 11].map((deslocamento) => ({ ...linhaGenesis, y: linhaGenesis.y + deslocamento })),
   },
+  flowRoot5933: { serif: true },
+  flowRoot6261: { serif: true },
   // afasta "Mt 25:41" da borda vermelha da Geena
   text6327: { r: 54 },
   // no SVG do Inkscape este texto é preto, quase ilegível sobre o vermelho escuro;
@@ -29,6 +32,34 @@ export const geometria = {
     linhas: [{ x: 0, y: 0, size: 37 }],
     rot: 90,
     fill: '#6248ac',
+  },
+  legendaPorta: {
+    tipo: 'linhas',
+    viewBox: [190, 32],
+    linhas: [{ x: 0, y: 0, size: 26 }],
+    rot: -90,
+    fill: '#142a19',
+    serif: true,
+  },
+  legendaCaminho: {
+    tipo: 'linhas',
+    viewBox: [300, 50],
+    linhas: [{ x: 150, y: 34, size: 30, ancora: 'middle' }],
+    fill: '#142a19',
+    serif: true,
+  },
+  legendaAlvo: {
+    tipo: 'curvo',
+    viewBox: [quadroAlvo.w, quadroAlvo.h],
+    cx: quadroAlvo.w / 2,
+    cy: quadroAlvo.h / 2,
+    r: 112,
+    a0: -90,
+    arco: 112.5,
+    ancora: 'middle',
+    size: 27,
+    fill: '#fff',
+    serif: true,
   },
 };
 
@@ -82,7 +113,7 @@ export const passos = {
   text6387: 13,
 };
 
-// O passo 17 (slide 18) apresenta a porta.
+// O passo 17 (slide 18) apresenta a porta e o alvo.
 export const passosTotais = 18;
 
 // Renumeração do "magic move": o círculo da igreja crescia no passo final, longe do
@@ -118,7 +149,11 @@ export const extras = [
   { asset: 'propositoDaSalvacao', apos: 'flowRoot4633', passo: 4, x: 3000, y: 37, w: 1020, h: 40 },
   // nuvens dentro da eternidade futura; o círculo interno as recorta (ver `recortes`)
   { asset: 'nuvens', apos: 'circle6215', passo: 16, x: 2247, y: 322, w: 587, h: 587 },
-  { asset: 'porta-da-cruz', apos: 'forma-127x506', passo: 17, x: 1741.46, y: 608.04, w: 338, h: 275 },
+  { asset: 'porta-da-cruz', apos: 'forma-127x506', passo: 17, entrada: { tipo: 'porta' }, x: 1741.46, y: 608.04, w: 338, h: 275 },
+  { asset: 'alvo', apos: 'text6203', passo: 17, entrada: { tipo: 'zoom' }, ...quadroAlvo },
+  { asset: 'legendaAlvo', apos: 'alvo', passo: 17, entrada: { tipo: 'zoom' }, ...quadroAlvo },
+  { asset: 'legendaPorta', apos: 'text6005', passo: 17, x: 1730, y: 792, w: 190, h: 32 },
+  { asset: 'legendaCaminho', apos: 'legendaPorta', passo: 17, x: 1919, y: 800, w: 300, h: 50 },
 ];
 
 // Ordem de camadas: joga um asset para trás de outro. (Nada por enquanto.)

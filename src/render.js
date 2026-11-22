@@ -74,7 +74,11 @@ function desenhaTexto(grupo, geo, linhas, id, fatia) {
     }));
     grupo.appendChild(defs);
     const t = el('text', { ...comum, 'font-size': geo.size });
-    const tp = el('textPath', { href: `#${idPath}` });
+    const tp = el('textPath', {
+      href: `#${idPath}`,
+      'text-anchor': geo.ancora,
+      startOffset: geo.ancora === 'middle' ? '50%' : null,
+    });
     tp.setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', `#${idPath}`);
     tp.textContent = typeof linhas === 'string' ? linhas : geo.texto;
     t.appendChild(tp);

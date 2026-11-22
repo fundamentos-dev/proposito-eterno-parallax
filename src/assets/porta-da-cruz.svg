@@ -11,7 +11,7 @@
     <clipPath id="superficie-da-ponte">
       <path d="M 54,163 H 338 V 270 H 62 V 220 H 54 Z"/>
     </clipPath>
-    <linearGradient id="folha" x1="0" y1="0" x2="1" y2="0">
+    <linearGradient id="folha" x1="1" y1="0" x2="0" y2="0">
       <stop stop-color="#8c7227"/>
       <stop offset="1" stop-color="#b69a42"/>
     </linearGradient>
@@ -23,21 +23,23 @@
     </radialGradient>
   </defs>
 
-  <g clip-path="url(#superficie-da-ponte)">
+  <g data-luz-porta="" clip-path="url(#superficie-da-ponte)">
     <path fill="url(#luz-da-ponte)" filter="url(#borda-da-luz)"
       d="M 54,205 C 130,199 207,184 291,168 L 316,229 C 225,244 129,249 60,238 Z"/>
   </g>
 
-  <!-- A folha recua à direita, atrás do próprio batente. -->
-  <path fill="#6c5523" d="M 46,246.22 V 94 C 57,63 71,43 82,43 C 90,42 94,48 94,59 V 211 L 90,213 Z"/>
-  <path fill="url(#folha)" d="M 46,246.22 V 94 C 56,64 70,44 80,44 C 87,44 90,50 90,60 V 213 Z"/>
-  <ellipse cx="83" cy="137" rx="2.2" ry="5.5" fill="#756022"/>
-  <circle cx="83.4" cy="136.2" r="4.45" fill="url(#macaneta)"/>
+  <!-- A folha é desenhada fechada e gira sobre a borda vertical em x=46. -->
+  <g data-folha-porta="" transform="matrix(-1.158 -.913 0 1 99.268 41.998)">
+    <path fill="url(#folha)" stroke="#6c5523" stroke-width="2.2" stroke-linejoin="round"
+      d="M 8,178.3 V 29 C 8,16 13,12 20,15 C 35,21 46,51 46,94 V 246.22 Z"/>
+    <ellipse cx="14.1" cy="107" rx="2.2" ry="5.5" fill="#756022"/>
+    <circle cx="13.7" cy="106.7" r="4.45" fill="url(#macaneta)"/>
+  </g>
 
   <!-- A moldura vazada deixa aparecer a cena. A base acompanha a diagonal da cruz. -->
   <path fill="#540000" d="M 19,2 C 40,1 62,36 62.06,94 V 274.8 L 53.52,259.67 V 92 C 53.52,40 38,5 19,2 Z"/>
   <path fill="#800000" fill-rule="evenodd"
     d="M 0,164 V 22 C 0,7 8,0 19,2 C 38,5 53.52,40 53.52,92 V 259.67 Z
        M 8,178.3 V 29 C 8,16 13,12 20,15 C 35,21 46,51 46,94 V 246.22 Z"/>
-  <path fill="#f5ff9b" fill-opacity="0.46" d="M 8,178.3 L 46,246.22 V 249 L 8,181.1 Z"/>
+  <path data-luz-porta="" fill="#f5ff9b" fill-opacity="0.46" d="M 8,178.3 L 46,246.22 V 249 L 8,181.1 Z"/>
 </svg>
