@@ -118,7 +118,7 @@ export const extras = [
   { asset: 'propositoDaSalvacao', apos: 'flowRoot4633', passo: 4, x: 3000, y: 37, w: 1020, h: 40 },
   // nuvens dentro da eternidade futura; o círculo interno as recorta (ver `recortes`)
   { asset: 'nuvens', apos: 'circle6215', passo: 16, x: 2247, y: 322, w: 587, h: 587 },
-  { asset: 'porta-da-cruz', apos: 'forma-127x506', passo: 17, x: 1741.46, y: 608.04, w: 63, h: 275 },
+  { asset: 'porta-da-cruz', apos: 'forma-127x506', passo: 17, x: 1741.46, y: 608.04, w: 338, h: 275 },
 ];
 
 // Ordem de camadas: joga um asset para trás de outro. (Nada por enquanto.)

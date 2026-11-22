@@ -1,12 +1,19 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 63 275">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 338 275">
   <defs>
-    <linearGradient id="vao" x1="0" y1="0" x2="1" y2="0">
-      <stop stop-color="#512810"/>
-      <stop offset="1" stop-color="#24130d"/>
+    <linearGradient id="luz-da-ponte" gradientUnits="userSpaceOnUse" x1="60" y1="225" x2="316" y2="199">
+      <stop stop-color="#f5ff9b" stop-opacity="0.72"/>
+      <stop offset="0.32" stop-color="#edff56" stop-opacity="0.5"/>
+      <stop offset="1" stop-color="#e4ff0c" stop-opacity="0"/>
     </linearGradient>
+    <filter id="borda-da-luz" x="-15%" y="-40%" width="130%" height="180%">
+      <feGaussianBlur stdDeviation="6"/>
+    </filter>
+    <clipPath id="superficie-da-ponte">
+      <path d="M 54,163 H 338 V 270 H 62 V 220 H 54 Z"/>
+    </clipPath>
     <linearGradient id="folha" x1="0" y1="0" x2="1" y2="0">
-      <stop stop-color="#ae963d"/>
-      <stop offset="1" stop-color="#887124"/>
+      <stop stop-color="#8c7227"/>
+      <stop offset="1" stop-color="#b69a42"/>
     </linearGradient>
     <radialGradient id="macaneta" cx="39%" cy="35%" r="66%" fx="28%" fy="24%">
       <stop stop-color="#fff4b3"/>
@@ -16,17 +23,21 @@
     </radialGradient>
   </defs>
 
-  <!-- A diagonal inferior acompanha o corte no topo da cruz. -->
-  <path fill="#540000" d="M 0,164 V 22 C 0,7 8,0 19,2 C 40,1 62,36 62.06,94 V 274.8 Z"/>
-  <path fill="#800000" d="M 0,164 V 22 C 0,7 8,0 19,2 C 38,5 53.52,40 53.52,92 V 259.67 Z"/>
+  <g clip-path="url(#superficie-da-ponte)">
+    <path fill="url(#luz-da-ponte)" filter="url(#borda-da-luz)"
+      d="M 54,205 C 130,199 207,184 291,168 L 316,229 C 225,244 129,249 60,238 Z"/>
+  </g>
 
-  <path fill="url(#vao)" d="M 8,178.3 V 29 C 8,16 13,12 20,15 C 35,21 46,51 46,94 V 246.22 Z"/>
-  <path fill="#c69a42" d="M 46,94 C 46,53 36,23 23,16 C 36,29 44.5,59 44.5,96 V 243.54 L 46,246.22 Z"/>
+  <!-- A folha recua à direita, atrás do próprio batente. -->
+  <path fill="#6c5523" d="M 46,246.22 V 94 C 57,63 71,43 82,43 C 90,42 94,48 94,59 V 211 L 90,213 Z"/>
+  <path fill="url(#folha)" d="M 46,246.22 V 94 C 56,64 70,44 80,44 C 87,44 90,50 90,60 V 213 Z"/>
+  <ellipse cx="83" cy="137" rx="2.2" ry="5.5" fill="#756022"/>
+  <circle cx="83.4" cy="136.2" r="4.45" fill="url(#macaneta)"/>
 
-  <!-- A folha gira no batente esquerdo, deixando a fresta junto à maçaneta. -->
-  <path fill="#63501a" d="M 8,178.3 V 29 C 8,16 14,12 20,15 C 30,20 33,42 33,70 V 217 L 29.5,214 Z"/>
-  <path fill="url(#folha)" d="M 8,178.3 V 29 C 8,17 13,13 19,16 C 27,21 29.5,42 29.5,70 V 214 Z"/>
-
-  <ellipse cx="24" cy="143" rx="2.4" ry="5.5" fill="#756022"/>
-  <circle cx="24.5" cy="142.2" r="4.45" fill="url(#macaneta)"/>
+  <!-- A moldura vazada deixa aparecer a cena. A base acompanha a diagonal da cruz. -->
+  <path fill="#540000" d="M 19,2 C 40,1 62,36 62.06,94 V 274.8 L 53.52,259.67 V 92 C 53.52,40 38,5 19,2 Z"/>
+  <path fill="#800000" fill-rule="evenodd"
+    d="M 0,164 V 22 C 0,7 8,0 19,2 C 38,5 53.52,40 53.52,92 V 259.67 Z
+       M 8,178.3 V 29 C 8,16 13,12 20,15 C 35,21 46,51 46,94 V 246.22 Z"/>
+  <path fill="#f5ff9b" fill-opacity="0.46" d="M 8,178.3 L 46,246.22 V 249 L 8,181.1 Z"/>
 </svg>
