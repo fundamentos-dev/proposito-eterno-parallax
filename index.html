@@ -111,6 +111,54 @@
         </div>
       </div>
     </dialog>
+    <dialog id="modal-arvore" class="modal-estudo modal-arvore" aria-labelledby="titulo-modal-arvore">
+      <div class="modal-estudo__folha">
+        <header class="modal-estudo__cabecalho">
+          <h2 id="titulo-modal-arvore">Árvore do Pecado Original</h2>
+          <form method="dialog">
+            <button type="submit" aria-label="Fechar" autofocus>×</button>
+          </form>
+        </header>
+        <div class="arvore-prancha" data-etapa="1">
+          <img class="arvore-prancha__imagem arvore-prancha__imagem--base" src="/arvore-do-pecado.webp" alt="Árvore ilustrada com os vícios nos galhos, independência e rebelião no tronco e orgulho na raiz">
+          <img class="arvore-prancha__imagem" src="/arvore-do-pecado-desarraigada.webp" alt="Uma mão puxa as raízes da árvore, cujas pontas estão em vermelho" data-desde="4" hidden>
+
+          <section class="arvore-nota arvore-nota--raiz">
+            <h3>Raiz</h3>
+            <p>Pecado original</p>
+          </section>
+          <div class="arvore-referencias-raiz">
+            <svg viewBox="0 0 430 54" role="group" aria-label="Referências sobre o orgulho">
+              <defs>
+                <path id="arvore-arco-1" d="M 5,11 Q 215,37 425,11"/>
+                <path id="arvore-arco-2" d="M 5,31 Q 215,53 425,31"/>
+              </defs>
+              <text class="modal-estudo__referencias"><textPath href="#arvore-arco-1" startOffset="50%" text-anchor="middle">Ez 28:12–17 · Is 14:12–14 · Is 2:12 · Gn 3:5</textPath></text>
+              <text class="modal-estudo__referencias"><textPath href="#arvore-arco-2" startOffset="50%" text-anchor="middle">1Tm 3:6 · Pv 16:18 · Pv 21:4</textPath></text>
+            </svg>
+          </div>
+          <section class="arvore-nota arvore-nota--tronco" data-desde="2" hidden>
+            <h3>Tronco</h3>
+            <p>Atitude</p>
+          </section>
+          <section class="arvore-nota arvore-nota--galhos" data-desde="3" hidden>
+            <h3>Galhos</h3>
+            <p>Atos</p>
+            <p class="modal-estudo__referencias">Ef 5:3–5<br>Gl 5:19–21<br>1Co 6:10<br>Ap 21:8</p>
+          </section>
+          <section class="arvore-nota arvore-nota--arrependimento" data-desde="4" hidden>
+            <h3>Desarraigar</h3>
+            <p>Arrependimento</p>
+            <p class="modal-estudo__referencias">Gl 1:4<br>Cl 1:13</p>
+          </section>
+        </div>
+        <nav class="arvore-navegacao" aria-label="Etapas da Árvore do Pecado Original">
+          <button type="button" data-avanco="-1" aria-label="Etapa anterior" disabled>‹</button>
+          <output aria-label="Etapa atual">1 / 4</output>
+          <button type="button" data-avanco="1" aria-label="Próxima etapa">›</button>
+        </nav>
+      </div>
+    </dialog>
     <div id="hud"><span id="passo-atual">1</span></div>
     <div id="dica">role a página · setas ou espaço para avançar</div>
     <noscript>

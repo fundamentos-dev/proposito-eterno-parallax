@@ -10,6 +10,7 @@ const quadroAlvo = { x: 2315, y: 682, w: 154, h: 154 };
 // Enquadra o estudo entre o contorno do desenho e a faixa da Justificação.
 export const modais = {
   porta: { x: 171, y: 279, w: 1437, h: 872, origem: { x: 1785, y: 735 } },
+  arvore: { x: 1608, y: -62, w: 1155, h: 1213, origem: { x: 1195, y: 677 }, compacto: 330 },
 };
 
 // Título da cena: sobrescreve scene.json (usado como aria-label do SVG). O extraído do

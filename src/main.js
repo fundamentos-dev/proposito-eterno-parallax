@@ -10,7 +10,7 @@ import { montaCena } from './render.js';
 import { estado, montaPorta, suavizar, FRACAO_ENTRADA } from './animacao.js';
 import { montaGlobo } from './globo.js';
 import { montaLegendas } from './legendas.js';
-import { montaModalPorta } from './modais.js';
+import { montaModalArvore, montaModalPorta } from './modais.js';
 
 // correções manuais sobre os dados gerados (ver src/ajustes.js)
 if (ajustes.titulo) cena.titulo = ajustes.titulo;
@@ -102,6 +102,7 @@ const palco = document.getElementById('palco-wrap');
 palco.appendChild(montaCena(cena, geo, textos, links, ajustes));
 const atualizaLegenda = montaLegendas(palco.firstElementChild, document.getElementById('legenda-biblica'));
 montaModalPorta(palco.firstElementChild, ajustes.modais.porta);
+const atualizaAcionadorArvore = montaModalArvore(palco.firstElementChild, ajustes.modais.arvore);
 
 const PARALLAX = 14;   // unidades de palco
 const reduzMovimento = matchMedia('(prefers-reduced-motion: reduce)');
@@ -133,6 +134,7 @@ function progresso() {
 
 function pinta(p) {
   const cursor = p * cena.passos;
+  atualizaAcionadorArvore(Math.round(cursor) >= 8);
   globo?.atualiza(cursor);
   for (const c of camadas) {
     const avanco = Math.min(Math.max((cursor - c.passo + 1) / FRACAO_ENTRADA, 0), 1);

@@ -65,6 +65,11 @@ body {
 #palco [data-asset='circle4893'] { pointer-events: none; }
 #palco .acionador-modal { cursor: pointer; }
 #palco tspan.acionador-modal { pointer-events: bounding-box; }
+#palco [data-asset='path4692'][aria-disabled='false'] { pointer-events: bounding-box; }
+#palco [data-asset='path4692'][aria-disabled='false']:is(:hover, :focus-visible) {
+  filter: drop-shadow(0 0 4px #fff4af) drop-shadow(0 0 2px #fff4af);
+}
+#palco [data-asset='path4692'][aria-disabled='true'] { cursor: auto; }
 #palco:has([aria-controls='modal-porta']:is(:hover, :focus-visible)) [data-estrutura-porta] {
   filter: drop-shadow(0 0 6px #fff7c0) drop-shadow(0 0 2px #fff7c0);
 }
@@ -157,6 +162,81 @@ html:has(.modal-estudo[open]) { overflow: hidden; scrollbar-gutter: stable; }
 .modal-estudo li .modal-estudo__referencias { display: inline; }
 .modal-estudo .referencia-biblica { cursor: help; white-space: nowrap; }
 .modal-estudo .referencia-biblica.ativa { color: var(--tinta); background: #fffbe8; box-shadow: 0 0 0 1px #baa366; }
+
+.modal-arvore .modal-estudo__folha { grid-template-rows: auto minmax(0, 1fr) auto; }
+
+.arvore-prancha {
+  --tamanho-arvore: min(73cqw, 83cqh);
+  --topo-arvore: max(1cqh, calc((87cqh - var(--tamanho-arvore)) / 2));
+  position: relative;
+  container-type: size;
+  overflow: hidden;
+}
+.arvore-prancha__imagem {
+  position: absolute;
+  inset-block-start: var(--topo-arvore);
+  left: 50%;
+  width: var(--tamanho-arvore);
+  height: auto;
+  transform: translateX(-50%);
+}
+.arvore-prancha[data-etapa='1'] .arvore-prancha__imagem {
+  mask-image: linear-gradient(transparent 66%, #000 72%);
+}
+.arvore-prancha[data-etapa='2'] .arvore-prancha__imagem {
+  mask-image: linear-gradient(transparent 49%, #000 56%);
+}
+.arvore-prancha[data-etapa='4'] .arvore-prancha__imagem--base { display: none; }
+.arvore-nota {
+  position: absolute;
+  left: 3%;
+  max-width: 19%;
+  font-size: clamp(0.67rem, 2.65cqw, 1.08rem);
+  line-height: 1.24;
+}
+.arvore-nota h3 { margin: 0; color: var(--vinho); font-size: 1.1em; }
+.arvore-nota p { margin: 0.18em 0 0; }
+.arvore-nota--galhos { top: calc(var(--topo-arvore) + var(--tamanho-arvore) * 0.08); }
+.arvore-nota--tronco { top: calc(var(--topo-arvore) + var(--tamanho-arvore) * 0.59); }
+.arvore-nota--raiz { top: calc(var(--topo-arvore) + var(--tamanho-arvore) * 0.82); }
+.arvore-nota--arrependimento {
+  top: calc(var(--topo-arvore) + var(--tamanho-arvore) * 0.6);
+  right: 2.2%;
+  left: auto;
+}
+.arvore-referencias-raiz {
+  position: absolute;
+  inset-inline: 7%;
+  inset-block-start: calc(var(--topo-arvore) + var(--tamanho-arvore));
+}
+.arvore-referencias-raiz svg { display: block; width: 100%; height: auto; overflow: visible; }
+.arvore-referencias-raiz text { fill: #704a36; font-size: 16px; }
+.arvore-referencias-raiz .referencia-biblica { pointer-events: bounding-box; }
+.arvore-referencias-raiz .referencia-biblica.ativa { fill: var(--tinta); }
+.arvore-referencias-raiz .realce-biblico { fill: #fffbe8; pointer-events: none; }
+
+.arvore-navegacao {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  padding-block: 0.08rem 0.3rem;
+  color: var(--vinho);
+  font-size: 0.82rem;
+  font-variant-numeric: tabular-nums;
+}
+.arvore-navegacao button {
+  width: 1.8rem;
+  height: 1.65rem;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font: 1.3rem/1 Georgia, serif;
+  cursor: pointer;
+}
+.arvore-navegacao button:not(:disabled):hover { background: #e9dba7; }
+.arvore-navegacao button:disabled { opacity: 0.38; cursor: default; }
 
 #legenda-biblica {
   position: fixed;
