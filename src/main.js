@@ -11,6 +11,7 @@ import { estado, montaPorta, suavizar, FRACAO_ENTRADA } from './animacao.js';
 import { montaGlobo } from './globo.js';
 import { montaLegendas } from './legendas.js';
 import { montaModalArvore, montaModalPorta } from './modais.js';
+import { montaPerfis } from './perfis.js';
 
 // correções manuais sobre os dados gerados (ver src/ajustes.js)
 if (ajustes.titulo) cena.titulo = ajustes.titulo;
@@ -100,6 +101,7 @@ for (const [id, regra] of Object.entries(ajustes.ordem || {})) {
 
 const palco = document.getElementById('palco-wrap');
 palco.appendChild(montaCena(cena, geo, textos, links, ajustes));
+montaPerfis(palco.firstElementChild, ajustes.modais.perfis);
 const atualizaLegenda = montaLegendas(palco.firstElementChild, document.getElementById('legenda-biblica'));
 montaModalPorta(palco.firstElementChild, ajustes.modais.porta);
 const atualizaAcionadorArvore = montaModalArvore(palco.firstElementChild, ajustes.modais.arvore);

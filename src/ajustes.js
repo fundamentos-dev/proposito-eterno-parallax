@@ -10,6 +10,7 @@ const quadroAlvo = { x: 2315, y: 682, w: 154, h: 154 };
 // Enquadra o estudo entre o contorno do desenho e a faixa da Justificação.
 export const modais = {
   porta: { x: 171, y: 279, w: 1437, h: 872, origem: { x: 1785, y: 735 } },
+  perfis: { x: 171, y: 279, w: 2303, h: 872 },
   arvore: { x: 1608, y: -62, w: 1155, h: 1213, origem: { x: 1195, y: 677 }, compacto: 330 },
 };
 
@@ -119,8 +120,8 @@ export const passos = {
   text6387: 13,
 };
 
-// O passo 17 (slide 18) apresenta a porta e o alvo.
-export const passosTotais = 18;
+// Os perfis entram no passo 18 (slide 19), depois da porta e do alvo.
+export const passosTotais = 19;
 
 // Renumeração do "magic move": o círculo da igreja crescia no passo final, longe do
 // texto que o nomeia. Ele passa a crescer no passo em que entra, junto com o texto.
@@ -160,6 +161,7 @@ export const extras = [
   { asset: 'legendaAlvo', apos: 'alvo', passo: 17, entrada: { tipo: 'zoom' }, ...quadroAlvo },
   { asset: 'legendaPorta', apos: 'text6005', passo: 17, x: 1730, y: 792, w: 190, h: 32 },
   { asset: 'legendaCaminho', apos: 'legendaPorta', passo: 17, x: 1919, y: 800, w: 300, h: 50 },
+  { asset: 'perfis-pontos', apos: 'legendaCaminho', passo: 18, x: 1375, y: 737, w: 248, h: 213 },
 ];
 
 // Ordem de camadas: joga um asset para trás de outro. (Nada por enquanto.)

@@ -103,7 +103,7 @@ export function montaLegendas(palco, legenda) {
   fundo.classList.add('realce-biblico');
   fundo.setAttribute('aria-hidden', 'true');
   const origem = legenda.parentElement;
-  const modais = [...document.querySelectorAll('.modal-estudo')];
+  const modais = [...document.querySelectorAll('dialog')];
   let ativa;
 
   function fechar() {
@@ -132,7 +132,7 @@ export function montaLegendas(palco, legenda) {
     legenda.scrollTop = 0;
   }
 
-  const textos = [...palco.querySelectorAll('text'), ...document.querySelectorAll('.modal-estudo__referencias')];
+  const textos = [...palco.querySelectorAll('text'), ...document.querySelectorAll('.modal-estudo__referencias, .perfil-referencias')];
   for (const ref of marcaReferencias(textos)) {
     ref.addEventListener('pointerenter', (e) => { if (e.pointerType !== 'touch') abrir(ref); });
     ref.addEventListener('pointerleave', (e) => { if (e.pointerType !== 'touch' && ativa === ref) fechar(); });

@@ -80,7 +80,63 @@ body {
   stroke-linejoin: round;
 }
 
-html:has(.modal-estudo[open]) { overflow: hidden; scrollbar-gutter: stable; }
+[data-perfil='incredulo'] { --perfil-cor: #245a7b; --perfil-ponto: #2e62a9; --perfil-claro: #c9e0ec; --perfil-tinta: #18394d; }
+[data-perfil='religioso'] { --perfil-cor: #912e32; --perfil-ponto: #b22b33; --perfil-claro: #edc5c1; --perfil-tinta: #572323; }
+[data-perfil='discipulo'] { --perfil-cor: #396731; --perfil-ponto: #4a7a22; --perfil-claro: #d9e7ca; --perfil-tinta: #2e4926; }
+
+#palco [data-asset='perfis-pontos'] circle {
+  fill: var(--perfil-ponto);
+  opacity: 0.48;
+  transition: opacity 140ms ease, filter 140ms ease;
+}
+#palco [data-asset='perfis-pontos']:has(circle:is(:hover, :focus-visible)) circle {
+  opacity: 0.92;
+  filter: drop-shadow(0 0 6px #fff7b8) drop-shadow(0 0 3px #fff7b8);
+}
+html:has(#modal-perfis[open]) #palco [data-asset='perfis-pontos'] circle { opacity: 0; }
+html:has(:is(.modal-estudo, .modal-perfis)[open]) { overflow: hidden; scrollbar-gutter: stable; }
+
+.modal-perfis {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  max-height: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+  background: transparent;
+  color: var(--tinta);
+}
+.modal-perfis::backdrop { background: transparent; }
+.perfis-infografico { display: block; width: 100%; height: 100%; }
+.perfis-papel { fill: var(--fundo-legenda); stroke: #342e24; stroke-width: 1; }
+.perfil-circulo { transform-origin: 0 0; text-anchor: middle; }
+.perfil-anel, .perfil-centro { fill: var(--perfil-cor); }
+.perfil-setores { fill: var(--perfil-claro); }
+.perfil-setores, .perfil-divisoria, .perfil-centro { stroke: #fffdf3; stroke-width: 3; }
+.perfil-titulo, .perfil-centro-nome { fill: #fffdf3; font-weight: bold; }
+.perfil-titulo { font-size: 24px; letter-spacing: 0.065em; }
+.perfil-referencias { fill: #fffdf3; fill-opacity: 0.84; font-size: 13px; }
+.perfil-referencias .referencia-biblica { cursor: help; pointer-events: bounding-box; }
+.perfil-referencias .referencia-biblica.ativa { fill: var(--tinta); fill-opacity: 1; }
+.perfil-circulo .realce-biblico { fill: #fffbe8; pointer-events: none; }
+.perfil-centro-nome { font-size: 34px; }
+.perfil-setor { fill: var(--perfil-tinta); font-size: 16px; font-weight: bold; }
+.perfis-fechar { position: absolute; top: 0; left: 0; }
+.perfis-fechar button {
+  width: 2rem;
+  height: 2rem;
+  padding: 0;
+  border: 0;
+  background: var(--fundo-legenda);
+  color: #773029;
+  font: 1.5rem/1 Georgia, serif;
+  cursor: pointer;
+}
+.perfis-fechar button:hover { background: #f2e5cc; }
 
 .modal-estudo {
   --papel: #fef8cd;
@@ -255,7 +311,7 @@ html:has(.modal-estudo[open]) { overflow: hidden; scrollbar-gutter: stable; }
 }
 
 #legenda-biblica[data-toque='true'] { pointer-events: auto; }
-.modal-estudo > #legenda-biblica { z-index: 1; max-height: min(var(--altura-legenda), 52dvh, 28rem); }
+:is(.modal-estudo, .modal-perfis) > #legenda-biblica { z-index: 1; max-height: min(var(--altura-legenda), 52dvh, 28rem); }
 #legenda-biblica[data-extensao='media'] { font-size: 0.8125rem; }
 #legenda-biblica[data-extensao='longa'] { font-size: 0.75rem; }
 #legenda-biblica p { margin: 0; }
@@ -286,6 +342,7 @@ html:has(.modal-estudo[open]) { overflow: hidden; scrollbar-gutter: stable; }
 
 @media (prefers-reduced-motion: reduce) {
   .camada { transition: none; }
+  #palco [data-asset='perfis-pontos'] circle { transition: none; }
 }
 
 /* As chamas da Geena. O Keynote usava um "piscar" no grupo inteiro; aqui cada língua de

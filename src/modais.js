@@ -25,6 +25,22 @@ function posicionaModal(modal, palco, quadro) {
   modal.style.setProperty('--altura-legenda', `${alturaTela - topo - alturaPainel - 30}px`);
 }
 
+export function conectaAcionadores(modal, acionadores, abrir) {
+  for (const acionador of acionadores) {
+    acionador.classList.add('acionador-modal');
+    acionador.setAttribute('role', 'button');
+    acionador.setAttribute('tabindex', '0');
+    acionador.setAttribute('aria-haspopup', 'dialog');
+    acionador.setAttribute('aria-controls', modal.id);
+    acionador.addEventListener('click', () => abrir(acionador));
+    acionador.addEventListener('keydown', (e) => {
+      if (e.key !== 'Enter' && e.key !== ' ') return;
+      e.preventDefault();
+      abrir(acionador);
+    });
+  }
+}
+
 function conectaModal(modal, acionadores, palco, quadro, aoAbrir) {
   let ultimoAcionador;
   const texto = modal.querySelector('.modal-estudo__texto');
@@ -47,19 +63,7 @@ function conectaModal(modal, acionadores, palco, quadro, aoAbrir) {
     }
   }
 
-  for (const acionador of acionadores) {
-    acionador.classList.add('acionador-modal');
-    acionador.setAttribute('role', 'button');
-    acionador.setAttribute('tabindex', '0');
-    acionador.setAttribute('aria-haspopup', 'dialog');
-    acionador.setAttribute('aria-controls', modal.id);
-    acionador.addEventListener('click', () => abrir(acionador));
-    acionador.addEventListener('keydown', (e) => {
-      if (e.key !== 'Enter' && e.key !== ' ') return;
-      e.preventDefault();
-      abrir(acionador);
-    });
-  }
+  conectaAcionadores(modal, acionadores, abrir);
 
   modal.addEventListener('click', (e) => {
     if (e.target !== modal) return;
