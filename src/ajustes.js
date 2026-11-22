@@ -1,17 +1,42 @@
 // Correções manuais sobre os dados extraídos. Fica separado de src/scene/*.json porque
 // aqueles são gerados: reextrair sobrescreve lá, não aqui.
 
+import textosExtraidos from './scene/text.json';
+
+const [linhaGenesis] = textosExtraidos.flowRoot4641.linhas;
+const [linhaHebraica, ...linhasExplicativas] = textosExtraidos.image132.linhas;
+
 // Título da cena: sobrescreve scene.json (usado como aria-label do SVG). O extraído do
 // Keynote tem erro de digitação e o sufixo "- Animação", que não fazem sentido fora do deck.
 export const titulo = 'Propósito Eterno de Deus';
 
-// Geometria de texto: sobrescreve campos de src/scene/text.json.
+// Geometria de texto: complementa os dados de src/scene/text.json.
 export const geometria = {
+  image132: {
+    linhas: [{ ...linhaHebraica, x: linhaHebraica.x -10, ancora: 'end' }, ...linhasExplicativas],
+  },
+  flowRoot4641: {
+    linhas: [0, 5.5, 11].map((deslocamento) => ({ ...linhaGenesis, y: linhaGenesis.y + deslocamento })),
+  },
   // afasta "Mt 25:41" da borda vermelha da Geena
   text6327: { r: 54 },
   // no SVG do Inkscape este texto é preto, quase ilegível sobre o vermelho escuro;
   // no deck do Keynote (e no site em produção) ele é branco
   text6040: { fill: '#ffffff' },
+  propositoDaSalvacao: {
+    tipo: 'linhas',
+    viewBox: [1020, 40],
+    linhas: [{ x: 0, y: 0, size: 37 }],
+    rot: 90,
+    fill: '#6248ac',
+  },
+};
+
+// Abre espaço entre o bloco de referências e o círculo da eternidade passada.
+const deslocamentoDoBlocoHebraico = -174;
+export const deslocamentosX = {
+  image132: deslocamentoDoBlocoHebraico,
+  flowRoot4641: deslocamentoDoBlocoHebraico,
 };
 
 // Passo de entrada: sobrescreve quando a ordem do deck não é a desejada.
@@ -90,6 +115,7 @@ export const fatias = {
 
 // Camadas novas, que não vêm do deck.
 export const extras = [
+  { asset: 'propositoDaSalvacao', apos: 'flowRoot4633', passo: 4, x: 3000, y: 37, w: 1020, h: 40 },
   // nuvens dentro da eternidade futura; o círculo interno as recorta (ver `recortes`)
   { asset: 'nuvens', apos: 'circle6215', passo: 16, x: 2247, y: 322, w: 587, h: 587 },
 ];

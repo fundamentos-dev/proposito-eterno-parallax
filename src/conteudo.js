@@ -13,12 +13,12 @@ export const aspectosDoPecado = [
 export const textos = {
   // 1 linha(s)
   flowRoot4633: ["O propósito de Deus não é salvar o homem"],
-  // 1 linha(s)
-  flowRoot4641: ["Gn 1:26"],
+  // 3 linha(s)
+  flowRoot4641: ["Gn 1:26","Ef 4:24 – Criado segundo Deus","(falando do espírito)"],
   // 1 linha(s)
   flowRoot4797: ["1ª MORTE · SHEOL"],
   // 1 linha(s)
-  flowRoot4813: ["thanatos · 1Co 15:26, Ap 6:8, Rm 6:23, Hb:2"],
+  flowRoot4813: ["thanatos · 1Co 15:26, Ap 6:8, Rm 6:23, Hb 2:9,14-15"],
   // 2 linha(s)
   flowRoot58: ["Propósito Eterno","de Deus"],
   // 3 linha(s)
@@ -26,7 +26,7 @@ export const textos = {
   // 2 linha(s)
   flowRoot5943: ["A QUEDA · O PECADO","Rm 3:12,23; 5:12 · Gn 5:3"],
   // 5 linha(s)
-  flowRoot5959: ["O RESGATE · JUSTIFICAÇÃO","Rm 6:3-7","2 Co 14-17 (nova vida)","Gl 2:20","Cl 1:27"],
+  flowRoot5959: ["O RESGATE · JUSTIFICAÇÃO","Rm 6:3-7","2 Co 5:17 (nova vida)","Gl 2:20","Cl 1:27"],
   // 5 linha(s)
   flowRoot6020: ["JUSTIFICAÇÃO","·","SANTIFICAÇÃO","·","GLORIFICAÇÃO"],
   // 5 linha(s)
@@ -44,7 +44,7 @@ export const textos = {
   // 1 linha(s)
   flowRoot6339: ["Rm 8:28-29"],
   // 1 linha(s)
-  flowRoot6357: ["Ef 4:24 - Criado segundo Deus (falando do espírito)"],
+  propositoDaSalvacao: ["A SALVAÇÃO é um meio para alcançar o seu propósito"],
   // texto em caminho circular
   text4775: "ETERNIDADE PASSADA Sl 30:2",
   // texto em caminho circular

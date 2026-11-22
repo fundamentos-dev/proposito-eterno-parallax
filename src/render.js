@@ -90,6 +90,7 @@ function desenhaTexto(grupo, geo, linhas, id, fatia) {
       'font-size': ln.size,
       'font-family': ln.rtl ? FONTE_HEBRAICO : fonte,
       direction: ln.rtl ? 'rtl' : null,
+      'text-anchor': ln.ancora,
       transform: `translate(${ln.x},${ln.y})${geo.rot ? ` rotate(${geo.rot})` : ''}`,
       'xml:space': 'preserve',
     });
@@ -160,8 +161,9 @@ export function montaCena(cena, geometria, textos, links, ajustes = {}) {
   const faltando = new Set();
   cena.camadas.forEach((c) => {
     const bruto = svgPorId[c.asset.id];
-    if (!bruto) { faltando.add(c.asset.id); return; }
-    const cx = caixa(bruto);
+    const geo = geometria[c.asset.id];
+    if (!bruto && !geo) { faltando.add(c.asset.id); return; }
+    const cx = bruto ? caixa(bruto) : { w: geo.viewBox[0], h: geo.viewBox[1] };
 
     // Dois níveis: o de fora é do controlador (animação, em coordenadas de palco); o de
     // dentro encaixa o asset, desenhado no seu próprio quadro, dentro do retângulo do palco.
@@ -194,7 +196,6 @@ export function montaCena(cena, geometria, textos, links, ajustes = {}) {
     }
 
 
-    const geo = geometria[c.asset.id];
     if (c.asset.id === 'flowRoot5943') {
       desenhaQueda(dentro, geo, textos[c.asset.id]);
     } else if (geo) {

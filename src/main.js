@@ -14,7 +14,10 @@ import { montaGlobo } from './globo.js';
 if (ajustes.titulo) cena.titulo = ajustes.titulo;
 const geo = { ...geometria };
 for (const [id, campos] of Object.entries(ajustes.geometria || {})) {
-  if (geo[id]) geo[id] = { ...geo[id], ...campos };
+  geo[id] = { ...geo[id], ...campos };
+}
+for (const c of cena.camadas) {
+  c.x += ajustes.deslocamentosX[c.asset.id] ?? 0;
 }
 for (const [id, alvo] of Object.entries(ajustes.passos || {})) {
   const c = cena.camadas.find((l) => l.asset.id === id);
@@ -65,7 +68,7 @@ for (const [id, cortes] of Object.entries(ajustes.fatias || {})) {
   })));
 }
 
-// camadas novas, que não vêm do deck (as nuvens da eternidade futura)
+// camadas novas, que não vêm do deck
 for (const extra of ajustes.extras || []) {
   const nova = {
     asset: { id: extra.asset }, z: extra.asset, step: extra.passo,
